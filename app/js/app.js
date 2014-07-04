@@ -92,6 +92,7 @@ $(document).ready(function(){
 	lastname	=	$('input[name="lastname"]'),
 	gender		=	$('input[name="Gaslachet"]'),
 	phone		=	$('input[name="Telefoonnummer"]'),
+	mobile		= 	$('input[name="Mobielnummer"]'),
 	street		=	$('input[name="Straat"]'),
 	houseNo		=	$('input[name="Huisnummer"]'),
 	postalCode	=	$('input[name="Postcode"]'),
@@ -110,7 +111,8 @@ $(document).ready(function(){
 	dobmonthStr,
 	dobdayStr,
 	dobyearStr,
-	phoneStr,	
+	phoneStr,
+	mobileStr,	
 	streetStr,
 	houseNoStr,
 	postalCodeStr,
@@ -386,6 +388,51 @@ $(document).ready(function(){
 				}
 			}
 		}
+
+		//Mobile
+		if(mobile.val() == '' || mobile.val() == null)
+		{
+			if(errorList.find('.errormessage-mobile').length == 0){
+				$('<li />', {html: 'Vul mobielnummer in', class : 'col-sm-6 errormessage-mobile'})
+				.appendTo(errorList)
+				.click(function(){
+					$('html, body').animate({
+						scrollTop: mobile.offset().top - 100
+					}, 500);
+					mobile.focus();
+				});
+				//$('#errorMsg').show();
+				mobile.parent().addClass('has-error');
+			}
+		}else{
+			var reg = new RegExp('^\\d+$');
+			if(!reg.test(mobile.val())){
+				if(errorList.find('.errormessage-mobile').length == 0){
+					$('<li />', {html: 'Vul geldig mobielnummer', class : 'col-sm-6 errormessage-mobile'})
+					.appendTo(errorList)
+					.click(function(){
+						$('html, body').animate({
+							scrollTop: mobile.offset().top - 100
+						}, 500);
+						mobile.focus();
+					});
+					//$('#errorMsg').show();
+					mobile.parent().addClass('has-error');
+				}
+			}
+			else{
+				if(mobile.parent().hasClass('has-error')){
+					mobile.parent().removeClass('has-error')
+				};
+				if(errorList.find('.errormessage-mobile').length > 0){
+					errorList.find('.errormessage-mobile').remove();
+					//$('#errorMsg').hide();
+				}
+			}
+		}
+
+
+
 
 		// Street
 		if(street.val() == '' || street.val() == null)

@@ -6449,3 +6449,12 @@ a.list-group-item.active:focus .list-group-item-text {
     margin-left:10px;
     width:36%;
 }
+
+.align-icon-info{
+  position: relative;
+  top: 3px;
+}
+.position-fb-li{
+  position: relative;
+  top: 30px; 
+}
