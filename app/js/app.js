@@ -776,6 +776,25 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+	$('#tooltip2').popover({
+		container: 'body',
+		html: true
+	})
+	.css({'cursor': 'pointer'});
+
+	$(document).click(function (e) {
+		$('#tooltip2').each(function () {
+			if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+				//$(this).popover('hide');
+				if ($(this).data('bs.popover').tip().hasClass('in')) {
+					$(this).popover('toggle');
+				}
+				
+				return;
+			}
+		});
+	});
 });
 
 $(document).ready(function(){
