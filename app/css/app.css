@@ -5993,7 +5993,7 @@ aside .well {
   font-size: 16px;
 }
 .website-icons.big-font {
-  font-size: 25px;
+  font-size: 20px;
 }
 .btn-linkedin {
   font-family: "PT Sans", 'arial', sans-serif;
@@ -6486,4 +6486,8 @@ a.link-normal:hover,
 a.link-normal:focus{
   color: #ff4400 !important;
   text-decoration: underline !important;;
+}
+.btn.call-to-action{
+  width:358px !important;
+  padding: 7px 0;
 }
