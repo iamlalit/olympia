@@ -1,6 +1,6 @@
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -265,7 +265,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -435,7 +435,7 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 24px;
 }
 h2,
 .h2 {
@@ -443,7 +443,7 @@ h2,
 }
 h3,
 .h3 {
-  font-size: 24px;
+  font-size: 20px;
 }
 h4,
 .h4 {
@@ -5993,7 +5993,7 @@ aside .well {
   font-size: 16px;
 }
 .website-icons.big-font {
-  font-size: 40px;
+  font-size: 25px;
 }
 .btn-linkedin {
   font-family: "PT Sans", 'arial', sans-serif;
@@ -6457,5 +6457,33 @@ a.list-group-item.active:focus .list-group-item-text {
 }
 .position-fb-li{
   position: relative;
-  top: 30px; 
+  top: 31px; 
+  padding-left: 0px;
+}
+.margin-bottom-0{
+  margin-bottom: 0px;
+}
+.margin-top-0{
+  margin-top: 0px;
+}
+.margin-left-13{
+  margin-left:13px;
+}
+.wdith-494{
+  width: 494px;
+}
+a.link-in-text{
+  color: #ff4400;
+}
+a.link-in-text:hover,
+a.link-in-text:focus{
+  text-decoration: underline;
+}
+a.link-normal{
+  color: #666666;
+}
+a.link-normal:hover,
+a.link-normal:focus{
+  color: #ff4400;
+  text-decoration: underline;
 }
