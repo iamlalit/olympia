@@ -6304,7 +6304,6 @@ a.list-group-item.active:focus .list-group-item-text {
 }
 .well.job-vacancy .list-group-item:hover,
 .well.job-vacancy .list-group-item.focused {
-  border-color: #ccc;
   background-color: #f5f5f5;
 }
 .btn.big-text {
