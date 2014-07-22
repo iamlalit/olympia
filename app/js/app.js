@@ -223,6 +223,8 @@ $(document).ready(function(){
 			$('#jobForm-section2').removeClass('grey-link');
 			$('#jobForm-section2').find('select').removeClass('grey-link');
 			$('#jobForm-section2').find('button[type=submit]').addClass('btn-primary').removeClass('btn-default');
+			$('#jobForm-section2 #11:input').prop("disabled", true);
+			$('#jobForm-section2 #7:input').prop("disabled", true);
 			$('#firstname').focus();
 			$('html, body').animate({
 				scrollTop: $("#firstname").offset().top - 100

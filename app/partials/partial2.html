@@ -203,7 +203,7 @@
 			</p> -->
 
 			<form id="jobForm-section1" role="form"  method="post">
-				<div class="row">
+				<div class="row margin-top-10">
 					<div class="col-sm-8">
 						<div class="form-group">
 							<label for="email">E-mailadres</label>
@@ -271,7 +271,7 @@
 
 					<h3>2. Vul je persoonlijke gegevens in</h3>	
 
-					<div class="row">
+					<div class="row margin-top-10">
 						<div class="col-sm-8">
 							<div class="form-group">
 								<label for="firstname">Voornaam</label>
@@ -437,52 +437,51 @@
 							</div>
 						</div>
 					</div>
-
-					<div class="form-group">
-						<label for="7">Straat</label>
-						<input type="text" name="Straat" class="form-control" id="7">
-					</div>
-
-					<div class="form-group">
-						<div class="row">
-							<div class="col-sm-3">
-								<label for="8">Huisnummer</label>
-								<input type="text" name="Huisnummer" class="form-control" id="8"/>
-							</div>
-							<div class="col-sm-3 col-sm-offset-1">
-								<label for="9">Toevoeging (optioneel)</label>
-								<input type="text" class="form-control" id="9">
-							</div>
-						</div>
-					</div>
-
 					<div class="form-group">
 						<div class="row">
 							<div class="col-sm-4">
-								<label for="10">Postcode</label>
-								<input type="text" name="Postcode" class="form-control" id="10"/>
-							</div>
-							<div class="col-sm-8">
-								<label for="11">Woonplaats</label>
-								<input type="text" name="Woonplaats" class="form-control" id="11"/>
-							</div>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label for="12">Land</label>
-						<div class="row">
-							<div class="col-sm-4">
+								<label for="12">Land</label>
 								<select class="form-control" id="12">
 									<option>Nederland</option>
 									<option>België</option>
 									<option>Duitsland</option>
 								</select>
 							</div>
+							<div class="col-sm-4">
+								<label for="10">Postcode</label>
+								<input type="text" name="Postcode" class="form-control" id="10"/>
+							</div>
+							<div class="col-sm-4">
+								<label for="11">Woonplaats</label>
+								<input type="text" name="Woonplaats" class="form-control" id="11" disabled="disabled"/>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-4">
+								<label for="8">Huisnummer</label>
+								<input type="text" name="Huisnummer" class="form-control" id="8"/>
+							</div>
+							<div class="col-sm-8">
+								<label for="7">Straat</label>
+								<input type="text" name="Straat" class="form-control" id="7" disabled="disabled" />
+							</div>
 						</div>
 					</div>
 
 					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-3">
+								<label for="9">Toevoeging (optioneel)</label>
+								<input type="text" class="form-control" id="9">
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group margin-top-20">
 						<label>Rijbewijs</label>
 						<div class="row">
 							<div class="col-sm-8">
@@ -517,30 +516,30 @@
 							</div>
 						</div>
 					</div>
-					<h3>3. Ervaring &amp; Motivatie</h3>	
+					<h3 class="margin-top-20">3. Ervaring &amp; Motivatie</h3>	
 					
 					<div class="form-group">
-						<div class="row">
+						<div class="row margin-top-10">
 							<div class="col-sm-12">
 								<label>CV toevoegen</label>
-								<p>Voeg je CV toe door een bestand te uploaden of maak hieronder een nieuw CV.
+								<p class="shift--5x">Voeg je CV toe door een bestand te uploaden of maak hieronder een nieuw CV.
 									<a href="#" id="zoomTextarea" class="website-icons small" data-toggle="modal" data-target="#cvHelp"><i class="olympia-question-circle"></i></a>
 									</p>
 							</div>
 							
-							<div class="col-sm-10">
+							<div class="col-sm-10 shift--12x">
 								<label class="radio-inline">
 									<input type="radio" name="cvChoice" value="cvUpload" checked> CV uploaden
 								</label>
 							</div>
 
-							<div class="col-sm-10">
+							<div class="col-sm-10 shift--12x">
 								<label class="radio-inline">
 									<input type="radio" name="cvChoice" value="cvWrite"> CV aanmaken (handmatig of met gebruik van linkedin)
 								</label>
 							</div>
 							
-							<div class="clearfix" style="margin-bottom: 25px;"></div>
+							<div class="clearfix"></div>
 
 							<div class="col-sm-12" id="cvContainer">
 								<div class="well margin-bottom-0" style="background:#fff;" id="cvUpload">
@@ -612,7 +611,7 @@
 						</div>
 					</div>
 
-					<div class="form-group">
+					<div class="form-group margin-top-20">
 						<label for="15">Wat is je werk- en denkniveau?:</label>
 						<div class="row">
 							<div class="col-sm-4">
@@ -630,7 +629,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="form-group" id="ques1container">
+					<div class="form-group margin-top-20" id="ques1container">
 						<label>Specifieke vragen voor deze functie:</label>
 						<div class="row">
 							<div class="col-sm-12">
@@ -655,6 +654,8 @@
 							<div class="col-xs-12">
 								<p>2. Hoeveel jaar heb je ervaring als heftruckchauffeur?</p>
 							</div>
+						</div>
+						<div class="row shift--5x">
 							<div class="col-sm-4">
 								<select class="form-control" id="xp">
 									<option value="0">Selecteer</option>
@@ -665,11 +666,11 @@
 							</div>
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group margin-top-10">
 						<div class="row">
 							<div class="col-sm-10">
 								<label for="text-content">Motivatie</label>
-								<p>Klik <a class="link-in-text" href="javascript:void(0)">hier</a> voor tips voor het schrijven van een motivatie.
+								<p class="shift--5x margin-bottom-5">Klik <a class="link-in-text" href="javascript:void(0)">hier</a> voor tips voor het schrijven van een motivatie.
 									
 									<i class="olympia-expand2 pull-right" style="position:relative; top:3px;"></i>
 									<a href="javascript:void(0)" id="zoomTextarea"  class="pull-right link-in-text" title="Click to Zoom" data-toggle="modal" data-target="#textBoxBig"> Vergroten&nbsp;</a>
@@ -686,13 +687,13 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<label>Wil je automatische updates ontvangen?</label>
-								<div class="radio">
+								<div class="radio shift--12x margin-bottom-5">
 									<label>
 										<input type="radio" name="optionsRadios" id="optionsRadios1" value="1">
 										Ja, ik sta open voor heftruckchauffeur vacturesuggesties en/of gerelateerde functies.
 									</label>
 								</div>
-								<div class="radio">
+								<div class="radio shift--12x margin-top-5">
 									<label>
 										<input type="radio" name="optionsRadios" id="optionsRadios1" value="3">
 										Nee, ik wil dat Olympia mij alleen helpt met deze solicitatie
@@ -702,7 +703,7 @@
 						</div>
 					</div>	
 					<div class="form-group">
-						<div class="row">
+						<div class="row shift--12x">
 							<div class="col-sm-12">
 
 								<div class="checkbox">
@@ -714,7 +715,7 @@
 
 								<br/>
 
-								<button type="submit" class="btn btn-primary" id="form-submit">Verstuur sollicitatie</button>
+								<button type="submit" class="btn btn-primary margin-top-5" id="form-submit">Verstuur sollicitatie</button>
 							</div>
 						</div>
 					</div>
@@ -730,7 +731,7 @@
 							<dd>
 								<h4 class="warning-text margin-top-0">Heftruckchauffeur (m/v)</h4>
 							</dd>
-							<hr style="border-color: #e3e3e3" class="margin-top-0 margin-bottom-5">
+							<hr style="border-color: #e3e3e3" class="margin-top-0 margin-bottom-10">
 
 							<dt>Plaats</dt>
 							<dd>Rotterdam</dd>
@@ -786,10 +787,10 @@
 						<p class="margin-bottom-0">Heb je een vraag?
 							<br/>
 							<i class="olympia-phone"></i> 
-							<a href="javascript:void(0)" class="link-in-text"  id="phoneToggle">Toon Telefoonnummer</a>
+							<a href="javascript:void(0)" class="link-in-text"  id="phoneToggle">Toon telefoonnummer</a>
 							<span id="phoneToggler">98988998989</span>
 							<br/>
-							<i class="olympia-envelope"></i> <a href="javascript:void(0)" class="link-in-text"  id="mailToggle">Stuur een bericht</a>
+							<i class="olympia-envelope"></i> <a href="#" class="link-in-text">Stuur een bericht</a>
 							<span id="mailToggler">info@olympia.com</span>
 						</p>
 					</div>
