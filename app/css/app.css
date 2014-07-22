@@ -397,7 +397,7 @@ h2,
 .h2,
 h3,
 .h3 {
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 10px;
 }
 h1 small,
@@ -6493,7 +6493,7 @@ a.link-normal:focus{
 }
 .btn.call-to-action{
   width:358px !important;
-  padding: 7px 0;
+  padding: 0;
 }
 .grey-link a{
 color: #cccccc !important;
