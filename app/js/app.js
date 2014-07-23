@@ -129,6 +129,8 @@ $(document).ready(function(){
 	$('#jobForm-section2').find('button[type=submit]').addClass('btn-default').removeClass('btn-primary');
 	$('#jobForm-section2').find('a').prop("disabled", true)
 	.addClass('grey-link')
+	$('#jobForm-section2').find('a i').prop("disabled", true)
+	.addClass('grey-link')
 	.click(function(e){
 		if($(this).attr("disabled") == "disabled")
 		{
@@ -225,6 +227,8 @@ $(document).ready(function(){
 			$('#jobForm-section2').find('button[type=submit]').addClass('btn-primary').removeClass('btn-default');
 			$('#jobForm-section2 #11:input').prop("disabled", true);
 			$('#jobForm-section2 #7:input').prop("disabled", true);
+			$('#jobForm-section2').find('a i').prop("disabled", false)
+			.removeClass('grey-link')
 			$('#firstname').focus();
 			$('html, body').animate({
 				scrollTop: $("#firstname").offset().top - 100
