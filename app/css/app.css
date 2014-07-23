@@ -6493,13 +6493,13 @@ a.link-normal:focus{
 }
 .btn.call-to-action{
   width:358px !important;
-  padding: 7px 0;
+  padding: 4px 0;
   position: relative;
   bottom: 0;
 }
 .btn.call-to-actionb{
   width:176px !important;
-  padding: 7px 0;
+  padding: 4px 0;
   position: relative;
   bottom: 0;
 }
@@ -6576,4 +6576,8 @@ color: #cccccc !important;
 .shift--5x{
   position: relative;
   top: -5px; 
+}
+.shift--3x{
+  position: relative;
+  top: -3px; 
 }
