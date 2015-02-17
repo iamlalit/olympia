@@ -641,7 +641,8 @@ $(document).ready(function(){
 		
 		
 
-		// Question 1
+		// Question 1 To hide for version 4
+		/*
 		$.each(ques1, function() {
 			if (this.checked)
 				ques1Str = this.value;
@@ -669,7 +670,7 @@ $(document).ready(function(){
 				//localStorage.setItem('logQues1', ques1Str);
 			}
 		});
-
+		
 		// Experiance
 		if(	parseInt($('#xp option:selected').val()) == 0 ){
 			if(errorList.find('.errormessage-xp').length == 0){
@@ -696,7 +697,7 @@ $(document).ready(function(){
 
 			//localStorage.setItem('logQues2', $('#xp option:selected').val());
 		}
-
+		*/
 		$.each(moreHelp, function() {
 			if (this.checked)
 				moreHelpStr = this.value;
@@ -756,7 +757,15 @@ $(document).ready(function(){
 			}, 500);
 		}else{
 			$('#errorMsg').hide();
-			window.location.href='partial3.html'
+			$('html, body').animate({
+				scrollTop: 1600
+			}, 500);
+			//to enable job selection 3 
+			$('#jobForm-section3').removeClass('grey-link');
+			$('#jobForm-section3 ul li').removeClass('grey-link');
+			$('#jobForm-section3 ul li span').removeClass('grey-link');
+			$('#jobForm-section3').find('button[type=submit]').removeClass('btn-default').addClass('btn-primary');
+			$('#jobForm-section3 :input').prop("disabled", false);
 		}
 		
 	});
@@ -1060,6 +1069,16 @@ $(document).ready(function(){
 	});
 });
 
+//for form 3
+$(document).ready(function(){
+	$('#jobForm-section3').addClass('grey-link');
+	$('#jobForm-section3 ul li').addClass('grey-link');
+	$('#jobForm-section3 ul li span').addClass('grey-link');
+	$('#jobForm-section3').find('button[type=submit]').addClass('btn-default').removeClass('btn-primary');
+	$('#jobForm-section3 :input').prop("disabled", true);
+});
+
+
 window.tagData = window.tagData || {};
 window.tagData.classInstance = {
     'classID': ClassDetail.classInstanceDetail.classId,
@@ -1086,3 +1105,4 @@ window.tagData.classInstance = {
     'categoryID': 6,
     'timeOffset': timeOffset
 };
+

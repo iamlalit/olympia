@@ -615,7 +615,7 @@
 						</div>
 					</div>
 
-					<div class="form-group margin-top-20">
+					<div class="form-group margin-top-20 hide">
 						<label for="15">Wat is je werk- en denkniveau?:</label>
 						<div class="row">
 							<div class="col-sm-4">
@@ -633,7 +633,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="form-group margin-top-20" id="ques1container">
+					<div class="form-group margin-top-20 hide" id="ques1container">
 						<label>Specifieke vragen voor deze functie:</label>
 						<div class="row">
 							<div class="col-sm-12">
@@ -717,11 +717,29 @@
 								</div>
 
 								<br/>
-
-								<button type="submit" class="btn btn-primary margin-top-5" id="form-submit">Verstuur sollicitatie</button>
+								<div class="row shift--12x">
+									<div class="col-sm-5">
+										<button type="submit" class="btn btn-primary btn-block margin-top-5"  id="form-submit">Verder naar contact centre test <i class="olympia-arrow-down"></i></button>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
+				</form>
+				<form id="jobForm-section3" role="form" method="post">
+					<h4 class="margin-top-0 margin-bottom-20">4. Contact centre test</h4>	
+					<div class="well margin-bottom-0 margin-top-15" style="background:#fff" id="cvUpload">
+						<h4 class="margin-top-0">Contact Centre</h4>
+						<ul class="bullet-list-colored margin-bottom-0">
+							<li><span>Benefit 1 here</span></li>
+							<li><span>Benefit 2 here</span></li>
+							<li><span>Benefit 3 here</span></li>
+						</ul>
+						<button type="submit" class="btn btn-primary margin-top-5 start-test" onclick="window.location.href='#'">Start test</button>
+					</div>
+				</form>
+				<form id="jobForm-section4" role="form" method="post">
+					<button type="submit" disabled="disabled" class="btn btn-default margin-top-30  margin-bottom-30">Verstuur sollicitatie</button>
 				</form>
 			</div>
 			<div class="col-sm-4">
