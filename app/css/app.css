@@ -6613,3 +6613,12 @@ color: #cccccc !important;
 .no-bold{
   font-weight: 500;
 }
+.callcenter-page-temp{
+  text-align: center;
+  position: relative;
+  margin-top: 8%;
+}
+.callcenter-page-temp h1{
+  margin-top: 10%;
+  position: relative;
+}

@@ -35,17 +35,17 @@ $(document).ready(function(){
 	});
 
 	$('input[name=cv]').change(function() {
-		console.log($(this).val()); 
 		var FileName  = $(this).val();
-		var cvFile = FileName.match(/\\([^\\]+)$/)[1];
-		$('#cvVal-div').show();
+		var cvFile = FileName.replace(/^.*[\\\/]/, '');
+		console.log(FileName, cvFile)
+		$('#cvVal-div').removeClass('hide');
 		$('#cvVal').html('<a href="javascript:void(0)">'+cvFile+'</a>');
 	});
 
 	$('#removeCv').click(function(){
 		$('input[name=cv]').val() === '';
 		$('#cvVal').empty();
-		$('#cvVal-div').hide();
+		$('#cvVal-div').addClass('hide');
 	});
 })
 
@@ -611,8 +611,8 @@ $(document).ready(function(){
 								//$('#errorMsg').hide();
 							}
 							
-							var cvFile = FileName.match(/\\([^\\]+)$/)[1];
-
+							var cvFile = FileName.replace(/^.*[\\\/]/, '');
+							console.log(cvFile);
 							$('#cvVal-div').show();
 							$('#cvVal').html('<a href="javascript:void(0)">'+cvFile+'</a>');
 
@@ -1078,42 +1078,35 @@ $(document).ready(function(){
 	$('#jobForm-section3 :input').prop("disabled", true);
 
 	$('.start-test').click(function(e) {
-		window.open('callcentre-test.html', '_blank'); 
-		$('#jobForm-section4 :input').prop("disabled", false);
-		$('#jobForm-section4').find('button[type=submit]').removeClass('btn-default').addClass('btn-primary');
+		window.location.href='callcentre-test.html'; 
 	});
-
-	$('#jobForm-section4').submit(function(e){
-		e.preventDefault();
-		window.location.href='partial3.html'
-	})
 });
 
 
-window.tagData = window.tagData || {};
-window.tagData.classInstance = {
-    'classID': ClassDetail.classInstanceDetail.classId,
-    'facilityID': ClassDetail.classInstanceDetail.facility.facilityId,
-    'classInstanceID': ClassDetail.layout.cycleClassStatus.classInstanceId,
-    'categoryID': 6,
-    'timeOffset': moment(ClassDetail.layout.classStartDate).diff(moment(), 'hours')
-};
+// window.tagData = window.tagData || {};
+// window.tagData.classInstance = {
+//     'classID': ClassDetail.classInstanceDetail.classId,
+//     'facilityID': ClassDetail.classInstanceDetail.facility.facilityId,
+//     'classInstanceID': ClassDetail.layout.cycleClassStatus.classInstanceId,
+//     'categoryID': 6,
+//     'timeOffset': moment(ClassDetail.layout.classStartDate).diff(moment(), 'hours')
+// };
 
 
-if (timeOffset === 0) {
-    if (timeOffsetMinutes > 0) {
-        timeOffset = 1;
-    } else {
-        timeOffset = -1;
-    }
-}
+// if (timeOffset === 0) {
+//     if (timeOffsetMinutes > 0) {
+//         timeOffset = 1;
+//     } else {
+//         timeOffset = -1;
+//     }
+// }
 
-window.tagData = window.tagData || {};
-window.tagData.classInstance = {
-    'classID': ClassDetail.classInstanceDetail.classId,
-    'facilityID': ClassDetail.classInstanceDetail.facility.facilityId,
-    'classInstanceID': ClassDetail.layout.cycleClassStatus.classInstanceId,
-    'categoryID': 6,
-    'timeOffset': timeOffset
-};
+// window.tagData = window.tagData || {};
+// window.tagData.classInstance = {
+//     'classID': ClassDetail.classInstanceDetail.classId,
+//     'facilityID': ClassDetail.classInstanceDetail.facility.facilityId,
+//     'classInstanceID': ClassDetail.layout.cycleClassStatus.classInstanceId,
+//     'categoryID': 6,
+//     'timeOffset': timeOffset
+// };
 
