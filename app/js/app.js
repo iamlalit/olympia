@@ -1084,7 +1084,8 @@ $(document).ready(function(){
 	});
 
 	$('#jobForm-section4').submit(function(e){
-		window.open('partial3.html'); 
+		e.preventDefault();
+		window.location.href='partial3.html'
 	})
 });
 
