@@ -764,7 +764,7 @@ $(document).ready(function(){
 			$('#jobForm-section3').removeClass('grey-link');
 			$('#jobForm-section3 ul li').removeClass('grey-link');
 			$('#jobForm-section3 ul li span').removeClass('grey-link');
-			$('#jobForm-section3').find('button[type=submit]').removeClass('btn-default').addClass('btn-primary');
+			$('#jobForm-section3').find('button[type=button]').removeClass('btn-default').addClass('btn-primary');
 			$('#jobForm-section3 :input').prop("disabled", false);
 		}
 		
@@ -1074,8 +1074,18 @@ $(document).ready(function(){
 	$('#jobForm-section3').addClass('grey-link');
 	$('#jobForm-section3 ul li').addClass('grey-link');
 	$('#jobForm-section3 ul li span').addClass('grey-link');
-	$('#jobForm-section3').find('button[type=submit]').addClass('btn-default').removeClass('btn-primary');
+	$('#jobForm-section3').find('button[type=button]').addClass('btn-default').removeClass('btn-primary');
 	$('#jobForm-section3 :input').prop("disabled", true);
+
+	$('.start-test').click(function(e) {
+		window.open('callcentre-test.html', '_blank'); 
+		$('#jobForm-section4 :input').prop("disabled", false);
+		$('#jobForm-section4').find('button[type=submit]').removeClass('btn-default').addClass('btn-primary');
+	});
+
+	$('#jobForm-section4').submit(function(e){
+		window.open('partial3.html'); 
+	})
 });
 
 
