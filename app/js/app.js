@@ -49,7 +49,10 @@ $(document).ready(function(){
 	});
 })
 
+
+
 $(document).ready(function(){
+
 
 	$('.job-vacancy')
 	.mouseover(function(){
@@ -71,17 +74,33 @@ $(document).ready(function(){
 		$('#ques1-opt1-ans').prop('disabled', !(checkval == '1'));
 	});	
 
-	$('#radio-email1').click(function(){
-		$('#password-container').hide();
-		$('#password-container-hide').show();
-	});
-	$('#radio-email2').click(function(){
-		$('#password-container').show();
-		$('#password-container-hide').hide();
-	});
+	$('input[name=radioEmail]').change(function () {
+        if($('input[name=radioEmail]:checked').val() == 'option2'){
+			$('#password-container').show();
+			$('#password-container-hide').hide();
+		}else if($('input[name=radioEmail]:checked').val() == 'option1'){
+			$('#password-container').hide();
+			$('#password-container-hide').show();
+		}
+    });
+
 
 	$('#errorMsg').hide();
 	
+	var UserData = {"email": "rob.boersma@ePageo.com",
+					"firstName": "Rob",
+					"lastName": "Boersma",
+					"gender": "option1",
+					"dob": ["20", "5", "35"],
+					"phone": "02072052454",
+					"mobile": "0644303526",
+					"street": "Old Gloucester Street",
+					"houseNo": "27",
+					"postalCode": "1017 HL",
+					"residense": "Amsterdam",
+					"drivingLicense": ["A", "B"]
+				}
+
 	var
 	errorDiv	=	$('#errorMsg'),
 	errorList	=	$('#errorList'),
@@ -101,6 +120,8 @@ $(document).ready(function(){
 	ques1 		=	$('input[name="ques1"]'),
 	moreHelp 	=	$('input[name="optionsRadios"]'),
 	terms		=	$('#terms');
+
+	var isPasswordEntered = false;
 
 	var 
 	emailStr,
@@ -214,23 +235,62 @@ $(document).ready(function(){
 						errorList.find('.errormessage-password').remove();
 						$('#errorMsg').hide();
 					}
+					isPasswordEntered = true;
 				}
 			}
 		});
+
 		if(errorList.find('.errormessage-form1mail').length == 0 &&
 			errorList.find('.logOpt-form1radio').length == 0 &&
 			errorList.find('.errormessage-password').length == 0){
-			$('#jobForm-section2 :input').prop("disabled", false);
-			$('#jobForm-section2').find('a').removeAttr("disabled").removeClass('grey-link');
-			$('#jobForm-section2').removeClass('grey-link');
-			$('#jobForm-section2').find('select').removeClass('grey-link');
-			$('#jobForm-section2').find('button[type=submit]').addClass('btn-primary').removeClass('btn-default');
-			$('#jobForm-section2').find('a i').prop("disabled", false)
-			.removeClass('grey-link')
-			$('#firstname').focus();
-			$('html, body').animate({
-				scrollTop: $("#firstname").offset().top - 100
-			}, 500);
+			
+			//to check for rob data
+			if(email.val() === UserData.email){
+				//to set the second option
+				$('input[name="radioEmail"][value="option2"]').prop('checked', true);
+				$('#password-container').show();
+				$('#password-container-hide').hide();
+				if(isPasswordEntered){
+					$('#jobForm-section2 :input').prop("disabled", false);
+					$('#jobForm-section2').find('a').removeAttr("disabled").removeClass('grey-link');
+					$('#jobForm-section2').removeClass('grey-link');
+					$('#jobForm-section2').find('select').removeClass('grey-link');
+					$('#jobForm-section2').find('button[type=submit]').addClass('btn-primary').removeClass('btn-default');
+					$('#jobForm-section2').find('a i').prop("disabled", false)
+					.removeClass('grey-link')
+					
+					$('#firstname').focus();	
+					$('html, body').animate({
+						scrollTop: $("#firstname").offset().top - 100
+					}, 500);	
+					//now to set the dummy data according to json object
+					firstname.val(UserData.firstName);
+					lastname.val(UserData.lastName);
+					$('input[name="Gaslachet"][value="option1"]').prop('checked', true);
+					$('select[name^="dobDay"] option[value="'+UserData.dob[0]+'"]').attr("selected","selected");
+					$('select[name^="dobMonth"] option[value="'+UserData.dob[1]+'"]').attr("selected","selected");
+					$('select[name^="SelectedYear"] option[value="'+UserData.dob[2]+'"]').attr("selected","selected");
+					phone.val(UserData.phone);
+					mobile.val(UserData.mobile);
+					houseNo.val(UserData.houseNo);
+					postalCode.val(UserData.postalCode);
+					residense.val(UserData.residense);
+					street.val(UserData.street);
+				}
+			}else{
+				$('#jobForm-section2 :input').prop("disabled", false);
+				$('#jobForm-section2').find('a').removeAttr("disabled").removeClass('grey-link');
+				$('#jobForm-section2').removeClass('grey-link');
+				$('#jobForm-section2').find('select').removeClass('grey-link');
+				$('#jobForm-section2').find('button[type=submit]').addClass('btn-primary').removeClass('btn-default');
+				$('#jobForm-section2').find('a i').prop("disabled", false)
+				.removeClass('grey-link')
+				
+				$('#firstname').focus();	
+				$('html, body').animate({
+					scrollTop: $("#firstname").offset().top - 100
+				}, 500);
+			}
 		}
 		else
 		{
