@@ -1,0 +1,910 @@
+<script type="text/javascript" src="../../../Modules/Orchard.jQuery/scripts/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+<script type="text/javascript">// <![CDATA[
+var olympiaApp = angular.module('olympiaApp', []);
+
+	olympiaApp.controller('OndernemerWordenController', ['$scope', '$location', '$anchorScroll',
+	  function ($scope, $location, $anchorScroll) {
+	    $scope.gotoTop = function() {
+	      // set the location.hash to the id of
+	      // the element you wish to scroll to.
+	      //$location.hash('top');
+	      // call $anchorScroll()
+	      $anchorScroll();
+	    };
+
+	    $scope.getParameterByName = function(name) {
+	        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	            results = regex.exec(location.search);
+	        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	    }
+
+	    if( window.location.search.indexOf('sub') > -1 ) {
+	    	$scope.sub = $scope.getParameterByName('sub');
+	    	if($scope.sub == 'Ondernemerworden'){
+				$scope.Ondernemerworden = true;$scope.franchiseFormule = false;$scope.selectieProcedure = false;$scope.overOlympia = false;$scope.snelAanDeSlag = false;$scope.hoorn = false;$scope.amstelveen = false;$scope.gouda = false;$scope.voordelenVan = false;$scope.kwaliteitEn = false;$scope.weLoveToWork = false;$scope.neemContact = false;$scope.OndernemerwordenState = true;$scope.franchiseFormuleState = false;$scope.overOlympiaState = false;$scope.bedankt = false;
+	    	}else if($scope.sub == 'snelAanDeSlag'){
+	    		$scope.Ondernemerworden = false;$scope.franchiseFormule = false;$scope.selectieProcedure = false;$scope.overOlympia = false;$scope.snelAanDeSlag = true;$scope.hoorn = false;$scope.amstelveen = false;$scope.gouda = false;$scope.voordelenVan = false;$scope.kwaliteitEn = false;$scope.weLoveToWork = false;$scope.neemContact = false;$scope.OndernemerwordenState = true;$scope.franchiseFormuleState = false;$scope.overOlympiaState = false;$scope.bedankt = false;
+	    	}else if($scope.sub == 'hoorn'){
+	    		$scope.Ondernemerworden = false;$scope.franchiseFormule = false;$scope.selectieProcedure = false;$scope.overOlympia = false;$scope.snelAanDeSlag = false;$scope.hoorn = true;$scope.amstelveen = false;$scope.gouda = false;$scope.voordelenVan = false;$scope.kwaliteitEn = false;$scope.weLoveToWork = false;$scope.neemContact = false;$scope.OndernemerwordenState = true;$scope.franchiseFormuleState = false;$scope.overOlympiaState = false;$scope.bedankt = false;
+	    	}else if($scope.sub == 'amstelveen'){
+	    		$scope.Ondernemerworden = false;$scope.franchiseFormule = false;$scope.selectieProcedure = false;$scope.overOlympia = false;$scope.snelAanDeSlag = false;$scope.hoorn = false;$scope.amstelveen = true;$scope.gouda = false;$scope.voordelenVan = false;$scope.kwaliteitEn = false;$scope.weLoveToWork = false;$scope.neemContact = false;$scope.OndernemerwordenState = true;$scope.franchiseFormuleState = false;$scope.overOlympiaState = false;$scope.bedankt = false;
+	    	}else if($scope.sub == 'franchiseFormule'){
+	    		$scope.Ondernemerworden = false;$scope.franchiseFormule = true;$scope.selectieProcedure = false;$scope.overOlympia = false;$scope.snelAanDeSlag = false;$scope.hoorn = false;$scope.amstelveen = false;$scope.gouda = false;$scope.voordelenVan = false;$scope.kwaliteitEn = false;$scope.weLoveToWork = false;$scope.neemContact = false;$scope.OndernemerwordenState = false;$scope.franchiseFormuleState = true;$scope.overOlympiaState = false;$scope.bedankt = false;
+	    	}else if($scope.sub == 'voordelenVan'){
+	    		$scope.Ondernemerworden = false;$scope.franchiseFormule = false;$scope.selectieProcedure = false;$scope.overOlympia = false;$scope.snelAanDeSlag = false;$scope.hoorn = false;$scope.amstelveen = false;$scope.gouda = false;$scope.voordelenVan = true;$scope.kwaliteitEn = false;$scope.weLoveToWork = false;$scope.neemContact = false;$scope.OndernemerwordenState = false;$scope.franchiseFormuleState = true;$scope.overOlympiaState = false;$scope.bedankt = false;
+	    	}else if($scope.sub == 'kwaliteitEn'){
+	    		$scope.Ondernemerworden = false;$scope.franchiseFormule = false;$scope.selectieProcedure = false;$scope.overOlympia = false;$scope.snelAanDeSlag = false;$scope.hoorn = false;$scope.amstelveen = false;$scope.gouda = false;$scope.voordelenVan = false;$scope.kwaliteitEn = true;$scope.weLoveToWork = false;$scope.neemContact = false;$scope.OndernemerwordenState = false;$scope.franchiseFormuleState = true;$scope.overOlympiaState = false;$scope.bedankt = false;
+	    	}else if($scope.sub == 'selectieProcedure'){
+	    			$scope.Ondernemerworden = false;$scope.franchiseFormule = false;$scope.selectieProcedure = true;$scope.overOlympia = false;$scope.snelAanDeSlag = false;$scope.hoorn = false;$scope.amstelveen = false;$scope.gouda = false;$scope.voordelenVan = false;$scope.kwaliteitEn = false;$scope.weLoveToWork = false;$scope.neemContact = false;$scope.OndernemerwordenState = false;$scope.franchiseFormuleState = false;$scope.overOlympiaState = false;$scope.bedankt = false;
+	    	}else if($scope.sub == 'overOlympia'){
+	    			$scope.Ondernemerworden = false;$scope.franchiseFormule = false;$scope.selectieProcedure = false;$scope.overOlympia = true;$scope.snelAanDeSlag = false;$scope.hoorn = false;$scope.amstelveen = false;$scope.gouda = false;$scope.voordelenVan = false;$scope.kwaliteitEn = false;$scope.weLoveToWork = false;$scope.neemContact = false;$scope.OndernemerwordenState = false;$scope.franchiseFormuleState = false;$scope.overOlympiaState = true;$scope.bedankt = false;
+	    	}else if($scope.sub == 'weLoveToWork'){
+	    		$scope.Ondernemerworden = false;$scope.franchiseFormule = false;$scope.selectieProcedure = false;$scope.overOlympia = false;$scope.snelAanDeSlag = false;$scope.hoorn = false;$scope.amstelveen = false;$scope.gouda = false;$scope.voordelenVan = false;$scope.kwaliteitEn = false;$scope.weLoveToWork = true;$scope.neemContact = false;$scope.OndernemerwordenState = false;$scope.franchiseFormuleState = false;$scope.overOlympiaState = true;$scope.bedankt = false;
+	    	}else if($scope.sub == 'neemContact'){
+	    		$scope.Ondernemerworden = false;$scope.franchiseFormule = false;$scope.selectieProcedure = false;$scope.overOlympia = false;$scope.snelAanDeSlag = false;$scope.hoorn = false;$scope.amstelveen = false;$scope.gouda = false;$scope.voordelenVan = false;$scope.kwaliteitEn = false;$scope.weLoveToWork = false;$scope.neemContact = true;$scope.OndernemerwordenState = false;$scope.franchiseFormuleState = false;$scope.overOlympiaState = true;$scope.bedankt = false;
+	    	}else if($scope.sub == 'bedankt'){
+	    		$scope.Ondernemerworden = false;$scope.franchiseFormule = false;$scope.selectieProcedure = false;$scope.overOlympia = false;$scope.snelAanDeSlag = false;$scope.hoorn = false;$scope.amstelveen = false;$scope.gouda = false;$scope.voordelenVan = false;$scope.kwaliteitEn = false;$scope.weLoveToWork = false;$scope.neemContact = false;$scope.OndernemerwordenState = false;$scope.franchiseFormuleState = false;$scope.overOlympiaState = true;$scope.bedankt = true;
+	    	}else{
+	    		$scope.Ondernemerworden = true;
+		    	$scope.franchiseFormule = false;
+		    	$scope.selectieProcedure = false;
+		    	$scope.overOlympia = false;
+		    	$scope.snelAanDeSlag = false;
+		    	$scope.hoorn = false;
+		    	$scope.amstelveen = false; 
+		    	$scope.gouda = false;$scope.voordelenVan = false;
+		    	$scope.kwaliteitEn = false; 
+		    	$scope.weLoveToWork = false;
+		    	$scope.neemContact = false;
+		    	$scope.OndernemerwordenState = true;
+		    	$scope.franchiseFormuleState = false;
+		    	$scope.overOlympiaState = false;
+		    	$scope.bedankt = false;
+	    	}
+	    }else{
+	    	$scope.Ondernemerworden = true;
+	    	$scope.franchiseFormule = false;
+	    	$scope.selectieProcedure = false;
+	    	$scope.overOlympia = false;
+	    	$scope.snelAanDeSlag = false;
+	    	$scope.hoorn = false;
+	    	$scope.amstelveen = false; 
+	    	$scope.gouda = false;$scope.voordelenVan = false;
+	    	$scope.kwaliteitEn = false; 
+	    	$scope.weLoveToWork = false;
+	    	$scope.neemContact = false;
+	    	$scope.OndernemerwordenState = true;
+	    	$scope.franchiseFormuleState = false;
+	    	$scope.overOlympiaState = false;
+	    	$scope.bedankt = false;
+	    }
+	}]);
+// ]]></script>
+<script type="text/javascript" src="../../../Modules/FeaturedItemSlider/scripts/jquery.cycle.all.js"></script>
+<!-- custom code for slider starts-->
+<script type="text/javascript">// <![CDATA[
+$(function () {
+            $('#featuresList-HomeSlider').cycle({
+                fx: 'fade',
+                speed: '250',
+                timeout: '5000',
+                pause: 1,
+                pager: '#slider-nav-HomeSlider',
+                containerResize: true,
+                fit: true,
+                slideResize: 0
+            });
+
+            $("#featureSlider-HomeSlider ul li").removeClass('hiddenItem');
+
+            $('#pauseButton-HomeSlider').show();
+            $('#resumeButton-HomeSlider').hide();
+
+            $('#pauseButton-HomeSlider').live("click", function () {
+                $('#featuresList-HomeSlider').cycle('pause');
+                $('#pauseButton-HomeSlider').toggle();
+                $('#resumeButton-HomeSlider').toggle();
+            });
+
+            $('#resumeButton-HomeSlider').live("click", function () {
+                $('#featuresList-HomeSlider').cycle('resume');
+                $('#pauseButton-HomeSlider').toggle();
+                $('#resumeButton-HomeSlider').toggle();
+            });
+            $('head').append('<link href="/Modules/Orchard.jQuery/Styles/jquery-ui-1.8.18.custom.css" rel="stylesheet" type="text/css" />')
+            
+        });
+// ]]></script>
+<!-- custom code for slider ends -->
+<script type="text/javascript">// <![CDATA[
+$("style").append('body{padding:0;margin:0;font-family:Arial,Helvetica,Tahoma,sans-serif;color:#666;background-color:#FFF;font-size:9pt;line-height:13pt}.list-group-submenu{margin-left:20px}.content-area.container{padding-top:2px;margin-top:22px}.container-left,.container-right{display:block;float:left;width:28%;word-wrap:break-word;padding:0 10px 20px 0}.container-right{border-left:2px dotted #ddd;min-height:296px;width:69%;padding:0 0 0 10px}#MainMenu .list-group div a{padding-left:30px}#MainMenu a:focus,#MainMenu a:hover{background:#eee;color:#f40}#MainMenu .list-group div a:focus,#MainMenu .list-group div a:hover{background:#f7f9f8}.panel{margin-bottom:20px;background-color:#fff;border:1px solid transparent;border-radius:4px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}.list-group{margin-bottom:20px;padding-left:0}.list-group-item{position:relative;display:block;padding:10px 15px;margin-bottom:-1px;background-color:#fff;border:1px solid #ddd}.list-group-item-success{background:#eee;color:#fff}a.list-group-item{color:#555}.list-group-item:first-child{border-top-right-radius:4px;border-top-left-radius:4px}#MainMenu a{font-weight:700}#MainMenu a.activeIn{color:#f40}#MainMenu a.in{color:#f40;background:#f7f9f8}a{color:#f40;text-decoration:none}a:focus,a:hover{text-decoration:none}h1{color:#f40;margin:0 0 -5px;line-height:normal}h2,h3,h4,h5{margin-top:0;color:#f40;line-height:normal}h2{font-size:13pt;font-weight:700;padding-top:4px}h3{font-size:14px;font-weight:700}h4{font-size:12px;font-weight:700}#content_text h3{padding-top:3px;padding-bottom:3px}#content_text ul{list-style:none;margin-left:0;padding-left:0}#content_text ul li{padding-left:15px;background:url(/Media/CMSMedia/ondernemerworden-images/list-item.png) 2px 5px no-repeat}.clear{clear:both}.line{width:100%;height:1px;margin-bottom:10px;line-height:0;background:url(/Media/CMSMedia/ondernemerworden-images/line.gif) repeat-x;position:relative;left:-10px;top:0}.line.line-OndernemerWorden{width:103%}#content_container #content{margin-left:10px}.content-item.page header{display:none;visibility:hidden}.bottomBar{margin-top:40px}.well{min-height:20px;padding:19px;background-color:#f5f5f5;border:1px solid #e3e3e3;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.05);box-shadow:inset 0 1px 1px rgba(0,0,0,.05)}.well.ondernemer-well{background:#fff;width:auto;display:inline-block;padding:10px}.well-container{margin-left:10px;display:block;float:left;width:210px;word-wrap:break-word}.well-container:nth-child(2){margin-left:3px}.well-container:nth-child(3){margin-left:5px}.amstelveen .well-container:nth-child(2),.amstelveen .well-container:nth-child(3),.selectieProcedure .well-container:nth-child(2),.selectieProcedure .well-container:nth-child(3){margin-left:4px}.weLoveToWork .well-container{width:308px}.weLoveToWork .well-container:nth-child(2){margin-left:14px}.neemContact .well-container{margin-left:0}.well.job-vacancy{padding:0}.well.job-vacancy .list-group-item:first-child{border-top-right-radius:4px;border-top-left-radius:4px}li.list-group-item{color:#555}.well.job-vacancy .list-group-item{position:relative;display:block;padding:10px 15px;margin-bottom:-1px;background-color:#fff;border:1px solid #ddd}.verstuurViaLinkedIn{float:right;margin-right:-3px;margin-top:37px}.weLoveToWork .verstuurViaLinkedIn{margin-top:54px}.zone-featured .widget-featured-item-slider-widget{margin:17px 0 0}div.slider-nav{text-align:right;list-style-type:none;position:relative;right:3px;top:-33px;height:0;margin:0 15px!important;z-index:99}div.slider-nav .sliderButtons{display:inline-block;float:right;margin-left:4px}div.slider-nav a{width:10px;height:10px;display:inline-block;vertical-align:middle;margin:0 5px;font-size:1px;line-height:5px;background-color:#b3b3b3;border-radius:10px;text-indent:100px;overflow:hidden}.featureSlider{border:solid #ebebeb;border:1px solid #d2d2d2;border-radius:5px;background-color:#fff;position:relative;height:188px;overflow:hidden;box-shadow:0 0 3px 0 #d2d2d2}.vacature-detail .featureSlider{margin-bottom:18px}.vacature-detail div.slider-nav{top:-50px}.featureSlider ul{margin:0;padding:0;list-style-type:none;border-radius:5px}.featureSlider img{width:100%;height:auto}.featureSlider ul li{display:block}.featureSlider li{height:188px;width:940px;border-radius:5px}.content .featureSlider li{height:188px;width:620px}.featureSlider li p{position:relative;top:223px}.headline{padding-top:10px}.headline,.headline+h2{padding-right:20px;text-align:right}.featureSlider ul li span{line-height:38px;font-size:38px;font-family:Calibri,sans-serif;letter-spacing:-1.6px;border:0;border-bottom:none!important;width:100%;font-weight:700;height:auto;color:#f40}.featureSlider ul li span a{text-decoration:none}.featureSlider ul li h2{font-size:15px;margin:15px 10px 0 0;font-weight:400!important;color:#f40;height:auto;line-height:15px}.featureSlider ul li p{font-size:8px;opacity:.5;filter:alpha(opacity=50);text-align:right;padding:0 10px 0 0;margin:0}.featureSlider ul li span{display:block;margin:0;padding:32px 0 0;position:relative;right:28px}.hiddenItem{display:none!important}.featureSlider li h2,.featureSlider li h2 a,.featureSlider li p.slideNumbers,.featureSlider li span,.featureSlider li span a{color:#666!important}.featureSlider li span,.featureSlider li span a img,.featureSlider li span img{width:0;height:0}div.slider-nav a.activeSlide{background-color:#666}.margin-bottom-5{margin-bottom:5px}.margin-bottom-1{margin-bottom:1px}.margin-left-10{margin-left:10px}.margin-left-20{margin-left:20px}.margin-top-10{margin-top:10px}.margin-top-24{margin-top:24px}.padding-top-10{padding-top:10px!important}.text-center{text-align:center}.well.job-vacancy ul.list-group li:focus,.well.job-vacancy ul.list-group li:hover{background-color:#f5f5f5;cursor:pointer}.btn.big-text{color:#fff;padding:6px 15px;margin-bottom:15px}a.interne_link{background:url(/Media/CMSMedia/ondernemerworden-images/link_bg.png) no-repeat;display:block;font-size:12pt;font-weight:700;height:49px;left:-10px;padding-left:49px;padding-top:28px;position:relative;top:0;width:571px}a.link2{margin-top:-1px}.content_back{float:right;width:37px;margin-top:-16px;font-size:7pt;text-align:right}.content_back a{text-transform:uppercase;text-decoration:none;color:#f30;font-weight:700;display:block;width:36px;padding-left:5px;background:url(/Media/CMSMedia/ondernemerworden-images/teruglink.gif) left 6px no-repeat}.ui-widget-overlay{z-index:1000;background:50% 50% repeat-x #AAA;opacity:.3;height:100%;left:0;position:absolute;top:0;width:100%}.bottomBar a{cursor:pointer}.ui-widget-header.ui-dialog-titlebar{color:#fff;background:#f40}.contactformPagina .required.contact-bericht,.contactformPagina .required.contact-links{padding-left:0}.uploadcv{display:none}.uploadcv-look .labelForm label{cursor:pointer}.uploadcv-look{width:319px;float:left;padding-left:0;padding-bottom:1px;font-size:9.5px;color:#666;text-transform:uppercase;margin-bottom:10px}.contactformPagina input,.contactformPagina select{background-image:url(/Media/CMSMedia/ondernemerworden-images/inputContact.png);border:none;font-size:9.5px;height:40px;padding:0 9px;width:162px}.contactformPagina textarea{background-image:url(/Media/CMSMedia/ondernemerworden-images/contactTextarea.png);width:490px;height:140px;padding:5px 9px;font-size:9.5px;border:none;resize:none}.uploadcv-look .labelForm{float:right;display:block;padding:11px 9px 11px 10px;color:#fff;cursor:pointer;background-image:url(/Media/CMSMedia/ondernemerworden-images/bladeren.png)}.uploadcv-look input{float:left}.contactformPagina .required{padding-left:10px;padding-top:2px;padding-bottom:1px;font-size:9.5px;color:#666;text-transform:uppercase}.contact-links.naam{float:left;margin-right:10px}.contact-bericht{clear:both}.submit{float:right}input.submit{margin-right:120px;background:0 0;height:28px;margin-left:-195px;margin-top:15px;width:183px}.contactformPagina .required.contact-bericht .labelForm{padding-left:10px}@media screen and (-webkit-min-device-pixel-ratio:0){.contactformPagina select{padding-top:0}}.contactformPagina select{width:180px;padding-top:15px;padding-right:0;border:none;outline:0;display:inline-block;cursor:pointer}#featureSlider-HomeSlider{height:186px!important}.bedankt .well-container:first-child{margin-left:0;margin-right:4px;width:206px}.bedankt .well-container:first-child .well{width:182px;height:143px;margin-right:10px}.bedankt .well-container:nth-child(2){margin-right:4px;width:206px}.bedankt .well-container:last-child{width:206px}');
+// ]]></script>
+<!--slider statrts -->
+<div id="layout-featured" class="group">
+<div class="zone zone-featured">
+<div id="featureSlider-HomeSlider" class="featureSlider"><em class="tl"></em><em class="tr"></em><em class="bl"></em><em class="br"></em>
+<ul id="featuresList-HomeSlider" style="color: #666666; position: relative; width: 940px; height: 188px;">
+<li style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; background-image: url('../../../Media/CMSMedia/ondernemerworden-images/image-slider2.jpg');">
+<p class="slideNumbers"><span><span>1 of 2</span></span></p>
+<h2>&nbsp;</h2>
+</li>
+<li style="position: absolute; top: 0px; left: 0px; display: none; z-index: 3; opacity: 0; background-image: url('../../../Media/CMSMedia/ondernemerworden-images/image-slider1.jpg');">
+<p class="slideNumbers"><span><span>2 of 2</span></span></p>
+<h2>&nbsp;</h2>
+</li>
+</ul>
+</div>
+<div id="slider-nav-HomeSlider" class="slider-nav">
+<div class="sliderButtons"><button id="pauseButton-HomeSlider" type="submit"> <img src="../../../Themes/OlympiaWeb/images/pause.png" alt="" /></button> <button id="resumeButton-HomeSlider" style="display: none;" type="submit"> <img src="../../../Themes/OlympiaWeb/images/play.png" alt="" /></button></div>
+</div>
+</div>
+</div>
+<!-- slider ends -->
+<div class="container content-area" data-ng-controller="OndernemerWordenController" data-ng-app="olympiaApp"><!--container left starts-->
+<div class="container-left">
+<div id="MainMenu">
+<div class="list-group panel"><a class="list-group-item list-group-item-success" href="?sub=Ondernemerworden" data-ng-class="{'activeIn' : Ondernemerworden == true}" data-ng-model="Ondernemerworden">ONDERNEMER WORDEN</a>
+<div id="Ondernemerworden" class="collapse in" style="height: auto;" data-ng-show="OndernemerwordenState == true"><a class="list-group-item" href="?sub=snelAanDeSlag" data-ng-class="{'in' : snelAanDeSlag == true}" data-ng-model="snelAanDeSlag">SNEL AAN DE SLAG</a> <!-- <div class="collapse list-group-submenu" id="SubMenu1">
+						<a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 1 a</a>
+						<a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 2 b</a>
+						<a href="#SubSubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1">Subitem 3 c <i class="fa fa-caret-down"></i></a>
+						<div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu1">
+						  <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Sub sub item 1</a>
+						  <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Sub sub item 2</a>
+						</div>
+						<a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 4 d</a>
+					</div> --> <a class="list-group-item" href="?sub=hoorn" data-ng-class="{'in' : hoorn == true}" data-ng-model="hoorn">HOORN</a> <a class="list-group-item" href="?sub=amstelveen" data-ng-class="{'in' : amstelveen == true}" data-ng-model="amstelveen">AMSTELVEEN</a></div>
+<a class="list-group-item list-group-item-success" href="?sub=franchiseFormule" data-ng-class="{'activeIn' : franchiseFormule == true}" data-ng-model="franchiseFormule">FRANCHISEFORMULE</a>
+<div id="franchiseFormule" data-ng-show="franchiseFormuleState == true"><a class="list-group-item" href="?sub=voordelenVan" data-ng-class="{'in' : voordelenVan == true}" data-ng-model="voordelenVan">VOORDELEN VAN OLYMPIA</a> <a class="list-group-item" href="?sub=kwaliteitEn" data-ng-class="{'in' : kwaliteitEn == true}" data-ng-model="kwaliteitEn">KWALITEIT EN STANDAARDISATIE</a></div>
+<a class="list-group-item list-group-item-success" href="?sub=selectieProcedure" data-ng-class="{'activeIn' : selectieProcedure == true}" data-ng-model="selectieProcedure">SELECTIEPROCEDURE</a> <a class="list-group-item list-group-item-success" href="?sub=overOlympia" data-ng-class="{'activeIn' : overOlympia == true}" data-ng-model="overOlympia">OVER OLYMPIA</a>
+<div id="overOlympia" data-ng-show="overOlympiaState == true"><a class="list-group-item" href="?sub=weLoveToWork" data-ng-class="{'in' : weLoveToWork == true}" data-ng-model="weLoveToWork">WE LOVE TO WORK FOR YOU</a> <a class="list-group-item" href="?sub=neemContact" data-ng-class="{'in' : neemContact == true || bedankt == true}" data-ng-model="neemContact">NEEM CONTACT OP</a></div>
+</div>
+</div>
+</div>
+<!-- container left ends -->
+<div class="container-right">
+<div data-ng-show="Ondernemerworden == true"><!-- start conent area for Ondernemerworden  -->
+<div id="content_container">
+<div id="content">
+<div id="content_kop">
+<h1>Ondernemer worden</h1>
+</div>
+<div class="clear">&nbsp;</div>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<div id="content_text">
+<h2>Wil jij franchiseondernemer worden bij een A-merk?</h2>
+<ul>
+<li>Heb je passie voor het werven &amp; selecteren van personeel?</li>
+<li>Zit ondernemen jou in het bloed?</li>
+<li>Zie je het als een uitdaging je eigen uitzendbureau te runnen?</li>
+<li>Zoek jij zelfstandigheid, uitdaging en financi&euml;le onafhankelijkheid?</li>
+<li>Wil je meegroeien met een solide organisatie en meeliften op de <a href="?sub=voordelenVan"><span style="text-decoration: underline;">voordelen</span> </a>van de sterke Olympia franchiseformule?</li>
+</ul>
+<p>Dan ben jij misschien wel de nieuwe franchiseondernemer van Olympia!</p>
+<h3>Wat doe je als franchiseondernemer?</h3>
+<p>Wat jij doet, dat bepaal jij natuurlijk zelf. Het is jouw bedrijf, het zijn jouw kansen &eacute;n de opbrengst is voor jou. Bij onze huidige franchiseondernemers zien we dat ze zich op hun vestiging o.a. bezighouden met:</p>
+<ul>
+<li>Het voortdurend actief benaderen en acquireren van potentiele klanten</li>
+<li>Het meedraaien (afhankelijk van de grootte van je vestiging) als meewerkend voorman</li>
+<li>Netwerken</li>
+<li>Investeren in de relatie met bestaande klanten</li>
+<li>Het jaarlijks schrijven van een businessplan</li>
+</ul>
+<p>Het succes van jouw bedrijf wordt door jou bepaald, want:</p>
+<ul>
+<li>Jij bent zelf verantwoordelijk voor de dagelijkse bedrijfsvoering</li>
+<li>Jij geeft leiding aan en coacht de medewerkers van jouw vestiging, zodat zij gemotiveerd en gedreven zijn om de doelstellingen van het businessplan te halen</li>
+<li>Jij bent zelf eindverantwoordelijk voor de administratie en de financi&euml;n van je vestiging</li>
+<li>Jij onderhoudt zelf een relevant netwerk binnen en buiten Olympia</li>
+</ul>
+<p>Voorop staat dat je ondernemend, commercieel en ambitieus bent. Ook beschik je over een groot empathisch vermogen. Daarnaast hebben wij de ervaring dat de grootste kans op succes is als je:</p>
+<ul>
+<li>HBO werk- en denkniveau hebt</li>
+<li>Minimaal 2 jaar (commerci&euml;le) ervaring in de uitzendbranche hebt</li>
+<li>Over aantoonbare leidinggevende ervaring beschikt</li>
+<li>Een aantoonbaar netwerk in de regio hebt</li>
+<li>Beschikt over de volgende competenties : ondernemerschap, commercieel inzicht, overtuigingskracht, ambitie, inspirerend leiderschap, verantwoordelijkheidsgevoel en organisatie commitment</li>
+</ul>
+Herken jij je hierin? En ben jij er klaar voor je eigen uitzendbedrijf te gaan runnen?<br />
+<p><a href="?sub=neemContact">Laat het ons dan weten!</a>&nbsp;We gaan graag met je in gesprek.</p>
+</div>
+</div>
+</div>
+<!-- Ends content area for Ondernemerworden  --> <!--bottom bar for Ondernemerworden starts-->
+<div class="bottomBar">
+<div class="well-container">
+<div class="well ondernemer-well">
+<div id="contact_text"><img src="../../../Media/CMSMedia/ondernemerworden-images/home.jpg" alt="" width="185" height="145" /></div>
+</div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<h4>Interesse?</h4>
+<div id="contact_text">Laat het ons horen! We nemen graag contact met je op.</div>
+<div class="clear">&nbsp;</div>
+<a class="verstuurViaLinkedIn" href="?sub=neemContact"><img src="../../../Media/CMSMedia/ondernemerworden-images/reageerdirect.png" alt="Reageer direct" /></a></div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<div id="contact_text"><img src="../../../Media/CMSMedia/ondernemerworden-images/Olympianen-vraagteken.jpg" alt="" width="185" height="145" /></div>
+</div>
+</div>
+</div>
+<!--bottom bar for Ondernemerworden ends--></div>
+<!-- Ondernemerworden page ends --> <!-- franchiseFormule starts -->
+<div data-ng-show="franchiseFormule == true"><!-- franchiseFormule content starts -->
+<div id="content_container">
+<div id="content">
+<div id="content_kop">
+<h1>Franchiseformule</h1>
+</div>
+<div class="clear">&nbsp;</div>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<div id="content_text">
+<h2>Olympia franchiseformule: uitstekende marktcijfers</h2>
+<p>Olympia bestaat sinds 1969 en inmiddels hebben we ca. 95 reguliere en 50 inhouse vestigingen, verspreid over heel Nederland. We hebben een eigenzinnige kijk op hoe je succesvol groeit in een competitieve markt als de uitzendmarkt.</p>
+<h2>Franchiseformule: de kracht van Olympia</h2>
+<p>Het meest wezenlijke onderscheid ten opzichte van onze concurrenten is het feit dat Olympia een franchiseorganisatie is: elke vestiging wordt gerund door een zelfstandig ondernemer. Deze franchiseformule hebben wij in 1998 ge&iuml;ntroduceerd. Door deze formule zijn wij in staat structureel beter te presteren dan de markt.</p>
+<p><a class="interne_link" href="?sub=kwaliteitEn">Olympia: focus op kwaliteit en standaardisatie</a><a class="interne_link link2" href="?sub=voordelenVan">De voordelen van Olympia</a></p>
+</div>
+</div>
+</div>
+<!-- franchiseFormule content ends --> <!-- bottom starts for franchiseformule -->
+<div class="bottomBar franchiseformule">
+<div class="well-container margin-bottom-20">
+<div class="well ondernemer-well">
+<div id="contact_text"><img src="../../../Media/CMSMedia/ondernemerworden-images/Groningen_Gevel.jpg" alt="" width="185" height="145" /></div>
+</div>
+</div>
+<div class="well-container margin-bottom-20">
+<div class="well ondernemer-well">
+<h4>Interesse?</h4>
+<div id="contact_text">Laat het ons horen! We nemen graag contact met je op.</div>
+<div class="clear">&nbsp;</div>
+<a class="verstuurViaLinkedIn" href="?sub=neemContact"><img src="../../../Media/CMSMedia/ondernemerworden-images/reageerdirect.png" alt="Reageer direct" /></a></div>
+</div>
+<div class="well-container margin-bottom-20">
+<div class="well ondernemer-well">
+<div id="contact_text"><img src="../../../Media/CMSMedia/ondernemerworden-images/welovetowork.jpg" alt="" width="185" height="145" /></div>
+</div>
+</div>
+<br /> <br />
+<div class="well-container margin-left-10 margin-top-10">
+<div class="well ondernemer-well">
+<h3>Het succes van de vestiging Emmen</h3>
+<span><iframe src="https://www.youtube.com/embed/2Hs8Z1i_8nA?rel=0" frameborder="0" width="613" height="380"></iframe></span></div>
+</div>
+</div>
+<!-- bottom ends for franchiseformule --></div>
+<!-- franchiseFormule ends --><!--selectieProcedure starts -->
+<div data-ng-show="selectieProcedure == true">
+<div id="content_container">
+<div id="content">
+<div id="content_kop">
+<h1>Hoe word jij franchiseondernemer bij Olympia?</h1>
+</div>
+<div class="clear">&nbsp;</div>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<div id="content_text">
+<h3>Stap 1. Eerste (telefonische) kennismakingsgesprek</h3>
+<p>Heeft een samenwerking tussen jou en Olympia kans van slagen? Om dat te beoordelen voeren we eerst een (telefonisch) kennismakingsgesprek. Is de eerste indruk aan beide kanten goed? Dan maken we afspraken voor persoonlijke vervolggesprekken.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>Stap 2. Persoonlijke vervolggesprekken</h3>
+<p>In de vervolggesprekken staan we uitgebreid stil bij jouw talenten en wensen en kijken we samen of er een match is met de cultuur van Olympia Uitzendbureau en onze doelstellingen.<br /><br />Andere onderwerpen in deze gesprekken zijn:</p>
+<ul>
+<li>de regio</li>
+<li>het ondernemingsplan</li>
+<li>de financiering</li>
+<li>de franchiseovereenkomst</li>
+</ul>
+<p>Daarnaast krijg je de gelegenheid om met verschillende personen binnen Olympia te spreken, waaronder de directie en franchiseondernemers.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>Stap 3. Presenteren businessplan</h3>
+<p>Is stap 2 afgerond en zijn beide partijen nog steeds enthousiast? Dan word je uitgenodigd een businessplan te schrijven en vervolgens te presenteren aan het management van Olympia.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>Stap 4. Persoonlijk assessment</h3>
+<p>Naast het businessplan doorloop je een persoonlijk assessment bij een assessmentbureau.</p>
+<p>Op basis van stap 3 en 4 besluiten we of we echt met elkaar in zee gaan.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>Stap 5. Ondertekenen franchisecontract</h3>
+<p>In deze fase regel je de financi&euml;n, de verzekeringen en alle overige zaken. Ook ondertekenen we het door Olympia opgestelde franchisecontract.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>Stap 6. Opleiding</h3>
+<p>Als jij dit wenst verzorgen we voor jou na het ondertekenen van het contract een opleidingstraject op maat. Op deze manier word je optimaal klaargestoomd om als franchiseondernemer aan de slag te gaan. Maar hoe jij start, dat bepaal jij zelf. Het is tenslotte jouw bedrijf.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>Stap 7. Je eigen zaak</h3>
+<p>Het contract is getekend, je bent goed voorbereid; dit is het moment waarop je start in jouw eigen Olympia uitzendvestiging. Je franchisemanager en het Olympia Service Center helpen je door de opstartfase en ondersteunen je ook daarna waar nodig. <br />Vanaf nu bepaal jij het succes van jouw bedrijf!</p>
+</div>
+</div>
+</div>
+<!--bottom bar for selectieProcedure starts-->
+<div class="bottomBar selectieProcedure">
+<div class="well-container">
+<div class="well ondernemer-well">
+<h4>Martiene Veldhuis vertelt over haar ervaring bij Olympia</h4>
+<div id="contact_text"><a id="openerSelectProcedure4"><img src="../../../Media/CMSMedia/ondernemerworden-images/video3.jpg" alt="" width="186" height="103" /></a></div>
+</div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<h4>Interesse?</h4>
+<div id="contact_text">Laat het ons horen! We nemen graag contact met je op.</div>
+<div class="clear">&nbsp;</div>
+<a class="verstuurViaLinkedIn" href="?sub=neemContact"><img src="../../../Media/CMSMedia/ondernemerworden-images/reageerdirect.png" alt="Reageer direct" /></a></div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<div id="contact_text"><a href="?sub=neemContact"><img src="../../../Media/CMSMedia/ondernemerworden-images/selectie.jpg" alt="" width="185" height="145" /> </a></div>
+</div>
+</div>
+</div>
+<!--bottom bar for selectieProcedure ends--></div>
+<!--selectieProcedure ends --> <!-- Over olympia section starts-->
+<div data-ng-show="overOlympia == true">
+<div id="content_container">
+<div id="content">
+<div id="content_kop">
+<h1>Over Olympia</h1>
+</div>
+<div class="clear">&nbsp;</div>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<div id="content_text">
+<h2>Olympia: een succesvolle uitzendorganisatie</h2>
+<p>Olympia Uitzendbureau is een succesvolle, snel groeiende uitzendorganisatie die behoort tot de top vijf van grootste Nederlandse uitzendorganisaties. Wij zijn een A-merk uitzendbureau, met landelijke bekendheid, professioneel georganiseerde marketing en een effici&euml;nte organisatiestructuur. De Olympia franchiseformule is uniek ten opzichte van concurrerende uitzendorganisaties.</p>
+<h2>Wat maakt Olympia zo bijzonder?</h2>
+<p>Olympia is de enige grote franchiseorganisatie met een regulier vestigingennetwerk. Dat maakt ons uniek in de uitzendbranche. De spirit van het ondernemerschap tekent onze cultuur. Voor iedereen die bij Olympia werkt vertaalt zich dat in:</p>
+<ul>
+<li>de drive om succesvol te zijn en jezelf voortdurend te verbeteren</li>
+<li>een langdurige verbondenheid van de &lsquo;Olympia-ondernemer&rsquo; met collega&rsquo;s, klanten en markt</li>
+</ul>
+<p>Die stabiliteit, drive en betrokkenheid maken Olympia onverslaanbaar ten opzichte van de concurrentie.</p>
+<h2>Olympia: oog voor de markt en oog voor talent</h2>
+<p>Olympia is een algemeen uitzendbureau en dus thuis in alle marktsegmenten (industrieel, technisch, medisch en administratief). Wij bedienen in deze segmenten grote (inter)nationale bedrijven, aansprekende lokale ondernemingen en overheidsinstellingen.</p>
+<p>De Olympia cultuur is gericht op talentontwikkeling: de mensen staan centraal. De kwaliteit van onze mensen bepaalt immers de kwaliteit van Olympia! Om onze klanten optimaal te kunnen bedienen, investeren wij voortdurend in talentontwikkeling: &nbsp;</p>
+<ul>
+<li>we hechten veel waarde aan training en opleiding</li>
+<li>we streven naar een langdurig samenwerkingsverband</li>
+<li>we bieden elke medewerker een uitdagende werkomgeving</li>
+<li>we stimuleren ondernemersgeest en belonen behaalde resultaten</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- bottom starts for over olympia -->
+<div class="bottomBar">
+<div class="well-container">
+<div class="well ondernemer-well">
+<div id="contact_text"><img src="../../../Media/CMSMedia/ondernemerworden-images/Olympianen-vraagteken.jpg" alt="" width="185" height="145" /></div>
+</div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<h4>Interesse?</h4>
+<div id="contact_text">Laat het ons horen! We nemen graag contact met je op.</div>
+<div class="clear">&nbsp;</div>
+<a class="verstuurViaLinkedIn" href="?sub=neemContact"><img src="../../../Media/CMSMedia/ondernemerworden-images/reageerdirect.png" alt="Reageer direct" /></a></div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<div id="contact_text"><img src="../../../Media/CMSMedia/ondernemerworden-images/overolympia.jpg" alt="" width="185" height="145" /></div>
+</div>
+</div>
+</div>
+<!-- bottom ends for over olympia --></div>
+<!-- Over olympia section ends--> <!-- sub menu starts --> <!-- snelAanDeSlag sub neu starts -->
+<div data-ng-show="snelAanDeSlag == true"><!-- content for snelAanDeSlag starts -->
+<div id="content_container">
+<div id="content">
+<div id="content_kop">
+<h1>Snel aan de slag</h1>
+</div>
+<div class="clear">&nbsp;</div>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<div id="content_text">
+<p>Is het&nbsp;<a href="?sub=franchiseFormule">Olympia-concept</a> precies wat jij zoekt en wil jij het liefst vandaag nog starten?</p>
+<p>De volgende vestigingen zijn per direct beschikbaar:</p>
+<ul>
+<li><a href="?sub=amstelveen">Amstelveen</a></li>
+<li><a href="?sub=hoorn">Hoorn</a></li>
+</ul>
+<p>Bovenstaande vestigingen hebben een grote marktpotentie en zowel landelijke als lokale opdrachtgevers. Volop kansen voor een ondernemer die sterk is in acquisitie en het aanboren van nieuwe markten!</p>
+<h3>Meer weten?</h3>
+<p><a href="?sub=neemContact">Laat je gegevens achter</a>. Wij nemen binnen 48 uur contact met je op.&nbsp;</p>
+</div>
+</div>
+</div>
+<!-- content for snelAanDeSlag ends --> <!-- bottom starts for snelAanDeSlag-->
+<div class="bottomBar amstelveen">
+<div class="well-container">
+<div class="well ondernemer-well">
+<h4>Nynke en Annette over ondernemer worden bij Olympia</h4>
+<div id="contact_text"><a id="openerSelectProcedure"><img src="../../../Media/CMSMedia/ondernemerworden-images/video2.jpg" alt="" width="186" height="103" /></a></div>
+</div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<h4>Interesse?</h4>
+<div id="contact_text">Laat het ons horen! We nemen graag contact met je op.</div>
+<div class="clear">&nbsp;</div>
+<a class="verstuurViaLinkedIn" href="?sub=neemContact"><img src="../../../Media/CMSMedia/ondernemerworden-images/reageerdirect.png" alt="Reageer direct" /></a></div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<div id="contact_text"><img src="../../../Media/CMSMedia/ondernemerworden-images/Olympianen-vraagteken.jpg" alt="" width="185" height="145" /></div>
+</div>
+</div>
+</div>
+<!-- bottom ends for snelAanDeSlag--></div>
+<!-- snelAanDeSlag sub neu ends --> <!-- hoorn sub menu starts -->
+<div data-ng-show="hoorn == true"><!-- content for hoorn starts -->
+<div id="content_container">
+<div id="content">
+<div id="content_kop">
+<h1>Houd jij als franchiseondernemer Olympia Hoorn aan de top?</h1>
+</div>
+<div class="clear">&nbsp;</div>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<div id="content_text">
+<p>Zoek jij zelfstandigheid, uitdaging en financi&euml;le onafhankelijkheid? Zit ondernemen je in het bloed? Is uitzenden of arbeidsbemiddeling je passie en wil je meegroeien met een solide organisatie? Dan ben je bij Olympia aan het juiste adres.<br /><br /><strong style="color: #ff4400; font-size: 14px; line-height: normal;">In de <strong>regio Noord Holland</strong> zijn wij op zoek naar een enthousiaste, gedreven franchiseondernemer voor het overnemen van de Olympia vestiging in <strong>Hoorn.</strong></strong></p>
+<p>Hier werkt een gedreven team dagelijks aan het bij elkaar brengen van vraag en aanbod in de breedste zin van het word. De vestiging is klaar voor de volgende stap in haar groei, onder leiding van een <strong>krachtige, enthousiaste ondernemer</strong> die de vestiging samen met het team naar een hoger plan gaat tillen.</p>
+<p>We zoeken iemand die, met een stevig regionaal netwerk en kennis van de uitzendbranche, de vestiging verder wil uitbouwen.&nbsp;Dat doe je uiteraard met passie en vakkennis. Door elke dag met plezier en overtuiging aan de slag te gaan met bestaande en nieuwe opdrachtgevers en ze voortdurend te voorzien van de juiste mensen bouw je de vestiging uit en cre&euml;er je je eigen succes.</p>
+<p>Vanaf dag &eacute;&eacute;n heb je een <strong>A-merk kwaliteitsimago</strong> en een <strong>stevige naamsbekendheid</strong>. Bovendien mag je rekenen op professionele Back Office- en Marketing ondersteuning, een succesvol National Account Team en kun je (net zoals je team) deelnemen aan de leerzame en inspirerende programma's van de Olympia Academy. Daardoor word je veel geregel en gedoe bespaard, ben je nog sneller succesvol en kun je je focussen op dat waar je goed in bent: de dagelijkse business! &nbsp;Je vindt het leuk om elke dag weer te werken aan de beste versie van jezelf, je team en je opdrachtgevers.</p>
+<p>Als franchiseondernemer bij Olympia maak je met jouw eigen uitzendbureau een vliegende start. <strong>Voordat je begint heb je al naam gemaakt!</strong></p>
+<h3><strong>Meer weten over franchiseondernemer worden in Hoorn? </strong></h3>
+<p>Een helder beeld van waar je aan begint is cruciaal voor het succes van jouw vestiging.&nbsp;Ieke Segers<span style="font-size: 9pt; line-height: 13pt;">&nbsp;van de afdeling Formule Management beantwoordt graag al je vragen. </span><span style="font-size: 9pt; line-height: 13pt;">Je kunt&nbsp;Ieke bereiken via 06 537&nbsp;155&nbsp;98 of een&nbsp; e-mail sturen naar <a href="mailto:i.segers@olympia.nl.">i.segers@olympia.nl.</a> </span></p>
+<h3><strong>Wordt Hoorn j&oacute;uw vestiging?</strong></h3>
+<p>Herken jij jezelf in het profiel&nbsp;van <a href="?sub=Ondernemerworden">franchiseondernemer</a>? En zie jij het zitten om van Olympia Hoorn een groot succes te maken? Maak dan nu een <a href="?sub=neemContact">afspraak</a> voor een ori&euml;nterend gesprek.</p>
+<!-- Add code here that should appear in the content block of all new pages --></div>
+</div>
+</div>
+<!-- content for hoorn ends --> <!-- bottom starts for hoorn -->
+<div class="bottomBar amstelveen">
+<div class="well-container">
+<div class="well ondernemer-well">
+<h4>Nynke en Annette over ondernemer worden bij Olympia</h4>
+<div id="contact_text"><a id="openerSelectProcedure2"><img src="../../../Media/CMSMedia/ondernemerworden-images/video2.jpg" alt="" width="186" height="103" /></a></div>
+</div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<h4>Interesse?</h4>
+<div id="contact_text">Laat het ons horen! We nemen graag contact met je op.</div>
+<div class="clear">&nbsp;</div>
+<a class="verstuurViaLinkedIn" href="?sub=neemContact"><img src="../../../Media/CMSMedia/ondernemerworden-images/reageerdirect.png" alt="Reageer direct" /></a></div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<div id="contact_text"><img src="../../../Media/CMSMedia/ondernemerworden-images/Olympianen-vraagteken.jpg" alt="" width="185" height="145" /></div>
+</div>
+</div>
+</div>
+<!-- bottom ends for hoorn --></div>
+<!-- hoorn sub menu ends --> <!-- amstelveen sub menu starts -->
+<div data-ng-show="amstelveen == true"><!-- content for amstelveen starts -->
+<div id="content_container">
+<div id="content">
+<div id="content_kop">
+<h1>Maak jij een vliegende start in Amstelveen</h1>
+</div>
+<div class="clear">&nbsp;</div>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<div id="content_text">
+<p>Heb jij ervaring in de uitzendbranche, wil je voor jezelf beginnen &eacute;n beschik je over een stevig netwerk in de regio Amstelveen? Dan ben je bij Olympia aan het juiste adres. Sinds kort is de Olympia vestiging in Amstelveen voor overname beschikbaar. We zijn dan ook op zoek naar een enthousiaste franchiseondernemer die het als een uitdaging ziet de bestaande, succesvolle vestiging over te nemen en naar een hoger plan te tillen. &nbsp;<br />&nbsp;<br />Dat doe je uiteraard met passie en vakkennis, maar ook samen met je team. Door elke dag met plezier en overtuiging aan de slag te gaan met bestaande en nieuwe opdrachtgevers en ze voortdurend te voorzien van de juiste mensen, bouw je de vestiging uit en creeer je je eigen succes.&nbsp;</p>
+<h3>Over de vestiging Amstelveen</h3>
+<p>De vestiging Amstelveen bevindt zich in een interessant marktgebied midden in de Randstad. Er is voldoende ruimte voor groei, dus met een flinke dosis ambitie is niets mis. Beschik jij over de spirit van het ondernemerschap, kennis van de regionale markt en is het uitzendvak je op jouw lijf geschreven? Dan is dit een mooie kans voor jou!<br />&nbsp;<br />Vanaf dag &eacute;&eacute;n heb je een A-merk kwaliteitsimago en een stevige naamsbekendheid. Bovendien mag je rekenen op professionele Back Office- en Marketing ondersteuning, een succesvol National Account Team en kun je (net zoals je team) deelnemen aan de leerzame en inspirerende programma's van de Olympia Academy. Daardoor word je veel geregel en gedoe bespaard, ben je nog sneller succesvol en kun je je focussen op dat waar je goed in bent: de dagelijkse business! &nbsp;<br />Je vindt het leuk om elke dag weer te werken aan de beste versie van jezelf, je team en je opdrachtgevers.&nbsp;<br />&nbsp;<br />Als franchiseondernemer bij Olympia in Amstelveen maak je met jouw eigen uitzendbureau een vliegende start. Voordat je begint heb je al naam gemaakt!</p>
+<h3 class="p1">Meer weten over franchiseondernemer worden in Amstelveen?&nbsp;</h3>
+<p>Een duidelijk beeld van waar je aan begint als franchiseondernemer is natuurlijk van groot belang.  <span style="font-size: 9pt; line-height: 13pt;">Ieke Segers&nbsp;van de afdeling Formule Management beantwoordt graag al je vragen.&nbsp;</span><span style="font-size: 9pt; line-height: 13pt;">Je kunt&nbsp;Ieke bereiken via 06 537&nbsp;155&nbsp;98 of een e-mail sturen naar <a href="mailto:i.segers@olympia.nl">i.segers@olympia.nl</a>.</span></p>
+<h3 class="p1">Wordt Amstelveen j&oacute;uw vestiging?</h3>
+<p class="p1">Herken jij jezelf in het profiel van <a href="?sub=Ondernemerworden">Franchiseondernemer</a>? En zie jij het zitten om van Olympia Gouda een groot succes te maken? Maak dan nu een<a href="?sub=neemContact"> afspraak</a> voor een ori&euml;nterend gesprek.</p>
+</div>
+</div>
+</div>
+<!-- content for amstelveen ends --> <!-- bottom starts for amstelveen -->
+<div class="bottomBar amstelveen">
+<div class="well-container">
+<div class="well ondernemer-well">
+<h4>Nynke en Annette over ondernemer worden bij Olympia</h4>
+<div id="contact_text"><a id="openerSelectProcedure3"><img src="../../../Media/CMSMedia/ondernemerworden-images/video2.jpg" alt="" width="186" height="103" /></a></div>
+</div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<h4>Interesse?</h4>
+<div id="contact_text">Laat het ons horen! We nemen graag contact met je op.</div>
+<div class="clear">&nbsp;</div>
+<a class="verstuurViaLinkedIn" href="?sub=neemContact"><img src="../../../Media/CMSMedia/ondernemerworden-images/reageerdirect.png" alt="Reageer direct" /></a></div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<div id="contact_text"><img src="../../../Media/CMSMedia/ondernemerworden-images/Olympianen-vraagteken.jpg" alt="" width="185" height="145" /></div>
+</div>
+</div>
+</div>
+<!-- bottom ends for amstelveen --></div>
+<!-- amstelveen sub menu ends --> <!-- voordelenVan sub menu starts -->
+<div data-ng-show="voordelenVan == true"><!-- content for voordelenVan Starts -->
+<div id="content_container">
+<div id="content">
+<div id="content_kop">
+<h1>De voordelen van Olympia</h1>
+</div>
+<div class="content_back"><a href="?sub=franchiseFormule">terug</a></div>
+<div class="clear">&nbsp;</div>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<div id="content_text">
+<p>Kies je voor Olympia, dan kies je voor alle voordelen van zelfstandig ondernemen in een aantrekkelijke branche. Maar dan zonder grote risico&rsquo;s &eacute;n met de zekerheid van een vliegende start.</p>
+<p>Onderstaand lees je op welke gebieden je profiteert van onze unieke en succesvolle franchiseformule.</p>
+<h2>Kenmerken van de Olympia franchiseformule</h2>
+<h3>Snelle en structurele bijdrage aan jouw omzet</h3>
+<p>Je profiteert direct van de contracten die wij hebben afgesloten met grote landelijke werkgevers (National Accounts). Dit garandeert je vaak al een basisomzet nog voordat je zelf je eerste opdracht hebt&nbsp; binnengehaald.</p>
+<p>Ook op andere manieren wordt je omzet gestimuleerd. Zo kun je gebruikmaken van het Olympia vestigingennetwerk, sparren met onze franchisemanager en leren van collega-franchiseondernemers.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>Financierings- en inkoopvoordelen, lagere kosten</h3>
+<p>Je profiteert van alle financierings- en inkoopvoordelen die wij dankzij onze schaalgrootte kunnen regelen. Maar je bespaart ook flink op kosten, die je als franchiseondernemer simpelweg niet hoeft te maken, zoals:</p>
+<ul>
+<li>kosten van marktpotentieonderzoek</li>
+<li>juridische kosten</li>
+<li>ontwikkelingskosten voor marketingmaterialen</li>
+</ul>
+<p>Bovendien hoef je geen tijd te steken in het ontwikkelen van systemen, werkprocessen en marketingmaterialen. Hierdoor heb je meer focus op de business (= extra omzet!) en bespaar je op personeelskosten.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>Meer rendement uit je business</h3>
+<p>Bij lagere kosten is je rendement natuurlijk als vanzelf hoger. Als je dit wenst, kunnen we je daarnaast op basis van onze ervaring ook inhoudelijk adviseren over hoe je zaken optimaal kunt aanpakken, zodat je meer rendement uit je business haalt. Daarnaast dragen onze gestandaardiseerde processen en middelen sterk bij aan een hoge productiviteit per werknemer. Kortom: je realiseert snel en structureel een mooi rendement.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>Direct de kwaliteit &amp; betrouwbaarheid van een A-merk</h3>
+<p>Vanaf dag &eacute;&eacute;n heb je een A-merk kwaliteitsimago en een stevige naamsbekendheid. Je maakt gebruik van onze kwaliteitssystemen (voor bijvoorbeeld matching, verloning en facturatie) en onze bewezen succesvolle marketing- en communicatiemiddelen. Dat is niet alleen makkelijk maar ook uiterst effectief.</p>
+<p>Naar de markt wordt de kwaliteit en betrouwbaarheid van je vestiging bekrachtigd doordat Olympia lid is van de Nederlandse branchevereniging ABU. Daarnaast zijn we ISO- en VCU-gecertificeerd en lid van de Nederlandse Franchise Vereniging.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>Ondernemen in je eigen, exclusieve regio</h3>
+<p>Je krijgt een eigen, exclusieve regio. De regio is gebaseerd op postcodegebieden.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>Een franchiseovereenkomst voor vijf jaar</h3>
+<p>Franchise is gebaseerd op een samenwerking tussen onafhankelijke partijen, waarbij de franchisegever (Olympia) de franchiseondernemer (jou!) het recht geeft om &ndash; tegen vergoeding &ndash; een bedrijf te exploiteren volgens het concept van de franchisegever. De rechten en plichten van beide partijen leggen we vast in een franchiseovereenkomst. De looptijd van deze overeenkomst is vijf jaar en kan telkens met vijf jaar worden verlengd.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>Eigen prijsbeleid</h3>
+<p>Als franchiseondernemer ben je vrij om zelf de tarieven voor je dienstverlening vast te stellen. Vanzelfsprekend op voorwaarde dat deze in overeenstemming zijn met de geldende wet- en regelgeving. De opbrengst uit de gerealiseerde marge is volledig voor jou.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>National Accounts: een belangrijk deel van je omzet</h3>
+<p>Olympia heeft een groot aantal Commercieel Managers en National Accountmanagers in dienst. Zij zijn fulltime bezig met de acquisitie van aansprekende landelijke of regio-overstijgende werkgevers met een grote behoefte aan flexibel personeel.</p>
+<p>Dit soort grote klanten &ndash; National Accounts &ndash; vormen een belangrijk deel van jouw omzet. Als franchiseondernemer kun je op basis van de contracten uitzendkrachten leveren aan deze ondernemingen. Dat garandeert je als het ware een basisomzet. Maar National Accounts bieden je nog meer voordelen. Zo hebben ze een hoge aantrekkingskracht op uitzendkrachten, waardoor je makkelijker en tegen lagere kosten uitzendkrachten werft.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>Effectieve reclame en marktbewerking</h3>
+<p>De corporate reclame en alle overige marketing- en communicatiemiddelen worden door Olympia &ndash; de franchisegever &ndash; verzorgd. Hierdoor ontstaat een consistent marketing- en reclamebeleid, dat het merk Olympia in heel Nederland krachtig uitdraagt en de naamsbekendheid vergroot.</p>
+<p>Lokale reclameactiviteiten vallen onder jouw verantwoordelijkheid als franchiseondernemer en voer je dus ook zelf uit. Hierbij maak je uitsluitend gebruik van de door Olympia beschikbaar gestelde middelen. Naast de standaard middelen voor lokale marktbewerking zorgt onze marketingafdeling ook voor specifieke verkoopondersteunende activiteiten. Landelijke mailings bijvoorbeeld, waaraan je als franchiseondernemer al dan niet verplicht deelneemt.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>Hoogwaardige automatisering</h3>
+<p>Olympia maakt gebruik van een speciaal voor de uitzendbranche ontwikkeld softwarepakket.</p>
+<p>In de vestiging worden actuele bestanden van sollicitanten en inleners opgebouwd, waarbinnen allerhande selecties en matches mogelijk zijn. De input voor de verloning gebeurt op de vestiging. De uiteindelijke verloning, facturering en debiteurenbewaking gebeurt geheel vanuit het Olympia Service Center.</p>
+<p>Verder kennen we een uitstekend intranet. Daar vind je het laatste nieuws en volop informatie, bijvoorbeeld over onze doelgroepen, diensten en werkwijze.</p>
+<p>Daarnaast bieden we onze klanten diverse online services en is de online werving van kandidaten verregaand geautomatiseerd. Onze standaard marketingmiddelen bestel je bovendien gemakkelijk en snel via een online bestelmodule.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>Olympia Academy</h3>
+<p>Uniek bij Olympia is de Olympia Academy, een intern opleidingsinstituut dat ervoor zorgt dat wij een continue lerende en inspirerende organisatie zijn. Zo kunnen startende franchiseondernemers snel succesvol en zelfstandig opereren en zich blijven (door)ontwikkelen.</p>
+<p>Voor de toekomstige ondernemers die graag eerst nog een aantal handvatten willen hebben, hebben wij het 1 jarig <a href="?sub=Ondernemerworden">Post-hbo traineeship Ondernemerschap</a>.</p>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<h3>Investeringen en verzekeringen</h3>
+<p>Het opstarten van een onderneming brengt investeringen met zich mee. Bovendien moeten eventuele aanloopverliezen die in de beginperiode kunnen ontstaan, gefinancierd worden.</p>
+<p>Voor de financiering en alle benodigde verzekeringen heeft Olympia aantrekkelijke afspraken met vaste partners. Uitgangspunt bij financiering is wel, dat je als franchiseondernemer een minimale eigen bijdrage levert. De hoogte hiervan is afhankelijk van de betreffende vestiging. <br /><br /></p>
+</div>
+</div>
+</div>
+<!-- content for voordelenVan ends --> <!-- bottom starts for voordelenVan -->
+<div class="bottomBar ">
+<div class="well-container">
+<div class="well ondernemer-well">
+<div id="contact_text"><img src="../../../Media/CMSMedia/ondernemerworden-images/Werving-FOs.jpg" alt="" width="185" height="145" /></div>
+</div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<h4>Interesse?</h4>
+<div id="contact_text">Laat het ons horen! We nemen graag contact met je op.</div>
+<div class="clear">&nbsp;</div>
+<a class="verstuurViaLinkedIn" href="?sub=neemContact"><img src="../../../Media/CMSMedia/ondernemerworden-images/reageerdirect.png" alt="Reageer direct" /></a></div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<div id="contact_text"><img src="../../../Media/CMSMedia/ondernemerworden-images/Zithoek.jpg" alt="" width="185" height="145" /></div>
+</div>
+</div>
+</div>
+<!-- bottom ends for voordelenVan --></div>
+<!-- voordelenVan sub menu ends --> <!-- kwaliteitEn sub menu starts -->
+<div data-ng-show="kwaliteitEn == true"><!-- content for kwaliteitEn starts -->
+<div id="content_container">
+<div id="content">
+<div id="content_kop">
+<h1>Olympia: focus op kwaliteit en standaardisatie</h1>
+</div>
+<div class="content_back"><a href="?suv=franchiseFormule">terug</a></div>
+<div class="clear">&nbsp;</div>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<div id="content_text">
+<p>Daar waar concurrenten hun dienstenaanbod sterk verbreden, focust Olympia bewust op datgene wat bedrijven en uitzendkrachten van een uitzendbureau verwachten: het leveren van goede tijdelijke medewerkers &eacute;n leuk tijdelijk werk.</p>
+<p><br />Dit doen we onder meer met: &nbsp;</p>
+<ul>
+<li>een ijzersterk merk (Olympia)</li>
+<li>onze succesvolle franchiseformule</li>
+<li>we bieden elke medewerker een uitdagende werkomgeving</li>
+<li>effici&euml;nte en gestandaardiseerde proces en middelen. Zij maken het mogelijk onze diensten snel, met een constante kwaliteit en de hoogste betrouwbaarheid te leveren</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- content for kwaliteiten ends --> <!-- bottom starts for kwaliteitEn -->
+<div class="bottomBar kwaliteitEn weLoveToWork">
+<div class="well-container">
+<div class="well ondernemer-well">
+<h4>Interesse?</h4>
+<div id="contact_text">Laat het ons horen! We nemen graag contact met je op.</div>
+<div class="clear">&nbsp;</div>
+<a class="verstuurViaLinkedIn" href="?sub=neemContact"><img src="../../../Media/CMSMedia/ondernemerworden-images/reageerdirect.png" alt="Reageer direct" /></a></div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<div id="contact_text"><img src="../../../Media/CMSMedia/ondernemerworden-images/Zwolle_Gevel.jpg" alt="" width="294" height="160" /></div>
+</div>
+</div>
+</div>
+<!-- bottom ends for kwaliteitEn --></div>
+<!-- kwaliteitEn sub menu ends --> <!-- weLoveToWork sub menu starts -->
+<div data-ng-show="weLoveToWork == true"><!-- container starts content -->
+<div id="content_container">
+<div id="content">
+<div id="content_kop">
+<h1>We love to work for you</h1>
+</div>
+<div class="clear">&nbsp;</div>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<div id="content_text">
+<p>Olympia werkt anders dan andere uitzendbureaus. Dat komt doordat onze vestigingen worden geleid door franchiseondernemers. De spirit van ondernemerschap kenmerkt dan ook onze cultuur. <br /><br />Zo hebben we de drive en resultaatgerichtheid van een ondernemer. Wij voelen ons meer dan anderen verantwoordelijk, zijn initiatiefrijk, hebben meer continu&iuml;teit in personele bezetting en marktkennis en kunnen daardoor daadwerkelijk investeren in langdurige relaties met bedrijven, kandidaten &eacute;n onze collega&rsquo;s. <br /><br />We werken hard, laten pas los als de opdracht vervuld is en we doen dat met passie en plezier. <br /><br />Kortom: we zijn gewoon ontzettend goed in het helpen realiseren van de ambities van bedrijven, werkzoekenden en van onze eigen medewerkers. We houden van wat we doen en gaan tot het uiterste om onze klanten optimaal van dienst te zijn. Of te wel; &ldquo;We love to work for you&rdquo;&hellip;. en d&aacute;t maakt het verschil. Elke dag opnieuw.</p>
+</div>
+</div>
+</div>
+<!-- cintainer ends content --> <!-- bottom starts for weLoveToWork -->
+<div class="bottomBar weLoveToWork">
+<div class="well-container">
+<div class="well ondernemer-well">
+<h4>Interesse?</h4>
+<div id="contact_text">Laat het ons horen! We nemen graag contact met je op.</div>
+<div class="clear">&nbsp;</div>
+<a class="verstuurViaLinkedIn" href="?sub=neemContact"><img src="../../../Media/CMSMedia/ondernemerworden-images/reageerdirect.png" alt="Reageer direct" /></a></div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<div id="contact_text"><img src="../../../Media/CMSMedia/ondernemerworden-images/welovetowork.jpg" alt="" width="294" height="160" /></div>
+</div>
+</div>
+</div>
+<!-- bottom ends for weLoveToWork --></div>
+<!-- weLoveToWork sub menu ends --> <!-- neemContact sub menu starts -->
+<div data-ng-show="neemContact == true || bedankt == true"><!-- content for neem contact starts -->
+<div id="content_container">
+<div id="content">
+<div id="content_kop">
+<h1 data-ng-show="neemContact == true">Contactformulier</h1>
+<h1 data-ng-show="bedankt == true">Hartelijk dank voor uw bericht</h1>
+</div>
+<div class="clear">&nbsp;</div>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<div id="content_text">
+<script type="text/javascript">// <![CDATA[
+function fbht(htid)
+				{
+					var fbhtc=document.getElementById(htid);
+					if (fbhtc)
+						{
+						if (fbhtc.style.display == 'none')
+							{
+							fbhtc.style.display = 'inline';
+							}
+						else
+							{
+							fbhtc.style.display = 'none';
+							}
+						}
+			}
+// ]]></script>
+<p style="margin-top: 3px;" data-ng-show="neemContact == true">Wil je&nbsp;weten of ondernemen bij Olympia Uitzendbureau iets voor jou is? Laat dan hieronder je gegevens en eventuele vragen achter. Wij nemen dan zo snel mogelijk&nbsp;contact met je op om kennis te maken.</p>
+<p style="margin-top: 3px;" data-ng-show="bedankt == true">Hartelijk dank voor uw bericht. Er wordt zo snel mogelijk contact met u opgenomen.</p>
+<form id="m54968moduleform_1" class="cms_form" data-ng-show="neemContact == true">
+<div class="contactformPagina">
+<div class="required contact-links naam"><input id="fbrp__50" onfocus="if(this.value==this.defaultValue) this.value='';" onblur="if(this.value=='') this.value=this.defaultValue;" type="text" name="m54968fbrp__50" value="NAAM" size="25" maxlength="80" /></div>
+<div class="required contact-links email"><input id="fbrp__51" onfocus="if(this.value==this.defaultValue) this.value='';" onblur="if(this.value=='') this.value=this.defaultValue;" type="text" name="m54968fbrp__51" value="E-MAILADRES" size="25" maxlength="80" /></div>
+<div class="margin-top-10 contact-links naam"><input id="fbrp__57" onfocus="if(this.value==this.defaultValue) this.value='';" onblur="if(this.value=='') this.value=this.defaultValue;" type="text" name="m54968fbrp__57" value="LINKEDIN" size="25" maxlength="80" /></div>
+<div class="margin-top-10 uploadcv"><input id="fbrp__55" class="cms_browse" type="file" name="m54968fbrp__55" size="10" maxlength="255" /></div>
+<div class="margin-top-10 uploadcv-look">
+<div class="labelForm"><label for="fbrp__56">SELECTEER BESTAND</label></div>
+<input id="fbrp__56" type="text" name="m54968fbrp__56" value="UPLOAD JE CV" disabled="disabled" size="25" maxlength="80" /></div>
+<div class="required contact-links naam contact-bericht">
+<div class="labelForm"><label for="fbrp__58">Regio</label></div>
+<select id="fbrp__58" class="cms_dropdown" name="m54968fbrp__58"><option selected="selected" value=""> Selecteer een regio</option><option value="1">Drenthe</option><option value="2">Flevoland</option><option value="3">Friesland</option><option value="4">Gelderland</option><option value="5">Groningen</option><option value="6">Limburg</option><option value="7">Noord-Brabant</option><option value="8">Noord-Holland</option><option value="9">Overijssel</option><option value="10">Utrecht</option><option value="11">Zeeland</option><option value="12">Zuid-Holland</option></select></div>
+<div class="required contact-bericht padding-top-10">
+<div class="labelForm"><label for="Array">Bericht</label></div>
+<textarea id="Array" class="cms_textarea" name="m54968fbrp__52" rows="5" cols="40"></textarea></div>
+<div class="submit"><input class="submit" type="image" name="submit" value="versturen" src="../../../Media/CMSMedia/ondernemerworden-images/verstuur.jpg" data-ng-click="window.location.href='?sub=neemContact'" /></div>
+</div>
+</form>
+<div class="clear">&nbsp;</div>
+<!-- bottom starts for neemContact page -->
+<div class="bottomBar weLoveToWork neemContact" data-ng-show="neemContact == true">
+<div class="well-container">
+<div class="well ondernemer-well">
+<p><strong>Olympia Service Center</strong><br />Eisenhowerlaan 140<br />2517 KN&nbsp; Den Haag</p>
+<div class="clear">&nbsp;</div>
+<p class="margin-top-24">Volg Olympia ook op social media:&nbsp;<a title="Linkedin" href="https://www.linkedin.com/company/21594" target="_blank">Linkedin</a>,&nbsp;<a title="Facebook" href="https://www.facebook.com/#!/OlympiaUitzendbureau?fref=ts" target="_blank">Facebook</a>&nbsp;en&nbsp;<a title="Twitter" href="https://twitter.com/OlympiaNL" target="_blank">Twitter</a>.</p>
+</div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<div id="contact_text"><img src="../../../Media/CMSMedia/ondernemerworden-images/Olympianen-vraagteken.jpg" alt="" width="294" height="160" /></div>
+</div>
+</div>
+</div>
+<!-- bottom ends for neem op contact page --> <!-- bottom starts for bedankt page -->
+<div class="bottomBar bedankt" data-ng-show="bedankt == true">
+<div class="well-container">
+<div class="well ondernemer-well">
+<p><strong>Olympia Service Center</strong><br />Eisenhowerlaan 140<br />2517 KN&nbsp; Den Haag<br /><a href="http://maps.google.nl/maps?f=q&amp;source=s_q&amp;hl=nl&amp;geocode=&amp;q=Eisenhowerlaan+140,+2517+KN,+Den+Haag&amp;sll=52.469397,5.509644&amp;sspn=4.203673,9.876709&amp;ie=UTF8&amp;z=16&amp;iwloc=A" target="_blank">&gt; Routebeschrijving</a></p>
+<div class="clear">&nbsp;</div>
+</div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<h4>Interesse?</h4>
+<div id="contact_text">Laat het ons horen! We nemen graag contact met je op.</div>
+<div class="clear">&nbsp;</div>
+<a class="verstuurViaLinkedIn" href="?sub=neemContact"><img src="../../../Media/CMSMedia/ondernemerworden-images/reageerdirect.png" alt="Reageer direct" /></a></div>
+</div>
+<div class="well-container">
+<div class="well ondernemer-well">
+<div id="contact_text"><img src="../../../Media/CMSMedia/ondernemerworden-images/Olympianen-vraagteken.jpg" alt="" width="185" height="145" /></div>
+</div>
+</div>
+</div>
+<!-- bottom ends for bedankt page -->
+<div class="clear">&nbsp;</div>
+<div id="map" style="width: 634px; height: 400px; border: 1px solid #bbbbbb;" data-ng-show="bedankt == true || neemContact == true">&nbsp;</div>
+</div>
+</div>
+</div>
+<!-- content for neem contact ends --></div>
+<!-- neemContact sub menu ends --></div>
+</div>
+<div id="videoDialog1" class="hidden" title="Nynke en Annette over ondernemer worden bij Olympia">&nbsp;</div>
+<div id="videoDialog2" class="hidden" title="Nynke en Annette over ondernemer worden bij Olympia">&nbsp;</div>
+<div class="ui-widget-overlay hidden">&nbsp;</div>
+<!--modal popups-->
+<script type="text/javascript" src="https://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyB0sIbNx6RxHEGS6sZsGDbW_JM39fhOpy0"></script>
+<script type="text/javascript">// <![CDATA[
+var geocode;
+	var map;
+	var eindAdres = "Eisenhowerlaan 140, 2517 KN, Den Haag";
+	var beginAdres = ", ";
+	var beginPunt;
+	var eindPunt;
+	var vlag = "1";
+	var begin = 0;	
+
+    function load() {
+      if (GBrowserIsCompatible()) {
+	    // Map maken
+        map = new GMap2(document.getElementById("map"));
+		
+		// Voeg controls toe
+		map.addControl(new GSmallMapControl());
+		map.addControl(new GMapTypeControl());
+		
+		// Maak Geocode object
+		geocoder = new GClientGeocoder();		
+		
+		// Punt 2
+		geocoder.getLocations(eindAdres, voegPuntToe);	
+		
+		// Punt 1
+		//geocoder.getLocations(beginAdres, voegPuntToe);	
+		
+		directionsPanel = document.getElementById("my_textual_div");
+	
+	    directions = new GDirections(map, directionsPanel);
+	    directions.load("from: ,  to: Eisenhowerlaan 140, 2517 KN, Den Haag ");
+
+      }
+    }
+	
+	function voegPuntToe(response) {
+		// Locatie
+		locatie = response.Placemark[0];
+		
+		// Coordinaten ophalen
+		point = new GLatLng(locatie.Point.coordinates[1], locatie.Point.coordinates[0]);	
+		
+		// Centreer map op coordinaten
+		map.setCenter(point, 13);
+		
+		// Maak een punt
+		marker = new GMarker(point);
+		
+		// Voeg punt toe aan de map
+		map.addOverlay(marker);
+
+		if(begin == 0) {
+			eindPunt = point;
+			begin = 1;
+		} else {
+			beginPunt = point;		
+		}
+
+ // Zet comment boxje
+                if(vlag != 0) {
+
+                      marker.openInfoWindowHtml("<div id='textMaps'><img src='/Media/CMSMedia/ondernemerworden-images/maps_logo.jpg' height='25'><br/>Eisenhowerlaan 140<br/> 2517 KN, Den Haag<br/><a href='http://maps.google.nl/maps?f=q&source=s_q&hl=nl&geocode=&q=Eisenhowerlaan+140,+2517+KN,+Den+Haag&sll=52.469397,5.509644&sspn=4.203673,9.876709&ie=UTF8&z=16&iwloc=A' target='_blank'>Routebeschrijving</a></div>");
+        
+                }
+	}
+	
+	if (window.attachEvent) {
+		window.attachEvent("onload", function() 
+		{
+			load();	// Internet Explorer
+		}
+		);
+	} 
+	else {
+		window.addEventListener("load", function()
+		{
+			load(); // Firefox + rest
+		}, false);
+	}
+// ]]></script>
+<script type="text/javascript">// <![CDATA[
+$(function() { 
+    
+    $( "#openerSelectProcedure, #openerSelectProcedure2, #openerSelectProcedure3" ).click(function() {
+      $( "#videoDialog1" ).dialog({autoOpen: false,width: 624, height: 430});
+      $( "#videoDialog1" ).removeClass("hidden")
+      $( "#videoDialog1" ).dialog( "open" );
+      $( "#videoDialog1" ).append('<iframe src="https://www.youtube.com/embed/2Hs8Z1i_8nA?rel=0&amp;showinfo=0" frameborder="0" width="585" height="380"></iframe>');
+      $('.ui-widget-overlay').removeClass("hidden")
+      var heightOfDocument = $(document).height();
+      $('.ui-widget-overlay').css({'height':heightOfDocument});
+    });
+    $( "#videoDialog1" ).on( "dialogclose", function( event, ui ) {
+    	$( "#videoDialog1 iframe" ).remove();
+    	$('.ui-widget-overlay').addClass("hidden")
+    } );
+  
+	$( "#openerSelectProcedure4" ).click(function() {
+      $( "#videoDialog2" ).dialog({autoOpen: false,width: 624, height: 430});
+      $( "#videoDialog2" ).removeClass("hidden")
+      $( "#videoDialog2" ).dialog( "open" );
+      $( "#videoDialog2" ).append('<iframe src="https://www.youtube.com/embed/dwzsa6YZIn0?rel=0&amp;showinfo=0" frameborder="0" width="585" height="380"></iframe>');
+      $('.ui-widget-overlay').removeClass("hidden")
+      var heightOfDocument = $(document).height();
+      $('.ui-widget-overlay').css({'height':heightOfDocument});
+    });
+    $( "#videoDialog2" ).on( "dialogclose", function( event, ui ) {
+    	$( "#videoDialog2 iframe" ).remove();
+    	$('.ui-widget-overlay').addClass("hidden")
+    } );
+
+  });
+
+$(document).ready(function(){
+	
+	$(".uploadcv-look input").prop('disabled', true);
+	
+	$('.uploadcv-look .labelForm').bind("click" , function () {
+        $('.uploadcv .cms_browse').click();
+    });
+	
+	$('.uploadcv .cms_browse').change(function(){
+		
+		var waarde = $('.uploadcv .cms_browse').val();
+		$('.uploadcv-look input').val(waarde);
+		
+	});
+});
+// ]]></script>

@@ -1170,3 +1170,24 @@ $(document).ready(function(){
 //     'timeOffset': timeOffset
 // };
 
+var olympiaApp = angular.module('olympiaApp', [])
+
+olympiaApp.controller('OndernemerWordenController', function($scope) {
+	$scope.clickMe = function(){
+
+	};
+})
+olympiaApp.directive('makeActive', function(){
+	return {
+		restrict: 'A',
+		scope: {
+            ngModel: "@ngModel"
+        },
+		link: function (scope, elem, attrs) {
+			elem.bind('click', function() {
+				elem.parent().children().removeClass('activeIn')
+				elem.addClass('activeIn')
+			})
+		}
+	}
+})
