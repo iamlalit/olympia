@@ -1,0 +1,346 @@
+<script type="text/javascript" src="../../../Modules/Orchard.jQuery/scripts/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+
+<script type="text/javascript">// <![CDATA[
+var olympiaApp = angular.module('olympiaApp', []);
+
+olympiaApp.controller('OndernemerWordenController', ['$scope', '$location', '$anchorScroll',
+  	function ($scope, $location, $anchorScroll) {
+	    $scope.gotoTop = function() {
+	      // set the location.hash to the id of
+	      // the element you wish to scroll to.
+	      //$location.hash('top');
+	      // call $anchorScroll()
+	      $anchorScroll();
+	      $(".container .container-right").css('display', 'none');
+	      setTimeout(function(){ 
+	      	$(".container .container-right").css('display', 'block');
+	      }, 600);
+	    };
+	    $scope.getParameterByName = function(name) {
+	        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	            results = regex.exec(location.search);
+	        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	    }
+
+	    if( window.location.search.indexOf('sub') > -1 ) {
+	    	$scope.gotoTop();
+	    	$scope.sub = $scope.getParameterByName('sub');
+	    	if($scope.sub == 'home'){
+	    		$scope.home = true;
+		    	$scope.sprekers = false;
+		    	$scope.programma = false;
+		    	$scope.aanmelden = false;
+	    	}else if($scope.sub == 'sprekers'){
+	    		$scope.home = false;
+		    	$scope.sprekers = true;
+		    	$scope.programma = false;
+		    	$scope.aanmelden = false;
+	    	}else if($scope.sub == 'programma'){
+	    		$scope.home = false;
+		    	$scope.sprekers = false;
+		    	$scope.programma = true;
+		    	$scope.aanmelden = false;
+	    	}else if($scope.sub == 'aanmelden'){
+	    		$scope.home = false;
+		    	$scope.sprekers = false;
+		    	$scope.programma = false;
+		    	$scope.aanmelden = true;
+	    	}else{
+	    		$scope.home = true;
+		    	$scope.sprekers = false;
+		    	$scope.programma = false;
+		    	$scope.aanmelden = false;
+	    	}
+	    }else {
+	    	$scope.home = true;
+	    	$scope.sprekers = false;
+	    	$scope.programma = false;
+	    	$scope.aanmelden = false;
+	    }
+}]);
+// ]]></script>
+
+<script type="text/javascript">// <![CDATA[
+$("style").append('.line,.list-group-item,.speaker-box,.well.banner-well{position:relative}#MainMenu a,.schedule-table .tables .table-heading .col label,h2,h3,h4{font-weight:700}a,a:focus,a:hover{text-decoration:none}h1,h2,h3,h4,h5{line-height:normal}body{padding:0;margin:0;font-family:Arial,Helvetica,Tahoma,sans-serif;color:#666;background-color:#FFF;font-size:9pt;line-height:13pt}.list-group,.panel{margin-bottom:20px}.list-group-submenu{margin-left:20px}.content-area.container{padding-top:2px;margin-top:22px}.container-left,.container-right{display:block;float:left;width:28%;word-wrap:break-word;padding:0 10px 20px 0}.container-right{border-left:2px dotted #ddd;min-height:296px;width:69%;padding:0 0 0 10px}#MainMenu .list-group div a{padding-left:30px}#MainMenu a:focus,#MainMenu a:hover{background:#eee;color:#f40}#MainMenu .list-group div a:focus,#MainMenu .list-group div a:hover{background:#f7f9f8}.panel{background-color:#fff;border:1px solid transparent;border-radius:4px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}.box-body,.well.banner-well{box-shadow:0 0 3px 0 #d2d2d2}.list-group{padding-left:0}.list-group-item{display:block;padding:10px 15px;margin-bottom:-1px;background-color:#fff;border:1px solid #ddd;text-transform:uppercase}.list-group-item-success{background:#eee;color:#fff}a.list-group-item{color:#555}#MainMenu a.activeIn,a,h1,h2,h3,h4,h5{color:#f40}.list-group-item:first-child{border-top-right-radius:4px;border-top-left-radius:4px}#MainMenu a.in{color:#f40;background:#eee}h1{margin:0 0 -5px}h2,h3,h4,h5{margin-top:0}h2{font-size:13pt;padding-top:4px}h3{font-size:14px}h4{font-size:12px}#content_text h3{padding-top:3px;padding-bottom:3px}.content-item.page header{display:none;visibility:hidden}.well.banner-well{text-align:center;padding:0;border:1px solid #d2d2d2;border-radius:5px;background-color:#fff;overflow:hidden;height:235px}#content_container #content{margin-left:10px}.line{width:100%;height:1px;margin-bottom:10px;line-height:0;background:url(/Media/CMSMedia/Olympia_talent/line.gif) repeat-x;left:-10px;top:0}.line.line-OndernemerWorden{width:103%}.bigger-speaker-box{margin:0 0 30px}.bigger-speaker-box+.bigger-speaker-box,.margin-0{margin:0}.speaker-box .box-heading{border:1px solid #f40;background:#f40;color:#fff;font-size:15px;padding:10px;border-top-left-radius:5px;border-top-right-radius:5px}.box-body{padding:15px 15px 0;border:1px solid #d2d2d2;border-bottom-left-radius:5px;border-bottom-right-radius:5px;border-top:0}.leftside-image,.rightside-name{display:inline-block}.rightside-name{height:100%;vertical-align:middle}.rightside-name span.name{font-size:24px}.rightside-name span.designation{font-size:15px}.arrow-down{width:0;height:0;border-left:20px solid transparent;border-right:20px solid transparent;border-top:20px solid #f40;position:absolute;left:35px}#content_text ul{list-style:none;margin-left:0;padding-left:0}#content_text ul li{padding-left:15px;background:url(/Media/CMSMedia/Olympia_talent/list-item.png) 2px 5px no-repeat}.schedule-table .tables .table-content,.schedule-table .tables .table-content .row,.schedule-table .tables .table-heading{width:100%}.schedule-table .tables .table-content .col,.schedule-table .tables .table-heading .col{display:inline-block;width:20%}');
+// ]]></script>
+<!--slider statrts -->
+<div id="layout-featured" class="group">
+	<div class="zone zone-featured">
+		<div class="well banner-well">
+			<img src="/Media/CMSMedia/Olympia_talent/Miss-Olympia-toptalent.jpg"  />
+		</div>
+	</div>
+</div>		
+<div class="container content-area" data-ng-controller="OndernemerWordenController" data-ng-app="olympiaApp"><!--container left starts-->
+	<div class="container-left">
+		<div id="MainMenu">
+			<div class="list-group panel">
+				<a class="list-group-item list-group-item-success" href="?sub=home" data-ng-class="{'in' : home == true}" data-ng-model="home">Home</a>
+				<a class="list-group-item list-group-item-success" href="?sub=sprekers" data-ng-class="{'in' : sprekers == true}" data-ng-model="sprekers">Sprekers</a>
+				<a class="list-group-item list-group-item-success" href="?sub=programma" data-ng-class="{'in' : programma == true}" data-ng-model="programma">Programma</a>
+				<a class="list-group-item list-group-item-success" href="?sub=aanmelden" data-ng-class="{'in' : aanmelden == true}" data-ng-model="aanmelden">Aanmelden</a>
+			</div>
+		</div>
+	</div>
+	<div class="container-right ng-cloak">
+		<!-- Start conent area for home  -->
+		<div data-ng-show="home == true">
+			<div id="content_container">
+				<div id="content">
+					<div id="content_kop" ng-cloak>
+						<h1>Talent in een wendbare wereld</h1>
+					</div>
+					<div class="clear ng-cloak">&nbsp;</div>
+					<div class="line line-OndernemerWorden">&nbsp;</div>
+					<div id="content_text" class="ng-cloak">
+						<p>De wereld verandert in snel tempo. Dat vraagt een andere kijk op de markt, op talentmanagement en op bedrijfsvoering. Veranderingen bieden volop kansen voor díegene die bereid zijn om bestaande overtuigingen los te laten en te reageren. Maar hoe doe je dat, bestaande overtuigingen loslaten? Wat betekent dit voor een bedrijf en ondernemer?
+						<br>
+						<br>
+						Wanneer het speelveld verandert, heeft dit gevolgen voor de manier waarop je vaste én flexibele medewerkers organiseert en aan je bindt. Het vinden van een juiste balans tussen continuïteit en wendbaarheid is meer dan ooit van belang. Want hoe zorg je ervoor dat jouw talent hét verschil blijft maken?<br></p>
+
+						<h2>Ontbijtsessie 'Talent in een wendbare wereld'</h2>
+						<p>Tijdens negen ontbijtsessies geven sprekers Michiel Muller en Steven Gudde u een frisse kijk op de wereld van nu. Een wereld die snel verandert, en die vraagt om een andere manier van kijken naar de markt, bedrijfsvoering en mensen.<br></p>
+
+						<h2>Welkom</h2>
+						<p class="margin-0">Wij nodigen u van harte uit om op één van de 9 locaties in Nederland een inspirerende ontbijtsessie bij te wonen. Bekijk het <a href="?sub=programma">programma</a> en kies een locatie. Klik <a href="?sub=aanmelden">hier</a> om u direct aan te melden.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End content area for home -->
+		<!-- Start conent area for sprekers  -->
+		<div data-ng-show="sprekers == true" class="ng-cloak">
+			<div id="content_container">
+				<div id="content">
+					<div id="content_kop">
+						<h1>Een goed verhaal én een goed ontbijt</h1>
+					</div>
+					<div class="clear">&nbsp;</div>
+					<div class="line line-OndernemerWorden ng-cloak">&nbsp;</div>
+					<div id="content_text" class="ng-cloak">
+						<p>Sprekers Michiel Muller en Steven Gudde nemen u in de vroege ochtend mee in de ontwikkelingen rondom de thema’s arbeid, talent en ondernemerschap.<br></p>
+					</div>
+					<div class="bigger-speaker-box">
+						<div class="speaker-box">
+							<div class="box-heading">
+								<div class="leftside-image">
+									<img src="/Media/CMSMedia/Olympia_talent/speaker1.png"  />
+								</div>
+								<div class="rightside-name">
+									<span class="name">Michiel Muller</span><br>
+									<span class="designation">Ondernemer en schrijver</span>
+								</div>
+								<div class="arrow-down"></div>
+							</div>
+						</div>
+						<div class="box-body">
+							<p>Michiel Muller is ondernemer en specialist in ondernemerschap, innovatie, daadkracht en het openbreken van markten. Hij laat graag het business model achter zijn ondernemingen zien en laat zo zien welke strategieën werken en welke niet. Zo inspireert hij opdrachtgevers om zelf in actie te komen. “Creatief en oorspronkelijk denken gecombineerd met de gave om het publiek in zijn betoog te betrekken maken hem tot een geliefde spreker en dagvoorzitter” aldus de auteurs van het boek Meestersprekers (2010).<br><br>
+							Michiel Muller bouwde op jonge leeftijd met oprichter Marc Schröder de benzineketen Tango uit tot een internationaal succes. Na de verkoop van Tango richtte hij met Schröder Route Mobiel, Bieden en Wonen en Vault79 op. Muller is ook actief als investeerder en coach voor ondernemers en bedrijven.<br><br>
+							Michiel Muller is lid van de adviesraad van het Holland Program on Entrepreneurship HOPE (Erasmus Universiteit Rotterdam/TU Delft/Leiden University) en van het Amsterdam Center of Entrepreneurship ACE (Universiteit van Amsterdam/Vrije Universiteit/Hogeschool van Amsterdam/Hogeschool InHolland Amsterdam).
+							</p>
+						</div>
+					</div>
+					<div class="bigger-speaker-box">
+						<div class="speaker-box">
+							<div class="box-heading">
+								<div class="leftside-image">
+									<img src="/Media/CMSMedia/Olympia_talent/speaker1.png"  />
+								</div>
+								<div class="rightside-name">
+									<span class="name">Steven Gudde</span><br>
+									<span class="designation">Manager Marketing en Innovatie Olympia</span>
+								</div>
+								<div class="arrow-down"></div>
+							</div>
+						</div>
+						<div class="box-body">
+							<p>Steven Gudde is Manager Marketing en Innovatie bij Olympia Uitzendbureau. Hij studeerde als systeemkundige af aan de Technische Universiteit Delft op de invloed van personele structuren en organisatieculturen op resultaten van een onderneming en volgde verder opleidingen aan bijvoorbeeld de Nyenrode Business University. In zijn werk richt Steven zich op het oplossen van complexe vraagstukken daar waar de organisatie en de mensen elkaar raken en elkaar kunnen versterken.<br><br>
+							Daarnaast volgt hij de ontwikkelingen op de arbeidsmarkt en arbeidsrelatie op de voet. Steven heeft verschillende publicaties op zijn naam staan, hij werkte mee aan verschillende onderzoeken, geeft lezingen over HR-ontwikkelingen en arbeidstrends en is columnist bij arbeidsmarktmagazine Flexmarkt.<br><br>
+							Naast zijn werk bij Olympia is hij docent op de Hogeschool van Amsterdam op het gebied van HR en leidinggeven. Ook verzorgt hij regelmatig gastdocentschappen over HR &amp; leiderschap, talentmanagement en organisatieculturen aan de Universiteit van Amsterdam. Tevens is hij lid van enkele kenniswerkgroepen zoals de EVO Raad van de Logistieke Kennis.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End content area for sprekers -->
+		<!-- Start conent area for programma  -->
+		<div data-ng-show="programma == true">
+			<div id="content_container">
+				<div id="content">
+					<div id="content_kop">
+						<h1>Programma</h1>
+					</div>
+					<div class="clear">&nbsp;</div>
+					<div class="line line-OndernemerWorden">&nbsp;</div>
+					<div id="content_text">
+						<ul>
+							<li><strong class="hours">08.00 uur</strong><span> Ontvangst met ontbijt</span></li>
+							<li><strong class="hours">08.30 uur</strong><span> Spreker Michiel Muller</span></li>
+							<li><strong class="hours">09.30 uur</strong><span> Pauze</span></li>
+							<li><strong class="hours">09.45 uur</strong><span> Spreker Steven Gudde</span></li>
+							<li><strong class="hours">10.45 uur</strong><span> Koffie en napraten</span></li>
+							<li><strong class="hours">11.00 uur</strong><span> Einde</span></li>
+						</ul>
+						<div class="schedule-table">
+							<h2>Regio en data</h2>
+							<div class="tables">
+								<div class="table-heading">
+									<div class="col">
+										<label>Regio</label>
+									</div>
+									<div class="col">
+										<label>Datum</label>
+									</div>
+									<div class="col">
+										<label>Locatie</label>
+									</div>
+								</div>
+								<div class="table-content">
+									<div class="row">
+										<div class="col">
+											<span>Zuid Holland</span>
+										</div>
+										<div class="col">
+											<span>29 september</span>
+										</div>
+										<div class="col">
+											<span>Lommerrijk</span>
+										</div>
+										<div class="col">
+											<span>Rotterdam</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<span>Noord Holland</span>
+										</div>
+										<div class="col">
+											<span>8 oktober</span>
+										</div>
+										<div class="col">
+											<span>Planetarium</span>
+										</div>
+										<div class="col">
+											<span>Amsterdam</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<span>Limburg</span>
+										</div>
+										<div class="col">
+											<span>13 oktober</span>
+										</div>
+										<div class="col">
+											<span>Kasteel de Keverberg</span>
+										</div>
+										<div class="col">
+											<span>Kessel</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<span>Oost Nederland</span>
+										</div>
+										<div class="col">
+											<span>15 oktober</span>
+										</div>
+										<div class="col">
+											<span>De Westerbouwing</span>
+										</div>
+										<div class="col">
+											<span>Oosterbeek</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<span>Utrecht</span>
+										</div>
+										<div class="col">
+											<span>3 november</span>
+										</div>
+										<div class="col">
+											<span>NBC</span>
+										</div>
+										<div class="col">
+											<span>Nieuwegein</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<span>Noord Nederland</span>
+										</div>
+										<div class="col">
+											<span>5 november</span>
+										</div>
+										<div class="col">
+											<span>Gold Club TT Assen</span>
+										</div>
+										<div class="col">
+											<span>Assen</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<span>Zuid Nederland</span>
+										</div>
+										<div class="col">
+											<span>10 november</span>
+										</div>
+										<div class="col">
+											<span>[TO BE DEFINED]</span>
+										</div>
+										<div class="col">
+											<span></span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<span>Oost Nederland</span>
+										</div>
+										<div class="col">
+											<span>12 november</span>
+										</div>
+										<div class="col">
+											<span>De Adelaarshorst</span>
+										</div>
+										<div class="col">
+											<span>Deventer</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<span>Zuid Nederland</span>
+										</div>
+										<div class="col">
+											<span>17 november</span>
+										</div>
+										<div class="col">
+											<span>[TO BE DEFINED]</span>
+										</div>
+										<div class="col">
+											<span></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<p><br>Wij nodigen u van harte uit om op één van de 9 locaties in Nederland een inspirerende ontbijtsessie bij te wonen. Klik <a href="?sub=aanmelden">hier</a> om u direct aan te melden</p>
+					</div>
+			</div>
+		</div>
+		<!-- End content area for programma -->
+		<!-- Start conent area for aanmelden  -->
+		<div data-ng-show="aanmelden == true">
+			<div id="content_container">
+				<h1>aanmelden</h1>
+			</div>
+		</div>
+		<!-- End content area for aanmelden -->
+	</div>
+</div>
+
+

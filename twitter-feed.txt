@@ -1,0 +1,18 @@
+Hi,
+
+to have twitter timeline, please follow these steps:
+
+1) open this URL:
+https://dev.twitter.com/web/embedded-timelines/user
+2)Then there is a link:
+"Create a new embedded user timeline"
+3)Click on this link, it will redirect the user to login page of twitter widget.
+4) Login into twitter account: enter email and pwd.
+5)Once you authenticated widget page appears
+6) after reviewing all the setting click on the button to create widget 
+7) once all done it will give you a small script/widget
+
+<a class="twitter-timeline" href="https://twitter.com/lalit_libra" data-widget-id="628514425025118208">Tweets by @lalit_libra</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+Script would be something like this!
