@@ -61,18 +61,63 @@ olympiaApp.controller('OndernemerWordenController', ['$scope', '$location', '$an
 	    }
 }]);
 // ]]></script>
-
+<script type="text/javascript" src="../../../Modules/FeaturedItemSlider/scripts/jquery.cycle.all.js"></script>
+<!-- custom code for slider starts-->
 <script type="text/javascript">// <![CDATA[
-$("style").append('.line,.list-group-item,.speaker-box,.well.banner-well{position:relative}#MainMenu a,.schedule-table .tables .table-heading .col label,h2,h3,h4{font-weight:700}a,a:focus,a:hover{text-decoration:none}h1,h2,h3,h4,h5{line-height:normal}body{padding:0;margin:0;font-family:Arial,Helvetica,Tahoma,sans-serif;color:#666;background-color:#FFF;font-size:9pt;line-height:13pt}.list-group,.panel{margin-bottom:20px}.list-group-submenu{margin-left:20px}.content-area.container{padding-top:2px;margin-top:22px}.container-left,.container-right{display:block;float:left;width:28%;word-wrap:break-word;padding:0 10px 20px 0}.container-right{border-left:2px dotted #ddd;min-height:296px;width:69%;padding:0 0 0 10px}#MainMenu .list-group div a{padding-left:30px}#MainMenu a:focus,#MainMenu a:hover{background:#eee;color:#f40}#MainMenu .list-group div a:focus,#MainMenu .list-group div a:hover{background:#f7f9f8}.panel{background-color:#fff;border:1px solid transparent;border-radius:4px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}.box-body,.well.banner-well{box-shadow:0 0 3px 0 #d2d2d2}.list-group{padding-left:0}.list-group-item{display:block;padding:10px 15px;margin-bottom:-1px;background-color:#fff;border:1px solid #ddd;text-transform:uppercase}.list-group-item-success{background:#eee;color:#fff}a.list-group-item{color:#555}#MainMenu a.activeIn,a,h1,h2,h3,h4,h5{color:#f40}.list-group-item:first-child{border-top-right-radius:4px;border-top-left-radius:4px}#MainMenu a.in{color:#f40;background:#eee}h1{margin:0 0 -5px}h2,h3,h4,h5{margin-top:0}h2{font-size:13pt;padding-top:4px}h3{font-size:14px}h4{font-size:12px}#content_text h3{padding-top:3px;padding-bottom:3px}.content-item.page header{display:none;visibility:hidden}.well.banner-well{text-align:center;padding:0;border:1px solid #d2d2d2;border-radius:5px;background-color:#fff;overflow:hidden;height:235px}#content_container #content{margin-left:10px}.line{width:100%;height:1px;margin-bottom:10px;line-height:0;background:url(/Media/CMSMedia/Olympia_talent/line.gif) repeat-x;left:-10px;top:0}.line.line-OndernemerWorden{width:103%}.bigger-speaker-box{margin:0 0 30px}.bigger-speaker-box+.bigger-speaker-box,.margin-0{margin:0}.speaker-box .box-heading{border:1px solid #f40;background:#f40;color:#fff;font-size:15px;padding:10px;border-top-left-radius:5px;border-top-right-radius:5px}.box-body{padding:15px 15px 0;border:1px solid #d2d2d2;border-bottom-left-radius:5px;border-bottom-right-radius:5px;border-top:0}.leftside-image,.rightside-name{display:inline-block}.rightside-name{height:100%;vertical-align:middle}.rightside-name span.name{font-size:24px}.rightside-name span.designation{font-size:15px}.arrow-down{width:0;height:0;border-left:20px solid transparent;border-right:20px solid transparent;border-top:20px solid #f40;position:absolute;left:35px}#content_text ul{list-style:none;margin-left:0;padding-left:0}#content_text ul li{padding-left:15px;background:url(/Media/CMSMedia/Olympia_talent/list-item.png) 2px 5px no-repeat}.schedule-table .tables .table-content,.schedule-table .tables .table-content .row,.schedule-table .tables .table-heading{width:100%}.schedule-table .tables .table-content .col,.schedule-table .tables .table-heading .col{display:inline-block;width:20%}');
+$(function () {
+            $('#featuresList-HomeSlider').cycle({
+                fx: 'fade',
+                speed: '250',
+                timeout: '5000',
+                pause: 1,
+                pager: '#slider-nav-HomeSlider',
+                containerResize: true,
+                fit: true,
+                slideResize: 0
+            });
+            $("#featureSlider-HomeSlider ul li").removeClass('hiddenItem');
+            $('#pauseButton-HomeSlider').show();
+            $('#resumeButton-HomeSlider').hide();
+            $('#pauseButton-HomeSlider').live("click", function () {
+                $('#featuresList-HomeSlider').cycle('pause');
+                $('#pauseButton-HomeSlider').toggle();
+                $('#resumeButton-HomeSlider').toggle();
+            });
+            $('#resumeButton-HomeSlider').live("click", function () {
+                $('#featuresList-HomeSlider').cycle('resume');
+                $('#pauseButton-HomeSlider').toggle();
+                $('#resumeButton-HomeSlider').toggle();
+            });
+            $('head').append('<link href="/Modules/Orchard.jQuery/Styles/jquery-ui-1.8.18.custom.css" rel="stylesheet" type="text/css" />')
+            
+        });
 // ]]></script>
+<!-- custom code for slider ends -->
+<script type="text/javascript">// <![CDATA[
+$("style").append('.line,.list-group-item,.speaker-box,.well.banner-well{position:relative}#MainMenu a,.schedule-table .tables .table-heading .col label,h2,h3,h4{font-weight:700}.featureSlider ul li span a,a,a:focus,a:hover{text-decoration:none}h1,h2,h3,h4,h5{line-height:normal}body{padding:0;margin:0;font-family:Arial,Helvetica,Tahoma,sans-serif;color:#666;background-color:#FFF;font-size:9pt;line-height:13pt}.list-group,.panel{margin-bottom:20px}.list-group-submenu{margin-left:20px}.content-area.container{padding-top:2px;margin-top:22px}.container-left,.container-right{display:block;float:left;width:28%;word-wrap:break-word;padding:0 10px 20px 0}.container-right{border-left:2px dotted #ddd;min-height:296px;width:69%;padding:0 0 0 10px}#MainMenu .list-group div a{padding-left:30px}#MainMenu a:focus,#MainMenu a:hover{background:#eee;color:#f40}#MainMenu .list-group div a:focus,#MainMenu .list-group div a:hover{background:#f7f9f8}.panel{background-color:#fff;border:1px solid transparent;border-radius:4px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}.box-body,.featureSlider,.schedule-table .image-block,.well.banner-well{box-shadow:0 0 3px 0 #d2d2d2}.list-group{padding-left:0}.list-group-item{display:block;padding:10px 15px;margin-bottom:-1px;background-color:#fff;border:1px solid #ddd;text-transform:uppercase}.list-group-item-success{background:#eee;color:#fff}a.list-group-item{color:#555}#MainMenu a.activeIn,a,h1,h2,h3,h4,h5{color:#f40}.list-group-item:first-child{border-top-right-radius:4px;border-top-left-radius:4px}#MainMenu a.in{color:#f40;background:#eee}h1{margin:0 0 -5px}h2,h3,h4,h5{margin-top:0}h2{font-size:13pt;padding-top:4px}h3{font-size:14px}h4{font-size:12px}#content_text h3{padding-top:3px;padding-bottom:3px}.content-item.page header{display:none;visibility:hidden}.well.banner-well{text-align:center;padding:0;border:1px solid #d2d2d2;border-radius:5px;background-color:#fff;overflow:hidden;height:235px}#content_container #content{margin-left:10px}.line{width:100%;height:1px;margin-bottom:10px;line-height:0;background:url(/Media/CMSMedia/Olympia_talent/line.gif) repeat-x;left:-10px;top:0}.line.line-OndernemerWorden{width:103%}.bigger-speaker-box{margin:0 0 30px}.bigger-speaker-box+.bigger-speaker-box{margin:0}.speaker-box.speaker1 .leftside-image{border:2px solid #fff;border-radius:100%;margin:5px 10px}.speaker-box.speaker1 .leftside-image img{border-radius:100%}.speaker-box .box-heading{border:1px solid #f40;background:#f40;color:#fff;font-size:15px;padding:10px;border-top-left-radius:5px;border-top-right-radius:5px}.box-body{padding:15px 15px 0;border:1px solid #d2d2d2;border-bottom-left-radius:5px;border-bottom-right-radius:5px;border-top:0}.leftside-image,.rightside-name{display:inline-block}.rightside-name{height:100%;vertical-align:middle}.rightside-name span.name{font-size:24px}.rightside-name span.designation{font-size:15px}.arrow-down{width:0;height:0;border-left:20px solid transparent;border-right:20px solid transparent;border-top:20px solid #f40;position:absolute;left:35px}#content_text ul{list-style:none;margin-left:0;padding-left:0}#content_text ul li{padding-left:15px;background:url(/Media/CMSMedia/Olympia_talent/list-item.png) 2px 5px no-repeat}.schedule-table .tables .table-content,.schedule-table .tables .table-content .row,.schedule-table .tables .table-heading{width:100%}.schedule-table .tables .table-content .col,.schedule-table .tables .table-heading .col{display:inline-block;width:20%}.margin-0{margin:0}.schedule-table .image-block{margin:10px 0 30px;border:1px solid #d2d2d2;border-radius:3px;text-align:center}.zone-featured .widget-featured-item-slider-widget{margin:17px 0 0}div.slider-nav{text-align:right;list-style-type:none;position:relative;right:3px;top:-33px;height:0;margin:0 15px!important;z-index:99}div.slider-nav .sliderButtons{display:inline-block;float:right;margin-left:4px}div.slider-nav a{width:10px;height:10px;display:inline-block;vertical-align:middle;margin:0 5px;font-size:1px;line-height:5px;background-color:#b3b3b3;border-radius:10px;text-indent:100px;overflow:hidden}.featureSlider{border:solid #ebebeb;border:1px solid #d2d2d2;border-radius:5px;background-color:#fff;position:relative;height:188px;overflow:hidden;box-shadow:0 0 3px 0 #d2d2d2\9}.vacature-detail .featureSlider{margin-bottom:18px}.vacature-detail div.slider-nav{top:-50px}.featureSlider ul{margin:0;padding:0;list-style-type:none;border-radius:5px}.featureSlider img{width:100%;height:auto}.featureSlider ul li{display:block}.featureSlider li{height:188px;width:940px;border-radius:5px}.content .featureSlider li{height:188px;width:620px}.featureSlider li p{position:relative;top:223px}.headline{padding-top:10px;padding-right:20px}.headline,.headline+h2{padding-right:20px;text-align:right}.featureSlider ul li span{line-height:38px;font-size:38px;font-family:Calibri,sans-serif;letter-spacing:-1.6px;margin-left:-20px;border:0;padding-bottom:10px;border-bottom:none!important;width:100%;font-weight:700;height:auto;color:#f40}.featureSlider ul li h2{font-size:15px;margin:15px 10px 0 0;font-weight:400!important;color:#f40;height:auto;line-height:15px}.featureSlider ul li p{font-size:8px;opacity:.5;filter:alpha(opacity=50);text-align:right;padding:0 10px 0 0;margin:0}.featureSlider ul li span{display:block;margin:0;padding:32px 0 0;position:relative;right:28px}.hiddenItem{display:none!important}.featureSlider li h2,.featureSlider li h2 a,.featureSlider li p.slideNumbers,.featureSlider li span,.featureSlider li span a{color:#666!important}.featureSlider li span,.featureSlider li span a img,.featureSlider li span img{width:0;height:0}div.slider-nav a.activeSlide{background-color:#666}');
+// ]]></script>
+
 <!--slider statrts -->
 <div id="layout-featured" class="group">
-	<div class="zone zone-featured">
-		<div class="well banner-well">
-			<img src="/Media/CMSMedia/Olympia_talent/Miss-Olympia-toptalent.jpg"  />
-		</div>
-	</div>
-</div>		
+<div class="zone zone-featured">
+<div id="featureSlider-HomeSlider" class="featureSlider"><em class="tl"></em><em class="tr"></em><em class="bl"></em><em class="br"></em>
+<ul id="featuresList-HomeSlider" style="color: #666666; position: relative; width: 940px; height: 188px;">
+<li style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; background-image: url('/Media/CMSMedia/Olympia_talent/ontbijtsessies-2015-v1.png');">
+<p class="slideNumbers"><span><span>1 of 2</span></span></p>
+<h2>&nbsp;</h2>
+</li>
+<li style="position: absolute; top: 0px; left: 0px; display: none; z-index: 3; opacity: 0; background-image: url('/Media/CMSMedia/Olympia_talent/ontbijtsessies-2015-v2.png');">
+<p class="slideNumbers"><span><span>2 of 2</span></span></p>
+<h2>&nbsp;</h2>
+</li>
+</ul>
+</div>
+<div id="slider-nav-HomeSlider" class="slider-nav">
+<div class="sliderButtons"><button id="pauseButton-HomeSlider" type="submit"> <img src="../../../Themes/OlympiaWeb/images/pause.png" alt="" /></button> <button id="resumeButton-HomeSlider" style="display: none;" type="submit"> <img src="../../../Themes/OlympiaWeb/images/play.png" alt="" /></button></div>
+</div>
+</div>
+</div>
+<!-- slider ends -->
 <div class="container content-area" data-ng-controller="OndernemerWordenController" data-ng-app="olympiaApp"><!--container left starts-->
 	<div class="container-left">
 		<div id="MainMenu">
@@ -123,10 +168,10 @@ $("style").append('.line,.list-group-item,.speaker-box,.well.banner-well{positio
 						<p>Sprekers Michiel Muller en Steven Gudde nemen u in de vroege ochtend mee in de ontwikkelingen rondom de thema’s arbeid, talent en ondernemerschap.<br></p>
 					</div>
 					<div class="bigger-speaker-box">
-						<div class="speaker-box">
+						<div class="speaker-box speaker1">
 							<div class="box-heading">
 								<div class="leftside-image">
-									<img src="/Media/CMSMedia/Olympia_talent/speaker1.png"  />
+									<img src="/Media/CMSMedia/Olympia_talent/Foto-Michiel-Muller.jpg" width='72'/>
 								</div>
 								<div class="rightside-name">
 									<span class="name">Michiel Muller</span><br>
@@ -143,10 +188,10 @@ $("style").append('.line,.list-group-item,.speaker-box,.well.banner-well{positio
 						</div>
 					</div>
 					<div class="bigger-speaker-box">
-						<div class="speaker-box">
+						<div class="speaker-box speaker1">
 							<div class="box-heading">
 								<div class="leftside-image">
-									<img src="/Media/CMSMedia/Olympia_talent/speaker1.png"  />
+									<img src="/Media/CMSMedia/Olympia_talent/Steven_Gudde1.jpg"  width='72' />
 								</div>
 								<div class="rightside-name">
 									<span class="name">Steven Gudde</span><br>
@@ -167,7 +212,7 @@ $("style").append('.line,.list-group-item,.speaker-box,.well.banner-well{positio
 		</div>
 		<!-- End content area for sprekers -->
 		<!-- Start conent area for programma  -->
-		<div data-ng-show="programma == true">
+		<div data-ng-show="programma == true" class="ng-cloak">
 			<div id="content_container">
 				<div id="content">
 					<div id="content_kop">
@@ -186,6 +231,9 @@ $("style").append('.line,.list-group-item,.speaker-box,.well.banner-well{positio
 						</ul>
 						<div class="schedule-table">
 							<h2>Regio en data</h2>
+							<div class="image-block">
+								<img src="/Media/CMSMedia/Olympia_talent/kaartje_najaar.PNG"  />
+							</div>
 							<div class="tables">
 								<div class="table-heading">
 									<div class="col">
@@ -221,7 +269,7 @@ $("style").append('.line,.list-group-item,.speaker-box,.well.banner-well{positio
 											<span>8 oktober</span>
 										</div>
 										<div class="col">
-											<span>Planetarium</span>
+											<span>Art Center</span>
 										</div>
 										<div class="col">
 											<span>Amsterdam</span>
@@ -235,10 +283,10 @@ $("style").append('.line,.list-group-item,.speaker-box,.well.banner-well{positio
 											<span>13 oktober</span>
 										</div>
 										<div class="col">
-											<span>Kasteel de Keverberg</span>
+											<span>ECI Cultuurfabriek</span>
 										</div>
 										<div class="col">
-											<span>Kessel</span>
+											<span>Roermond</span>
 										</div>
 									</div>
 									<div class="row">
@@ -249,10 +297,10 @@ $("style").append('.line,.list-group-item,.speaker-box,.well.banner-well{positio
 											<span>15 oktober</span>
 										</div>
 										<div class="col">
-											<span>De Westerbouwing</span>
+											<span>Slot Doddendael</span>
 										</div>
 										<div class="col">
-											<span>Oosterbeek</span>
+											<span>Ewijk</span>
 										</div>
 									</div>
 									<div class="row">
@@ -291,10 +339,10 @@ $("style").append('.line,.list-group-item,.speaker-box,.well.banner-well{positio
 											<span>10 november</span>
 										</div>
 										<div class="col">
-											<span>[TO BE DEFINED]</span>
+											<span>Studio76</span>
 										</div>
 										<div class="col">
-											<span></span>
+											<span>Etten-Leur</span>
 										</div>
 									</div>
 									<div class="row">
@@ -319,10 +367,10 @@ $("style").append('.line,.list-group-item,.speaker-box,.well.banner-well{positio
 											<span>17 november</span>
 										</div>
 										<div class="col">
-											<span>[TO BE DEFINED]</span>
+											<span>Evoluon</span>
 										</div>
 										<div class="col">
-											<span></span>
+											<span>Eindhoven</span>
 										</div>
 									</div>
 								</div>
@@ -330,13 +378,12 @@ $("style").append('.line,.list-group-item,.speaker-box,.well.banner-well{positio
 						</div>
 						<p><br>Wij nodigen u van harte uit om op één van de 9 locaties in Nederland een inspirerende ontbijtsessie bij te wonen. Klik <a href="?sub=aanmelden">hier</a> om u direct aan te melden</p>
 					</div>
+				</div>
 			</div>
 		</div>
-		<!-- End content area for programma -->
-		<!-- Start conent area for aanmelden  -->
-		<div data-ng-show="aanmelden == true">
+		<div data-ng-show="aanmelden == true" class="ng-cloak">
 			<div id="content_container">
-				<h1>aanmelden</h1>
+				<iframe src="https://olympiatoptalent.nl" width="100%" height="2800" allowtransparency="true" frameBorder="0"></iframe>
 			</div>
 		</div>
 		<!-- End content area for aanmelden -->
