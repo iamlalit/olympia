@@ -55,8 +55,6 @@ olympiaApp.controller('OndernemerWordenController', ['$scope', '$location', '$an
 			window.location.href = "?sub=aanmelden&" + $scope.search;
 		})
 
-	    console.log($("#myIframe").attr("src"));
-
 	    if( window.location.search.indexOf('sub') > -1 ) {
 	    	$scope.gotoTop();
 	    	$scope.sub = $scope.getParameterByName('sub');
