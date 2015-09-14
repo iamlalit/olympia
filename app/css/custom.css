@@ -12,7 +12,7 @@ body{
   float: left;
 }
 .block .left-side{
-  width: 33%;
+  width: 25.5%;
   float: left;
   margin-right: 30px;
   display: inline-block;
@@ -24,7 +24,7 @@ body{
   padding: 10px;
 }
 .block .right-side{
-  width: 33%;
+  width: 25.5%;
   float: left;
   display: inline-block;
   background-color: #fff;
@@ -36,5 +36,4 @@ body{
 }
 .block img{
   width: 99%;
-  height: 306px;
 }
