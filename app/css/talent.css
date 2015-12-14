@@ -448,6 +448,10 @@ div.slider-nav a
 #locationMap .map-image{
      height: 566px;
 }
+/*slider for images at programme page starts*/
+
+
+/*slider for images at programme page ends*/
 @media (max-width: 768px){
     .container-right {
         border-left: 0;
