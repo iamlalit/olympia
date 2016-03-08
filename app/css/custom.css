@@ -465,6 +465,51 @@ text-align: right;
 .well-container.vittal-well #contact_text img{
   width: 100%;
 }
+.contact-form label{
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+.contact-form div:first-child{
+  margin-top: 10px;
+}
+.contact-form div{
+  margin-bottom: 20px;
+}
+.contact-form div span.form-validation-error{
+  display: none;
+  visibility: hidden;
+}
+.contact-form div.error span.form-validation-error{
+  display: block;
+  visibility: visible;
+  color: #C70909;
+  margin-top: 5px;
+}
+.contact-form div.error input[type=text],
+.contact-form div.error select{
+  border-color: #C70909;
+}
+.contact-form input[type=text]{
+  width: 350px;
+}
+.contact-form select{
+  padding: 3px 10px;
+  border-radius: 3px;
+  height: 38px;
+  width: 372px;
+}
+.contact-form .thankyou p{
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+}
+.contact-form .button{
+  padding: 0 20px;
+  color: #fff;
+  line-height: 36px;
+  display: inline-block;
+}
 @media (max-width: 768px){
     .container-right {
         border-left: 0;
@@ -589,13 +634,23 @@ text-align: right;
         font-size: 15px;
         line-height: 1.6;
     }
-    .contact-form iframe{
-      width: 100%;
-      height: 777px;
-    }
     .container-right h3{
       font-size: 16px;
     }
+}
+@media (max-width: 420px){
+  .contact-form input[type=text]{
+    width: 97%;
+  }
+  .contact-form select{
+    width: 97%;
+  } 
+  #content_container #content{
+    margin-left: 0;
+  }
+  .contact-form{
+    margin-bottom: 50px;
+  }
 }
 @media (min-width: 768px){
     .banner-image,
