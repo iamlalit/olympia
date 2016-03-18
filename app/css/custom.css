@@ -523,6 +523,9 @@ text-align: right;
 #content_text .articles ul li .readMore{
   float: right;
 }
+.float-right{
+  float: right;
+}
 @media (max-width: 768px){
     .container-right {
         border-left: 0;

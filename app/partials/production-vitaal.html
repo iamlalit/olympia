@@ -1,0 +1,509 @@
+<script type="text/javascript" src="../../../Modules/Orchard.jQuery/scripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+<script type="text/javascript">
+    // <![CDATA[
+    var olympiaApp = angular.module('olympiaApp', []);
+
+    olympiaApp.controller('OlympiaVitaalController', ['$scope', '$location', '$anchorScroll',
+	  function ($scope, $location, $anchorScroll) {
+	      $scope.showhideMenu =function(){
+  			$(".mob-mainmenu").toggleClass("active-menu");
+  			}
+
+	      $scope.gotoTop = function () {
+	          // set the location.hash to the id of
+	          // the element you wish to scroll to.
+	          //$location.hash('top');
+	          // call $anchorScroll()
+	          setTimeout(function () {
+	              $(".container").css('display', 'block');
+	          }, 100);
+	          // $anchorScroll();
+	      };
+
+	      $scope.getParameterByName = function (name) {
+	          name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	          var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                  results = regex.exec(location.search);
+	          return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	      }
+
+	      if( window.location.search.indexOf('sub') > -1 ) {
+		    $scope.gotoTop();
+		    $scope.sub = $scope.getParameterByName('sub');
+		    if($scope.sub == 'olympia-vitaal'){
+		        $scope.olympiaVitaal = true; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		    }else if($scope.sub == 'artikelen'){
+		        $scope.olympiaVitaal = false; $scope.artikelen = true; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		    }else if($scope.sub == 'hoe-vitaler-hoe-beter'){
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = true; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		    }else if($scope.sub == 'vitaliteit-waar-doe-je-goed-aan'){
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = true; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		    }else if($scope.sub == 'vitaliteit-alle-hens-aan-dek'){
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = true; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		    }else if($scope.sub == 'arbeidsvoorwaarden-duurzame-inzetbaarheid-stimuleren'){
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = true;$scope.sterkePuntenBenadering = false;
+		    }else if($scope.sub == 'sterke-punten-benadering'){
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = true;
+		    }else if($scope.sub == 'contact'){
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = true;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		    }else if($scope.sub == 'geregistreerd'){
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = true;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		    }else{
+		        $scope.olympiaVitaal = true; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		    }
+		}else{
+		    $scope.gotoTop();
+		    $scope.olympiaVitaal = true; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		}
+      $scope.gotoTop();
+	  }]);
+    // ]]></script>
+<script type="text/javascript" src="../../../Modules/FeaturedItemSlider/scripts/jquery.cycle.all.js"></script>
+<!-- custom code for slider starts-->
+<script type="text/javascript">
+    // <![CDATA[
+    $(function () {
+        $('#featuresList-HomeSlider').cycle({
+            fx: 'fade',
+            speed: '250',
+            timeout: '5000',
+            pause: 1,
+            pager: '#slider-nav-HomeSlider',
+            containerResize: true,
+            fit: true,
+            slideResize: 0
+        });
+
+        $("#featureSlider-HomeSlider ul li").removeClass('hiddenItem');
+
+        $('#pauseButton-HomeSlider').show();
+        $('#resumeButton-HomeSlider').hide();
+
+        $('#pauseButton-HomeSlider').live("click", function () {
+            $('#featuresList-HomeSlider').cycle('pause');
+            $('#pauseButton-HomeSlider').toggle();
+            $('#resumeButton-HomeSlider').toggle();
+        });
+
+        $('#resumeButton-HomeSlider').live("click", function () {
+            $('#featuresList-HomeSlider').cycle('resume');
+            $('#pauseButton-HomeSlider').toggle();
+            $('#resumeButton-HomeSlider').toggle();
+        });
+        $('head').append('<link href="/Modules/Orchard.jQuery/Styles/jquery-ui-1.8.18.custom.css" rel="stylesheet" type="text/css" />')
+
+    });
+    // ]]></script>
+<!-- custom code for slider ends -->
+<script type="text/javascript">
+    // <![CDATA[
+    $("style").append('h1,h2,h3,h4,h5{line-height:normal}#MainMenu a,h2,h3,h4{font-weight:700}.content_back a,.featureSlider ul li span a,a,a:focus,a:hover{text-decoration:none}body{padding:0;margin:0;font-family:Arial,Helvetica,Tahoma,sans-serif;color:#666;background-color:#FFF;font-size:9pt;line-height:13pt}.list-group,.panel{margin-bottom:20px}.list-group-submenu{margin-left:20px}.content-area.container{padding-top:2px;margin-top:22px}.container-left,.container-right{display:block;float:left;width:28%;word-wrap:break-word;padding:0 10px 20px 0}.container-right{border-left:2px dotted #ddd;min-height:296px;width:69%;padding:0 0 0 10px}#MainMenu .list-group div a{padding-left:30px}#MainMenu a:focus,#MainMenu a:hover{background:#eee;color:#f40}#MainMenu .list-group div a:focus,#MainMenu .list-group div a:hover{background:#f7f9f8}.panel{background-color:#fff;border:1px solid transparent;border-radius:4px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}.list-group{padding-left:0}.list-group-item{position:relative;display:block;padding:10px 15px;margin-bottom:-1px;background-color:#fff;border:1px solid #ddd}.list-group-item-success{background:#eee;color:#fff}a.list-group-item{color:#555}#MainMenu a.activeIn,a,h1,h2,h3,h4,h5{color:#f40}.list-group-item:first-child{border-top-right-radius:4px;border-top-left-radius:4px}#MainMenu a.in{color:#f40;background:#f7f9f8}h1{margin:0 0 -5px}h2,h3,h4,h5{margin-top:0}h2{font-size:13pt;padding-top:4px}h3{font-size:14px}h4{font-size:12px}#content_text h3{padding-top:3px;padding-bottom:3px}#content_text ul{list-style:none;margin-left:0;padding-left:0}#content_container #content,.well-container{margin-left:10px}#content_text ul li{padding-left:15px;background:url(/Media/CMSMedia/ondernemerworden-images/list-item.png) 2px 5px no-repeat}.clear{clear:both}.line{width:100%;height:1px;margin-bottom:10px;line-height:0;background:url(/Media/CMSMedia/ondernemerworden-images/line.gif) repeat-x;position:relative;left:-10px;top:0}.line.line-OndernemerWorden{width:103%}.content-item.page header{display:none;visibility:hidden}.bottomBar{margin-top:40px}.well{min-height:20px;padding:19px;background-color:#f5f5f5;border:1px solid #e3e3e3;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.05);box-shadow:inset 0 1px 1px rgba(0,0,0,.05)}.well.ondernemer-well{background:#fff;width:auto;display:inline-block;padding:10px}.well-container{display:block;float:left;width:210px;word-wrap:break-word}.well-container:nth-child(2){margin-left:3px}.well-container:nth-child(3){margin-left:5px}.amstelveen .well-container:nth-child(2),.amstelveen .well-container:nth-child(3),.selectieProcedure .well-container:nth-child(2),.selectieProcedure .well-container:nth-child(3){margin-left:4px}.weLoveToWork .well-container{width:308px}.weLoveToWork .well-container:nth-child(2){margin-left:14px}.neemContact .well-container{margin-left:0}.well.job-vacancy{padding:0}.well.job-vacancy .list-group-item:first-child{border-top-right-radius:4px;border-top-left-radius:4px}li.list-group-item{color:#555}.well.job-vacancy .list-group-item{position:relative;display:block;padding:10px 15px;margin-bottom:-1px;background-color:#fff;border:1px solid #ddd}.verstuurViaLinkedIn{float:right;margin-right:-3px;margin-top:37px}.weLoveToWork .verstuurViaLinkedIn{margin-top:54px}.zone-featured .widget-featured-item-slider-widget{margin:17px 0 0}div.slider-nav{text-align:right;list-style-type:none;position:relative;right:3px;top:-33px;height:0;margin:0 15px!important;z-index:99}div.slider-nav .sliderButtons{display:inline-block;float:right;margin-left:4px}div.slider-nav a{width:10px;height:10px;display:inline-block;vertical-align:middle;margin:0 5px;font-size:1px;line-height:5px;background-color:#b3b3b3;border-radius:10px;text-indent:100px;overflow:hidden}.featureSlider{border:solid #ebebeb;border:1px solid #d2d2d2;border-radius:5px;background-color:#fff;position:relative;height:188px;overflow:hidden;box-shadow:0 0 3px 0 #d2d2d2;box-shadow:0 0 3px 0 #d2d2d2\9}.vacature-detail .featureSlider{margin-bottom:18px}.vacature-detail div.slider-nav{top:-50px}.featureSlider ul{margin:0;padding:0;list-style-type:none;border-radius:5px}.featureSlider img{width:100%;height:auto}.featureSlider ul li{display:block}.featureSlider li{height:188px;width:940px;border-radius:5px}.content .featureSlider li{height:188px;width:620px}.featureSlider li p{position:relative;top:223px}.headline{padding-top:10px;padding-right:20px}.headline,.headline+h2{padding-right:20px;text-align:right}.featureSlider ul li span{line-height:38px;font-size:38px;font-family:Calibri,sans-serif;letter-spacing:-1.6px;margin-left:-20px;border:0;padding-bottom:10px;border-bottom:none!important;width:100%;font-weight:700;height:auto;color:#f40}.featureSlider ul li h2{font-size:15px;margin:15px 10px 0 0;font-weight:400!important;color:#f40;height:auto;line-height:15px}.featureSlider ul li p{font-size:8px;opacity:.5;filter:alpha(opacity=50);text-align:right;padding:0 10px 0 0;margin:0}.featureSlider ul li span{display:block;margin:0;padding:32px 0 0;position:relative;right:28px}.hiddenItem{display:none!important}.featureSlider li h2,.featureSlider li h2 a,.featureSlider li p.slideNumbers,.featureSlider li span,.featureSlider li span a{color:#666!important}.featureSlider li span,.featureSlider li span a img,.featureSlider li span img{width:0;height:0}div.slider-nav a.activeSlide{background-color:#666}.margin-bottom-5{margin-bottom:5px}.margin-bottom-1{margin-bottom:1px}.margin-left-10{margin-left:10px}.margin-left-20{margin-left:20px}.margin-top-10{margin-top:10px}.margin-top-24{margin-top:24px}.padding-top-10{padding-top:10px!important}.text-center{text-align:center}.content_back{float:right;width:37px;margin-top:-16px;font-size:7pt;text-align:right}.content_back a{text-transform:uppercase;color:#f30;font-weight:700;display:block;width:36px;padding-left:5px;background:url(/Media/CMSMedia/ondernemerworden-images/teruglink.gif) left 6px no-repeat}.ui-widget-overlay{z-index:1000;background:50% 50% repeat-x #AAA;opacity:.3;height:100%;left:0;position:absolute;top:0;width:100%}.bottomBar a{cursor:pointer}.ui-widget-header.ui-dialog-titlebar{color:#fff;background:#f40}.well-container.vittal-well,.well-container.vittal-well #contact_text img{width:100%}.contact-form label{font-weight:700;margin-bottom:5px;display:block}.contact-form div:first-child{margin-top:10px}.contact-form div{margin-bottom:20px}.contact-form div span.form-validation-error{display:none;visibility:hidden}.contact-form div.error span.form-validation-error{display:block;visibility:visible;color:#C70909;margin-top:5px}.contact-form div.error input[type=text],.contact-form div.error select{border-color:#C70909}.contact-form input[type=text]{width:350px}.contact-form select{padding:3px 10px;border-radius:3px;height:38px;width:372px}.contact-form .thankyou{padding-top:64px}.contact-form .thankyou p{font-weight:700;font-size:20px;line-height:28px}.contact-form .button{padding:0 20px;color:#fff;line-height:36px;display:inline-block}#content_text .articles ul li{padding-left:0;background:0 0}#content_text .articles ul li h3{margin-bottom:0}#content_text .articles ul li .readMore{float:right}@media (max-width:768px){.container-right{border-left:0;min-height:auto;width:97%;padding:0}.container-right h1{font-size:24px;color:#f40;margin:10px 0 0}.container-right h2{font-size:20px;color:#f40;margin:16px 0 5px}.mob-margin-top0{margin-top:0!important}.mob-none{display:none;visibility:hidden}.banner-image{background-color:#fff;border:1px solid #dedede;border-radius:4px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05);text-align:center;position:relative;margin-top:50px}.banner-image img{width:90%;text-align:center}.banner-image .text-at-lower{width:100%;text-align:center;background:#f40;color:#fff;padding:6px 0 10px}.banner-image .text-at-lower .headings{font-size:18px;border-bottom:2px dotted #fff;margin:0 10px;padding:0 0 5px;font-weight:700}.banner-image .text-at-lower .description-text{font-size:16px;padding:5px 0 0;font-weight:700}.banner-image .text-at-lower .description-text .normal{font-weight:100}.mob-bars{background:#f40;position:fixed;display:block;width:100%;text-align:right;top:1px;left:0;padding:10px 0 11px;z-index:998}.mob-mainmenu.container-left #MainMenu{width:100%;font-size:15px;line-height:1.6;position:fixed;top:52px;left:100%;-webkit-transition:left .4s ease-in-out;-moz-transition:left .4s ease-in-out;-ms-transition:left .4s ease-in-out;-o-transition:left .4s ease-in-out;transition:left .4s ease-in-out;z-index:999}.mob-mainmenu.container-left.active-menu #MainMenu{left:1px}.main-inner header{position:fixed;height:47px;top:1px;z-index:999}header .logo img{width:auto}header .logo{width:210px;overflow:hidden}#content_text ul li{font-size:15px;line-height:1.3}#content_text ul{border:1px solid #dedede;border-radius:4px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05);padding:5px;width:98%}body{font-family:Arial,Helvetica,Tahoma,sans-serif}.container-right p{font-size:15px;line-height:1.6}.container-right h3{font-size:16px}}@media (max-width:420px){.contact-form input[type=text]{width:97%;padding:2px 8px}.contact-form select{width:97%}#content_container #content{margin-left:0}.contact-form{margin-bottom:50px}}@media (min-width:768px){.banner-image,.desktop-none,.mob-bars,.schedule-table .table-content .row label{display:none;visibility:hidden}}');
+    // ]]></script>
+    <!-- submit form data starts-->
+<script>
+	$(document).ready(function(e) {
+	    $('#contact-submit').click(function(){
+	        
+	        var naam = $("#naam").val();
+	        var telefoonnummer = $("#telefoonnummer").val();
+	        var voorkeursvestiging = $("#voorkeursvestiging").val();
+	        var checkNaam = false, checkTele = false, checkVoorkeur = false;
+	        if(naam == ''){
+	            $("#naam").parent('div').addClass('error');
+	            checkNaam = false;
+	        }else{
+	        	$("#naam").parent('div').removeClass('error');
+	            checkNaam = true;
+	        }
+	        if(telefoonnummer == ''){
+	            $("#telefoonnummer").parent('div').addClass('error');
+	            checkTele = false;
+	        }else{
+	        	$("#telefoonnummer").parent('div').removeClass('error');
+	            checkTele = true;
+	        }
+	        if(voorkeursvestiging == ''){
+	            $('#select-dropdown').addClass('error');
+	            checkVoorkeur = false;
+	        }else{
+	        	$('#select-dropdown').removeClass('error');
+	            checkVoorkeur = true;
+	        }
+	        if(checkNaam && checkTele && checkVoorkeur){
+	            $.ajax({
+	                url: "https://script.google.com/macros/s/AKfycbxCnveuqNhSoUiP7V1sUcXRxweb46Tc8hYIDP-P0HzsesGv0GI/exec", 
+	                type: "GET",   
+	                data: {
+	                'Naam': naam,
+	                'Telefoonnummer': telefoonnummer,
+	                'Voorkeursvestiging': voorkeursvestiging
+	            },  
+	                dataType: "jsonp",
+	                cache: false,
+	                success: function(data){   
+						                      
+	                }           
+	            });  
+	            $("#naam").val('');
+				$("#telefoonnummer").val('');
+				$("#voorkeursvestiging").val('');
+            	//window.location.href = "/vitaal?sub=geregistreerd"; 
+	        }else{
+	        	//form have errors
+	        }
+	    })
+	});
+</script>
+<!-- submit form data ends -->
+<!--slider statrts -->
+<div id="layout-featured" class="group mob-none">
+    <div class="zone zone-featured">
+        <div id="featureSlider-HomeSlider" class="featureSlider">
+            <em class="tl"></em><em class="tr"></em><em class="bl"></em><em class="br"></em>
+            <ul id="featuresList-HomeSlider" style="color: #666666; position: relative; width: 940px; height: 188px;">
+                <li style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; background-image: url('../../../Media/CMSMedia/olympia-vitaal/image-slider2.png');">
+                    <p class="slideNumbers"><span><span>1 of 2</span></span></p>
+                    <h2>&nbsp;</h2>
+                </li>
+                <li style="position: absolute; top: 0px; left: 0px; display: none; z-index: 3; opacity: 0; background-image: url('../../../Media/CMSMedia/olympia-vitaal/image-slider1.png');">
+                    <p class="slideNumbers"><span><span>2 of 2</span></span></p>
+                    <h2>&nbsp;</h2>
+                </li>
+            </ul>
+        </div>
+        <div id="slider-nav-HomeSlider" class="slider-nav">
+            <div class="sliderButtons"><button id="pauseButton-HomeSlider" type="submit"> <img src="../../../Themes/OlympiaWeb/images/pause.png" alt="" /></button> <button id="resumeButton-HomeSlider" style="display: none;" type="submit"> <img src="../../../Themes/OlympiaWeb/images/play.png" alt="" /></button></div>
+        </div>
+    </div>
+</div>
+<!-- slider ends -->
+<p>&nbsp;</p>
+<!-- banner for mobile starts -->
+<div class="banner-image">
+	<img src="/Media/CMSMedia/olympia-vitaal/mob-image-slider1.png"  />
+	<div class="text-at-lower">
+		<div class="description-text">Een energieke lente</div>
+	</div>
+</div>
+<!-- banner for mobile ends -->
+<div class="container content-area" style="display: none;" data-ng-controller="OlympiaVitaalController" data-ng-app="olympiaApp">
+	<div class="mob-bars"><img src="/Media/CMSMedia/olympia-vitaal/bar.png" alt="" data-ng-click="showhideMenu()"></div>
+    <!--container left starts-->
+    <div class="container-left mob-mainmenu">
+        <div id="MainMenu">
+            <div class="list-group panel">
+                <a class="list-group-item list-group-item-success" href="?sub=olympia-vitaal" data-ng-class="{'activeIn' : olympiaVitaal == true}" data-ng-model="olympiaVitaal">OLYMPIA VITAAL</a>
+                <a class="list-group-item list-group-item-success" href="?sub=artikelen" data-ng-class="{'activeIn' : artikelen == true}" data-ng-model="artikelen">ARTIKELEN</a>
+                <div id="artikelen" data-ng-show="artikelenState == true"><a class="list-group-item" href="?sub=hoe-vitaler-hoe-beter" data-ng-class="{'in' : vitalerBeter == true}" data-ng-model="vitalerBeter">HOE VITALER, HOE BETER!</a> <a class="list-group-item" href="?sub=vitaliteit-waar-doe-je-goed-aan" data-ng-class="{'in' : vitaliteitGoed == true}" data-ng-model="vitaliteitGoed">VITALITEIT! WAAR DOE JE NU EIGENLIJK GOED AAN?</a> <a class="list-group-item" href="?sub=vitaliteit-alle-hens-aan-dek" data-ng-class="{'in' : vitaliteitDek == true}" data-ng-model="vitaliteitDek">VITALITEIT: ALLE HENS AAN DEK</a> <a class="list-group-item" href="?sub=arbeidsvoorwaarden-duurzame-inzetbaarheid-stimuleren" data-ng-class="{'in' : arbeidsvoorwaardenDuurzame == true}" data-ng-model="arbeidsvoorwaardenDuurzame">ARBEIDSVOORWAARDEN MOETEN DUURZAME INZETBAARHEID STIMULEREN</a> <a class="list-group-item" href="?sub=sterke-punten-benadering" data-ng-class="{'in' : sterkePuntenBenadering == true}" data-ng-model="sterkePuntenBenadering">'STERKE PUNTEN'-BENADERING MAAKT VAN IEDEREEN EEN TALENT</a></div>
+                <a class="list-group-item list-group-item-success" href="?sub=contact" data-ng-class="{'activeIn' : contact == true}" data-ng-model="contact">CONTACT</a>
+            </div>
+        </div>
+    </div>
+    <!-- container left ends -->
+    <div class="container-right">
+    	<!-- start conent area for olympiavitaal  -->
+        <div data-ng-show="olympiaVitaal == true">
+            <div id="content_container">
+                <div id="content">
+                    <div id="content_kop">
+                        <h1>Een energieke lente</h1>
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="line line-OndernemerWorden">&nbsp;</div>
+                    <div id="content_text">
+                        <p>Het voorjaar brengt altijd nieuwe energie met zich mee. Dit jaargetijde zorgt er bijna automatisch voor dat iedereen weer met frisse zin de werkdag tegemoet gaat. En dat is maar goed ook, want er wordt steeds van werknemers gevraagd.  Meer dan ooit moeten werknemers breed en flexibel inzetbaar zijn, kunnen omgaan met veranderingen, langer doorwerken en daarbij wordt ook meer verantwoordelijkheid over de eigen loopbaan verwacht. <br /><br />De markt van vandaag vraagt bovendien steeds meer flexibiliteit. Zowel van organisaties als van mensen. Geen wonder dan ook dat vitaliteit van medewerkers steeds belangrijker wordt. Die moeten immers wel overeind blijven. Niet alleen nu, maar ook in de toekomst. Dat is beter voor hen en beter voor uw organisatie. Dus wie vandaag de dag geen vitale medewerkers in huis heeft, heeft het lastig. <br /><br />Hoe vitaler - ofwel hoe energieker, flexibeler en gemotiveerder - een medewerker zich voelt, hoe langer hij kan doorwerken en hoe productiever hij is. Dat geldt voor alle medewerkers dus ook voor  flexwerkers en uitzendkrachten. <br /><br />Het blijft een uitdaging om die vitaliteit te vergroten. Er wordt veel gezegd en geschreven over vitaliteit van medewerkers. Maar wat werkt nu wel en wat nou niet? Waar doe je als werkgever nu eigenlijk goed aan als het gaat om het vergroten van de vitaliteit van medewerkers?<br /><br />De Ondernemers van Olympia begrijpen door eigen ervaring wat u écht bezighoudt. We herkennen dus ook deze dilemma’s waar u voor staat en we bieden u praktische en flexibele HR-oplossingen en advies waar u direct mee verder kan. Meedenken en vooruitdenken, daar staan wij voor. Daarom gaan wij graag met u in gesprek en laten we zien wat wij voor u kunnen betekenen. <br /><br />Wilt u meer informatie laat dan uw gegevens <a href="?sub=contact">hier</a> achter. Het team van de vestiging bij u in de buurt neemt dan zo snel mogelijk contact met u op.</p>
+
+                        <p data-ng-init="showTelephone = false; showEmail = false;">Olympia Nederland<br />Eisenhowerlaan 140<br />2517 KN Den Haag<br /><a href="javascript:void(0)" data-ng-click="showTelephone = true" data-ng-show="showTelephone == false">Toon telefoonnummer</a><span data-ng-show="showTelephone == true">070 338 1066</span><br /><a href="javascript:void(0)" data-ng-click="showEmail = true" data-ng-show="!showEmail">Toon e-mail adres</a><span data-ng-show="showEmail">marketing@olympia.nl </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Ends content area for olympiavitaal  --> 
+        </div>
+        <!-- Ondernemerworden page ends -->
+        <!-- start conent area for artikelen  -->
+        <div data-ng-show="artikelen == true">
+        	<div id="content_container">
+                <div id="content">
+                    <div id="content_kop">
+                        <h1>Artikelen</h1>
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="line line-OndernemerWorden">&nbsp;</div>
+                    <div id="content_text">
+                    	<p>Lees ook de artikelen over vitaliteit of laat uw gegevens <a href="/vitaal?sub=contact">hier</a> achter, zodat het team van de vestiging bij u in de buurt contact met u kan opnemen.</p>
+                    	<div class="articles">
+                    		<ul>
+                    			<li>
+                    				<h3><a href="/vitaal?sub=hoe-vitaler-hoe-beter">Hoe vitaler, hoe beter!</a></h3>
+                    				<p>Wie vandaag de dag geen vitale medewerkers in huis heeft, heeft het moeilijk. Vitale medewerkers zijn immers gemotiveerder, wendbaarder en productiever. Dit geldt voor zowel vaste als flexibele medewerkers. "Het is de uitdaging om die vitaliteit te vergroten", stelt Willy Wasch, Teamleider HR Flexpersoneel bij Olympia Nederland....</p>
+                    				<a href="/vitaal?sub=hoe-vitaler-hoe-beter" class="readMore">Lees meer</a>
+                    				<div class="clear">&nbsp;</div>
+                    				<div class="line line-OndernemerWorden">&nbsp;</div>
+                    			</li>
+                    			<li>
+                    				<h3><a href="/vitaal?sub=vitaliteit-waar-doe-je-goed-aan">Vitaliteit! Waar doe je nu eigenlijk goed aan?</a></h3>
+                    				<p>Er is veel gezegd en geschreven over vitaliteit van medewerkers. Maar wat werkt nu wel? En wat werkt nu niet? Kortom: waar doe je als werkgever nu eigenlijk goed aan als het gaat om het vergroten van de vitaliteit van medewerkers? De belangrijkste inzichten op een rijtje...</p>
+                    				<a href="/vitaal?sub=vitaliteit-waar-doe-je-goed-aan" class="readMore">Lees meer</a>
+                    				<div class="clear">&nbsp;</div>
+                    				<div class="line line-OndernemerWorden">&nbsp;</div>
+                    			</li>
+                    			<li>
+                    				<h3><a href="/vitaal?sub=vitaliteit-alle-hens-aan-dek">Vitaliteit: alle hens aan dek</a></h3>
+                    				<p>De werkdruk in Nederland neemt toe, zo blijkt uit recent onderzoek van Effectory. Voor werkgevers betekent dit ‘alle hens aan dek’ om hun medewerker zo gezond en vitaal mogelijk te houden. Temeer omdat de kosten voor de re-integratie van zieke (flex)medewerkers aardig in de papieren kunnen lopen...</p>
+                    				<a href="/vitaal?sub=vitaliteit-alle-hens-aan-dek" class="readMore">Lees meer</a>
+                    				<div class="clear">&nbsp;</div>
+                    				<div class="line line-OndernemerWorden">&nbsp;</div>
+                    			</li>
+                    			<li>
+                    				<h3><a href="/vitaal?sub=arbeidsvoorwaarden-duurzame-inzetbaarheid-stimuleren">Arbeidsvoorwaarden moeten duurzame inzetbaarheid stimuleren</a></h3>
+                    				<p>De arbeidsvoorwaarden van de toekomst moeten meer afhangen van inzetbaarheid, productiviteit en ontwikkelpotentieel. Werkgeversorganisaties pleiten hiervoor in een nota. Niet langer moeten arbeidsvoorwaarden afhankelijk zijn van iemands leeftijd. Evenmin mogen ze uitzonderingsposities faciliteren...</p>
+                    				<a href="/vitaal?sub=arbeidsvoorwaarden-duurzame-inzetbaarheid-stimuleren" class="readMore">Lees meer</a>
+                    				<div class="clear">&nbsp;</div>
+                    				<div class="line line-OndernemerWorden">&nbsp;</div>
+                    			</li>
+                    			<li>
+                    				<h3><a href="/vitaal?sub=sterke-punten-benadering">'Sterke punten'-benadering maakt van iedereen een talent</a></h3>
+                    				<p>eel bedrijven hebben nog steeds aparte programma’s voor hun (top)talent. Langzamerhand is daar echter wel een kentering in te zien. Iedereen is of heeft immers een talent. Uiteraard op ieders eigen niveau, maar talent is er om ontdekt, gekoesterd en verder ontwikkeld te worden. Het idee door de zogenoemde ...</p>
+                    				<a href="/vitaal?sub=sterke-punten-benadering" class="readMore">Lees meer</a>
+                    				<div class="clear">&nbsp;</div>
+                    			</li>
+                    		</ul>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- artikelen page ends -->	
+        <!-- start conent area for vitalerBeter  -->
+        <div data-ng-show="vitalerBeter == true">
+            <div id="content_container">
+                <div id="content">
+                    <div id="content_kop">
+                        <h1>Hoe vitaler, hoe beter!</h1>
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="line line-OndernemerWorden">&nbsp;</div>
+                    <div id="content_text">
+                    	<h2>De huidige arbeidsmarkt stelt hoge eisen aan vitaliteit medewerkers</h2>
+                        <p><strong>Wie vandaag de dag geen vitale medewerkers in huis heeft, heeft het moeilijk. Vitale medewerkers zijn immers gemotiveerder, wendbaarder en productiever. Dit geldt voor zowel vaste als flexibele medewerkers. "Het is de uitdaging om die vitaliteit te vergroten", stelt Willy Wasch, Teamleider HR Flexpersoneel bij Olympia Nederland.</strong></p><p>De arbeidsmarkt is volop in beweging. De afgelopen jaren hebben overheidsorganisaties en bedrijven hun best moeten doen om het hoofd boven water te houden. Saneringen en reorganisaties waren vaak onvermijdelijk. Tegelijkertijd was de onzekerheid op de arbeidsmarkt flink toegenomen waardoor veel medewerkers onder druk kwamen te staan. </p><p>Maar tijden veranderen snel. De markt trekt weer aan waarbij flexibilisering steeds belangrijker wordt om te kunnen blijven meebewegen met alle ontwikkelingen. Dit betekent dat werkgevers van hun medewerkers verwachten dat ze meer dan ooit breed en flexibel inzetbaar zijn, om kunnen gaan met veranderingen, en zoveel mogelijk verantwoordelijk zijn voor hun eigen loopbaan. Bovendien moeten medewerkers niet alleen nu, maar ook wanneer ze ouder zijn, vitaal genoeg zijn om het werk aan te kunnen. Immers, Nederland vergrijst, waardoor het aantal ouderen in bedrijven de komende jaren alleen maar zal toenemen. Hoe vitaler – ofwel hoe energieker, flexibeler en gemotiveerder - een medewerker zich voelt, hoe langer hij kan doorwerken en hoe productiever hij is. Dat geldt ook – en misschien juist wel – voor flexwerkers en uitzendkrachten. In kwartaal twee van 2015 telde het CBS al meer dan 900.000 ZZP’ers in ons land en dit aantal neemt alleen maar toe door de flexibilisering van de arbeidsmarkt. Deze groep werkt vaker op verschillende werkplekken dan collega’s in loondienst. Uit onderzoek van Noties in opdracht van Fellowes blijkt dat meer dan de helft van de ZZP’ers in Nederland last heeft van nekpijn en 44% aangeeft vaak schouderpijn te hebben.</p><h3>Vitale medewerkers zijn productiever</h3><p>"Redenen genoeg voor bedrijven en HR managers om te werken aan vitaliteit binnen het  personeelsmanagement. En er valt nog veel winst te behalen op dit gebied. Afgezien van medewerkers die verzuimen vanwege fysieke problemen die wellicht voorkomen kunnen worden, is maar liefst de helft van al het langdurig verzuim in Nederlandse bedrijven psychisch van aard. En een groot deel daarvan, tussen de 30% en 40% , heeft te maken met stress, zo blijkt uit onderzoek van ArboNed", aldus Wasch.  Stress komt – zoals vaak wordt gedacht - niet per se door een te hoge werkdruk. Stress wordt namelijk niet veroorzaakt door het werk zelf als wel door de manier waarop de werknemer reageert op zijn omstandigheden. Een medewerker krijgt last van stress wanneer hij niet in staat is (of denkt niet in staat te zijn) om aan de eisen te voldoen die aan hem worden gesteld. Deze zogenaamde ‘coping mechanismen’ lijken daarbij ook nog eens anders te zijn bij flexwerkers dan bij medewerkers met een traditionele vaste aanstelling. Veel is hier echter nog niet over bekend. Maar met een verder flexibiliserende arbeidsmarkt is het wel van belang dat we weten hoe flexwerkers omgaan met druk. Daarom participeert Olympia  in samenwerking met Stichting Arbo Flexbranche  in een onderzoek door TNO dat ingaat op deze verschillen. Begin dit jaar verwachten zij de eerste resultaten.  Stress hoeft overigens niet slecht te zijn. Om optimaal te kunnen presteren is een prettige hoeveelheid stress noodzakelijk. Pas wanneer mensen gedurende lange tijd aan stress worden blootgesteld, zonder dat ze de spanningen kunnen ontladen, heeft dit slechte gevolgen voor onze gezondheid. </p><h3>Ken de oorzaken van stress</h3><p>Wie de oorzaken kent van stress, kan er voor zorgen dat medewerkers hier zo min mogelijk aan worden blootgesteld. Zo treedt stress bijvoorbeeld op wanneer het een medewerkers niet lukt om binnen de beschikbare werktijd aan de verwachtingen te voldoen. Wasch vervolgt: “Iemand die de juiste capaciteiten mist voor het werk dat hij moet verrichten, raakt eerder in de problemen dan iemand die dergelijke capaciteiten wel in huis heeft. Maar er kan ook stress ontstaan bij mensen die onder hun capaciteiten werken. Daar waar de werkdruk in feite te laag is. Juiste werving en selectie is dus uitermate relevant. Niet alleen om de juiste mensen te vinden, maar ook om uitval te voorkomen. Problemen als gevolg van werkdruk worden bovendien nog eens verergerd als de onderlinge relaties op het werk stroef verlopen. En een werknemer die nauwelijks mogelijkheden heeft om zijn werk naar eigen inzicht in te delen, kan op den duur ook last krijgen van stress”. Kortom: stressoren kennen vele gezichten. </p><h3>Niet binden maar juist verbinden</h3><p>"Maar er is één oorzaak van stress die telkens weer bovenaan de lijst prijkt", benadrukt Wasch. "En dat is de relatie tussen leidinggevende en medewerker. Hoe beter de relatie, hoe beter de medewerker zich doorgaans voelt." Een leidinggevende die weinig oog en oor heeft voor de medewerker en hem of haar niet stimuleert of inspireert, kan de oorzaak zijn van een hoger ziekteverzuim, meer stress, en een lagere motivatie, betrokkenheid en prestatie van de medewerker. Sterker nog. Medewerkers vinden aandacht of een compliment van hun baas belangrijker dan een financiële beloning, zo blijkt uit het onderzoek "waardering op de werkvloer" van trainings- en adviesbureau Van Harte &amp; Lingsma. En die aandacht vertaalt zich door naar prestaties. Organisaties die managers in huis hebben die hun medewerkers waarderen, respecteren en aandacht geven, zorgen ervoor dat medewerkers zich meer betrokken voelen en beter presteren. Wanneer een leidinggevende geen aandacht besteedt aan zijn medewerkers, is deze maar liefst veertig procent minder actief betrokken bij het werk, zo blijkt uit onderzoek van Gallup. Wasch: "Het nieuwe werken en flexibele werkvormen nemen een vlucht en leiders komen steeds vaker in een andere rol tegenover hun medewerkers te staan. Onze ervaring leert dat je dan extra waakzaam moet zijn als het gaat om aandacht geven aan medewerkers. Daarbij gaat het niet alleen om het binden van medewerkers maar veel meer om verbinden. Wij zien dit als een gezamenlijke verantwoordelijkheid. Door slimme ict tools aan de voorkant in te zetten kijken wij op een andere manier naar competenties. Vervolgens investeren wij veel in de persoonlijke relatie om echt die verbinding aan te gaan. Bedrijven die succesvol hun verzuimpercentage naar beneden hebben gekregen, geven massaal aan dat één factor daarbij van doorslaggevende betekenis was: een gezonde dosis vitamine A, ofwel aandacht voor niet alleen vaste maar ook flexibele medewerkers. Want juist flexibele medewerkers zijn op zoek naar erkenning en waardering. Wij zien dat ze beter presteren en meer zeker voelen met een 'schouderklopje' en aandacht." </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Ends content area for vitalerBeter  --> 
+        </div>
+        <!-- vitalerBeter page ends -->
+        <!-- start conent area for vitaliteitGoed  -->
+        <div data-ng-show="vitaliteitGoed == true">
+            <div id="content_container">
+                <div id="content">
+                    <div id="content_kop">
+                        <h1>Vitaliteit! Waar doe je nu eigenlijk goed aan?</h1>
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="line line-OndernemerWorden">&nbsp;</div>
+                    <div id="content_text">
+                        <p><strong>Er is veel gezegd en geschreven over vitaliteit van medewerkers. Maar wat werkt nu wel? En wat werkt nu niet? Kortom: waar doe je als werkgever nu eigenlijk goed aan als het gaat om het vergroten van de vitaliteit van medewerkers? De belangrijkste inzichten op een rijtje. </strong></p><h2>Dit werkt wèl!</h2><h3>Met stip op nummer 1: praat met medewerkers</h3><p>Bedrijven die succesvol hun verzuimpercentage naar beneden hebben gekregen, geven massaal aan dat één factor daarbij van doorslaggevende betekenis was: een gezonde dosis vitamine A, ofwel aandacht voor de vaste én flexibele medewerker. Want ook flexibele medewerkers zijn  op zoek naar erkenning en waardering. En ook zij presteren en voelen zich beter met een 'schouderklopje' van de leidinggevende. Sterker nog. Medewerkers vinden aandacht of een compliment van hun baas belangrijker dan een financiële beloning, zo blijkt uit het onderzoek "waardering op de werkvloer" van trainings- en adviesbureau Van Harte &amp; Lingsma. </p><h3>Wees er snel bij</h3><p>Preventie werkt. Zo blijkt onder andere uit een onderzoek van Harvard dat iedere euro die een bedrijf investeert om het welzijn van medewerkers te bevorderen, er maar liefst zes oplevert. In plaats van dat bedrijven zich erop focussen om hun niet vitale medewerkers zo snel mogelijk weer vitaal aan het werk te krijgen, kunnen ze zich dus beter richten op maatregelen die ervoor zorgen dat hun medewerkers bevlogen, gemotiveerd en gezonder worden. </p><h3>Geef medewerkers doelen en middelen</h3><p>Volgens de Amerikaanse professor Fred Luthans wordt de vitaliteit van medewerkers onder andere gestimuleerd door doelen te stellen en ze de middelen te geven om deze doelen te bereiken. Dan wordt het werk ineens ècht leuk.</p><h3>Stimuleer het zelfvertrouwen</h3><p>Wie veel zelfvertrouwen heeft, voelt zich doorgaans vitaler dan iemand die dat niet heeft. Volgens de eerder genoemde professor Luthans krijgt een medewerker zelfvertrouwen wanneer hij kan oefenen met taken die haalbaar zijn. Hij kan deze dan met succes afronden en dat geeft een goed gevoel. Wanneer collega's of leidinggevenden de medewerker dan ook nog een schouderklopje geven, groeit het zelfvertrouwen vanzelf.</p><h3>Geef de veerkracht een 'boost'</h3><p>Een leidinggevende kan de ‘veerkracht’ van medewerkers versterken door vooraf de risico's te benoemen en manieren aan te reiken om door te zetten. En bij tegenvallers telkens weer de vraag te stellen: wat kan er wél? Hierdoor ervaart de medewerker dat er altijd mogelijkheden zijn om zich uit lastige situaties te manoeuvreren.</p>
+                        <h2>Dit werkt niet!</h2><h3>Ontziemaatregelen</h3><p>Oudere werknemers zijn eerder bereid en gemotiveerd om langer door te werken als ze van hun werkgever goede scholingskansen krijgen, dan als ze ontzien worden met bijvoorbeeld extra verlofdagen of een lichter takenpakket. Dit blijkt uit onderzoek van het ROA (Research Centre for Education and the Labour Market) van de Universiteit Maastricht. Werkgevers kunnen hun oudere medewerkers dus beter opleiden dan dure ontziemaatregelen aanbieden.</p><h3>Pessimisme</h3><p>Pessimisme is de sluipmoordenaar van vitaliteit. Door fouten te interpreteren als leermomenten en niet te stil te staan bij zaken die mensen toch niet kunnen controleren, kunnen medewerkers verder komen. Het humeur wordt er alleen maar beter op wanneer leidinggevenden de nadruk leggen op kansen in de toekomst, in plaats van bedreigingen uit het verleden. </p><h3>Teveel controle</h3><p>Mensen hebben er van nature behoefte aan om vrij te kunnen handelen en niet onder druk te staan. Medewerkers die teveel door hun leidinggevende worden gecontroleerd en geen tot weinig ruimte krijgen voor hun eigen ideeën, raken hierdoor gefrustreerd en gedemotiveerd. Medewerkers willen het liefst zelf kunnen (mee)beslissen over zaken die hun werk aangaan. Wie de ruimte krijgt om zelf te bepalen wat de beste manier van werken is, ervaart meer werkplezier, presteert beter en kan datgene doen wat hij zinvol vindt en energie van krijgt.</p><h3>Saai en voorspelbaar werk</h3><p>Medewerkers worden meer gemotiveerd door het hebben van een uitdaging in hun werk dan door hun salaris, blijkt uit onderzoek van de Vlerick Business School in Gent. Saai en voorspelbaar werk kan dan ook een bedreiging vormen voor de vitaliteit. Een manier om het werk uitdagender te maken is jobcrafting waarbij medewerkers zelf aan hun baan sleutelen en daarbij gebruik maken de ruimte en verantwoordelijkheden die ze hebben in hun werk. Hierdoor wordt hun werk leuker en interessanter. Medewerkers presteren daarna beter en kunnen laten zien over welke talenten ze beschikken, zo blijkt uit een onderzoek naar jobcrafting van dr. Maria Tims, verbonden aan de Vrije Universiteit van Amsterdam.</p><h3>Medewerkers zelfhulptools aanbieden</h3><p>Veel bedrijven bieden hun medewerkers tools aan om de vitaliteit te vergroten: van fysieke healthchecks tot e-health apps en stappentellers. Maar de aanwezigheid van zelfmanagement- of ontwikkeltools op zich wil nog niet zeggen dat medewerkers daar ook gebruik van zullen maken. Daar is bewustwording voor nodig.</p>
+                        <h2>Kader</h2><h3>Teveel jargon? Hier de belangrijkste begrippen uitgelegd.</h3><p>Wie in de onderwerpen ‘vitaliteit’ en ‘duurzame inzetbaarheid’ duikt, raakt al snel verstrikt in het vakjargon. Jargon dat vaak gericht is op medewerkers met vaste en lange dienstverbanden. Olympia ziet dat anders. Wij vinden dat mensen niet alleen fit en geschikt moeten blijven voor hun huidige functie, maar ook duurzaam inzetbaar moeten zijn voor andere werkgevers en functies. </p>
+                        <p>Hieronder een uitleg van de meest gebruikte begrippen:</p>
+                        <p><strong>A</strong>ctive aging<br/>Actief ouder worden. Het gaat er hierbij om mensen zo gezond en veilig mogelijk ouder te laten worden terwijl ze zo goed mogelijk blijven deelnemen aan het arbeidsproces. </p>
+                        <p><strong>A</strong>mplitie<br/>Amplitie is afkomstig uit het Latijn en betekent letterlijk: versterken, vergroten en vermeerderen. Het gaat erom de krachtige en positieve kanten van mensen te versterken in plaats van het voorkomen van de negatieve eigenschappen.</p>
+                        <p><strong>D</strong>uurzame inzetbaarheid<br/>De mate waarin medewerkers gezond en fit, betrokken, en gemotiveerd zijn, plezier in hun werk hebben, goed presteren, weinig verzuimen en hierdoor langer en breder inzetbaar zijn. Niet alleen in hun huidige functie bij hun huidige werkgever, maar ook daarbuiten.</p>
+                        <p><strong>E</strong>igenaarschap<br/>De mate waarin een medewerker zich ‘eigenaar’ voelt van het werk dat hij uitvoert. Een medewerker met eigenaarschap is ondernemend, initiatiefrijk en voelt zich verantwoordelijk.</p>
+                        <p><strong>E</strong>mployability<br/>Het vermogen van een individu om nu en in de toekomst productief en belonend werk te behouden en krijgen. Employability is wat dat betreft een synoniem van 'brede inzetbaarheid'.</p>
+                        <p><strong>O</strong>ntziemaatregelen<br/>Regelingen die vooral ouderen te ontzien. Denk aan functiewijzingen, ergonomische aanpassingen of werktijdverkorting. Een befaamd voorbeeld van deze maatregelen zijn de zogenaamde 'oude lullen dagen'.</p>
+                        <p><strong>P</strong>resenteïsme<br/>Het fenomeen dat de medewerker slechts fysiek aanwezig is op het werk. Hij voert zijn werk echter niet (naar behoren) uit omdat hij gezondheidsklachten heeft of omdat hij mentaal is afgehaakt. Canadese studies geven aan dat de kosten van presenteïsme, uitgedrukt in productieverlies, ruim acht keer hoger zijn dan van ziekteverzuim.</p>
+                        <p><strong>V</strong>eerkracht<br/>Het vermogen om met problemen om te gaan en draad snel weer op te pakken.</p>
+                        <p><strong>V</strong>italiteit<br/>De beschikking over mentale veerkracht en doorzettingsvermogen om het werk gemotiveerd en energiek uit te voeren.</p>
+                        <p><strong>W</strong>erkvermogen<br/>De mate waarin mensen fysiek en mentaal aan de eisen van hun werk kunnen voldoen.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Ends content area for vitaliteitGoed  --> 
+        </div>
+        <!-- vitaliteitGoed page ends -->
+        <!-- start conent area for arbeidsvoorwaardenDuurzame  -->
+        <div data-ng-show="arbeidsvoorwaardenDuurzame == true">
+            <div id="content_container">
+                <div id="content">
+                    <div id="content_kop">
+                        <h1>Arbeidsvoorwaarden moeten duurzame inzetbaarheid stimuleren</h1>
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="line line-OndernemerWorden">&nbsp;</div>
+                    <div id="content_text">
+                    	<p>De arbeidsvoorwaarden van de toekomst moeten meer afhangen van inzetbaarheid, productiviteit en ontwikkelpotentieel. Werkgeversorganisaties pleiten hiervoor in een nota. Niet langer moeten arbeidsvoorwaarden afhankelijk zijn van iemands leeftijd. Evenmin mogen ze uitzonderingsposities faciliteren, zoals nu gebeurt met seniorendagen. Arbeidsvoorwaarden moeten verder een prikkel geven voor inzetbaarheid op de lange termijn. Past de functie niet langer, dan moet er een nieuwe functie voor de medewerker ontstaan met arbeidsvoorwaarden die daarbij passen.</p>
+                    	<p><i>Bron: TQL</i></p>
+                    	<p><a class="float-right" href="http://www.tql.nl/nl/content/60259/wat-zijn-duurzame-arbeidsvoorwaarden.html" target="_blank">Lees verder</a></p>
+                    </div>
+                </div>
+            </div>
+			<!--bottom bar for arbeidsvoorwaardenDuurzame ends-->
+        </div>
+        <!-- arbeidsvoorwaardenDuurzame page ends -->
+        <!-- start conent area for sterkePuntenBenadering  -->
+        <div data-ng-show="sterkePuntenBenadering == true">
+            <div id="content_container">
+                <div id="content">
+                    <div id="content_kop">
+                        <h1>'Sterke punten'-benadering maakt van iedereen een talent</h1>
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="line line-OndernemerWorden">&nbsp;</div>
+                    <div id="content_text">
+                    	<p>Veel bedrijven hebben nog steeds aparte programma’s voor hun (top)talent. Langzamerhand is daar echter wel een kentering in te zien. Iedereen is of heeft immers een talent. Uiteraard op ieders eigen niveau, maar talent is er om ontdekt, gekoesterd en verder ontwikkeld te worden. Het idee door de zogenoemde ‘sterke punten’-benadering. Het gaat om gedragingen, denkwijzen en gevoelens, waarover de medewerker van nature beschikt, waarvan hij geniet en die hem in staat stellen optimaal te functioneren. Een sterk punt is dus authentiek, geeft intrinsieke motivatie, energie en stelt in staat tot het doormaken van een steile leercurve.</p>
+                    	<p><i>Bron: MT</i></p>
+                    	<p><a class="float-right" href="http://www.mt.nl/645/88996/strategie/hoe-de-sterke-punten-benadering-van-iedereen-een-talent-maakt.html" target="_blank">Lees verder</a></p>
+                    </div>
+                </div>
+            </div>
+			<!--bottom bar for arbeidsvoorwaardenDuurzame ends-->
+        </div>
+        <!-- sterkePuntenBenadering page ends -->
+        <!-- start conent area for contact  -->
+        <div data-ng-show="contact == true">
+        	<div id="content_container">
+                <div id="content">
+                    <div id="content_kop">
+                        <h1>Registratieformulier Olympia Vitaal</h1>
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="line line-OndernemerWorden">&nbsp;</div>
+                    <div id="content_text">
+                    	<div class="contact-form">
+						    <fieldset>
+						        <div>
+						            <label for="naam">Naam *</label>
+						            <input autofocus="autofocus" id="naam" name="naam" type="text">
+						            <span class="form-validation-error">Naam is verplicht</span>
+						        </div>
+						        <div>
+						            <label for="telefoonnummer">Telefoonnummer *</label>
+						            <input autofocus="autofocus" id="telefoonnummer" name="telefoonnummer" type="text">
+						            <span class="form-validation-error">Telefoonnummer is verplicht</span>
+						        </div>
+						        <div id="select-dropdown">
+						        	<label for="voorkeursvestiging">Olympia voorkeursvestiging *</label>
+						        	<select id="voorkeursvestiging" name="voorkeursvestiging">
+									    <option value="">Kies een vestiging</option>
+									    <option value="Alkmaar">Alkmaar</option>
+									    <option value="Almelo">Almelo</option>
+									    <option value="Almere">Almere</option>
+									    <option value="Alphen a/d Rijn">Alphen a/d Rijn</option>
+									    <option value="Amersfoort">Amersfoort</option>
+									    <option value="Amstelveen">Amstelveen</option>
+									    <option value="Amsterdam">Amsterdam</option>
+									    <option value="Apeldoorn">Apeldoorn</option>
+									    <option value="Arnhem">Arnhem</option>
+									    <option value="Assen">Assen</option>
+									    <option value="Barendrecht">Barendrecht</option>
+									    <option value="Bergen op Zoom">Bergen op Zoom</option>
+									    <option value="Breda">Breda</option>
+									    <option value="Cuijk">Cuijk</option>
+									    <option value="Delfzijl">Delfzijl</option>
+									    <option value="Den Bosch">Den Bosch</option>
+									    <option value="Den Haag">Den Haag</option>
+									    <option value="Den Helder">Den Helder</option>
+									    <option value="Deurne">Deurne</option>
+									    <option value="Deventer">Deventer</option>
+									    <option value="Doetinchem">Doetinchem</option>
+									    <option value="Dordrecht">Dordrecht</option>
+									    <option value="Drachten">Drachten</option>
+									    <option value="Ede">Ede</option>
+									    <option value="Eindhoven">Eindhoven</option>
+									    <option value="Emmen">Emmen</option>
+									    <option value="Enschede">Enschede</option>
+									    <option value="Etten-leur">Etten-leur</option>
+									    <option value="Gorinchem">Gorinchem</option>
+									    <option value="Gouda">Gouda</option>
+									    <option value="Groningen">Groningen</option>
+									    <option value="Haaksbergen">Haaksbergen</option>
+									    <option value="Haarlem">Haarlem</option>
+									    <option value="Harderwijk">Harderwijk</option>
+									    <option value="Heerenveen">Heerenveen</option>
+									    <option value="Heerhugowaard">Heerhugowaard</option>
+									    <option value="Helmond">Helmond</option>
+									    <option value="Hengelo">Hengelo</option>
+									    <option value="Hilversum">Hilversum</option>
+									    <option value="Honselersdijk">Honselersdijk</option>
+									    <option value="Hoogeveen">Hoogeveen</option>
+									    <option value="Hoorn">Hoorn</option>
+									    <option value="Leerdam">Leerdam</option>
+									    <option value="Leeuwarden">Leeuwarden</option>
+									    <option value="Leiden">Leiden</option>
+									    <option value="Lichtenvoorde">Lichtenvoorde</option>
+									    <option value="Maassluis">Maassluis</option>
+									    <option value="Maastricht">Maastricht</option>
+									    <option value="Meppel">Meppel</option>
+									    <option value="Nieuwegein">Nieuwegein</option>
+									    <option value="Nijmegen">Nijmegen</option>
+									    <option value="Oosterhout">Oosterhout</option>
+									    <option value="Oss">Oss</option>
+									    <option value="Oud-Beijerland">Oud-Beijerland</option>
+									    <option value="Rijswijk">Rijswijk</option>
+									    <option value="Roermond">Roermond</option>
+									    <option value="Roosendaal">Roosendaal</option>
+									    <option value="Rotterdam Coolsingel">Rotterdam Coolsingel</option>
+									    <option value="Rotterdam Laan op Zuid">Rotterdam Laan op Zuid</option>
+									    <option value="Schiedam">Schiedam</option>
+									    <option value="Schijndel">Schijndel</option>
+									    <option value="Schiphol">Schiphol</option>
+									    <option value="Sneek">Sneek</option>
+									    <option value="Tiel">Tiel</option>
+									    <option value="Tilburg">Tilburg</option>
+									    <option value="Uden">Uden</option>
+									    <option value="Utrecht">Utrecht</option>
+									    <option value="Veendam">Veendam</option>
+									    <option value="Veenendaal">Veenendaal</option>
+									    <option value="Veghel">Veghel</option>
+									    <option value="Veldhoven">Veldhoven</option>
+									    <option value="Venlo">Venlo</option>
+									    <option value="Venray">Venray</option>
+									    <option value="Waalwijk">Waalwijk</option>
+									    <option value="Weert">Weert</option>
+									    <option value="Wijchen">Wijchen</option>
+									    <option value="Woerden">Woerden</option>
+									    <option value="Zaandam">Zaandam</option>
+									    <option value="Zaltbommel">Zaltbommel</option>
+									    <option value="Zeist">Zeist</option>
+									    <option value="Zevenaar">Zevenaar</option>
+									    <option value="Zoetermeer">Zoetermeer</option>
+									    <option value="Zutphen">Zutphen</option>
+									    <option value="Zwolle">Zwolle</option>
+									</select>
+									<span class="form-validation-error">Olympia voorkeursvestiging is verplicht</span>
+						        </div>
+						        <button class="orange button" id="contact-submit" type="submit">Registreer</button>
+						    </fieldset>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    	<!-- vitaliteitDek page ends -->
+    	<!-- start conent area for contact  -->
+        <div data-ng-show="geregistreerd == true">
+        	<div id="content_container">
+                <div id="content">
+                    <div id="content_kop">
+                        <h1>Registratieformulier Olympia Vitaal</h1>
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="line line-OndernemerWorden">&nbsp;</div>
+                    <div id="content_text">
+                    	<div class="contact-form">
+						    <fieldset>
+						    	<div class="thankyou">
+						    		<p class="text-center">Bedankt voor je registratie!<br />We nemen binnenkort contact met je op.</p>
+						    	</div>
+					    	</fieldset>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    	<!-- vitaliteitDek page ends -->
+    </div>
+</div>
