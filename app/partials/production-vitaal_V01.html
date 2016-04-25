@@ -31,29 +31,31 @@ var olympiaApp = angular.module('olympiaApp', []);
 		    $scope.gotoTop();
 		    $scope.sub = $scope.getParameterByName('sub');
 		    if($scope.sub == 'olympia-vitaal'){
-		        $scope.olympiaVitaal = true; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		        $scope.olympiaVitaal = true; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
 		    }else if($scope.sub == 'artikelen'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = true; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		        $scope.olympiaVitaal = false; $scope.artikelen = true; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
 		    }else if($scope.sub == 'hoe-vitaler-hoe-beter'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = true; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = true; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
 		    }else if($scope.sub == 'vitaliteit-waar-doe-je-goed-aan'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = true; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = true; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
 		    }else if($scope.sub == 'vitaliteit-alle-hens-aan-dek'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = true; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = true; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
 		    }else if($scope.sub == 'arbeidsvoorwaarden-duurzame-inzetbaarheid-stimuleren'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = true;$scope.sterkePuntenBenadering = false;
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = true;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
 		    }else if($scope.sub == 'sterke-punten-benadering'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = true;
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = true;$scope.evangelieGelukkigeWerknemer = false;
+		    }else if($scope.sub == 'evangelie-gelukkige-werknemer'){
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = true;
 		    }else if($scope.sub == 'contact'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = true;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = true;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
 		    }else if($scope.sub == 'geregistreerd'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = true;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = true;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
 		    }else{
-		        $scope.olympiaVitaal = true; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		        $scope.olympiaVitaal = true; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
 		    }
 		}else{
 		    $scope.gotoTop();
-		    $scope.olympiaVitaal = true; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;
+		    $scope.olympiaVitaal = true; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
 		}
       $scope.gotoTop();
 	  }]);
@@ -189,7 +191,7 @@ $(document).ready(function(e) {
 <div class="container-left mob-mainmenu">
 <div id="MainMenu">
 <div class="list-group panel"><a class="list-group-item list-group-item-success" href="?sub=olympia-vitaal" data-ng-class="{'activeIn' : olympiaVitaal == true}" data-ng-model="olympiaVitaal">OLYMPIA VITAAL</a> <a class="list-group-item list-group-item-success" href="?sub=artikelen" data-ng-class="{'activeIn' : artikelen == true}" data-ng-model="artikelen">ARTIKELEN</a>
-<div id="artikelen" data-ng-show="artikelenState == true"><a class="list-group-item" href="?sub=hoe-vitaler-hoe-beter" data-ng-class="{'in' : vitalerBeter == true}" data-ng-model="vitalerBeter">HOE VITALER, HOE BETER!</a> <a class="list-group-item" href="?sub=vitaliteit-waar-doe-je-goed-aan" data-ng-class="{'in' : vitaliteitGoed == true}" data-ng-model="vitaliteitGoed">VITALITEIT! WAAR DOE JE NU EIGENLIJK GOED AAN?</a> <a class="list-group-item" href="?sub=vitaliteit-alle-hens-aan-dek" data-ng-class="{'in' : vitaliteitDek == true}" data-ng-model="vitaliteitDek">VITALITEIT: ALLE HENS AAN DEK</a> <a class="list-group-item" href="?sub=arbeidsvoorwaarden-duurzame-inzetbaarheid-stimuleren" data-ng-class="{'in' : arbeidsvoorwaardenDuurzame == true}" data-ng-model="arbeidsvoorwaardenDuurzame">ARBEIDSVOORWAARDEN MOETEN DUURZAME INZETBAARHEID STIMULEREN</a> <a class="list-group-item" href="?sub=sterke-punten-benadering" data-ng-class="{'in' : sterkePuntenBenadering == true}" data-ng-model="sterkePuntenBenadering">'STERKE PUNTEN'-BENADERING MAAKT VAN IEDEREEN EEN TALENT</a></div>
+<div id="artikelen" data-ng-show="artikelenState == true"><a class="list-group-item" href="?sub=hoe-vitaler-hoe-beter" data-ng-class="{'in' : vitalerBeter == true}" data-ng-model="vitalerBeter">HOE VITALER, HOE BETER!</a> <a class="list-group-item" href="?sub=vitaliteit-waar-doe-je-goed-aan" data-ng-class="{'in' : vitaliteitGoed == true}" data-ng-model="vitaliteitGoed">VITALITEIT! WAAR DOE JE NU EIGENLIJK GOED AAN?</a> <a class="list-group-item" href="?sub=vitaliteit-alle-hens-aan-dek" data-ng-class="{'in' : vitaliteitDek == true}" data-ng-model="vitaliteitDek">VITALITEIT: ALLE HENS AAN DEK</a> <a class="list-group-item" href="?sub=arbeidsvoorwaarden-duurzame-inzetbaarheid-stimuleren" data-ng-class="{'in' : arbeidsvoorwaardenDuurzame == true}" data-ng-model="arbeidsvoorwaardenDuurzame">ARBEIDSVOORWAARDEN MOETEN DUURZAME INZETBAARHEID STIMULEREN</a> <a class="list-group-item" href="?sub=sterke-punten-benadering" data-ng-class="{'in' : sterkePuntenBenadering == true}" data-ng-model="sterkePuntenBenadering">'STERKE PUNTEN'-BENADERING MAAKT VAN IEDEREEN EEN TALENT</a> <a class="list-group-item" href="?sub=sterke-punten-benadering" data-ng-class="{'in' : evangelieGelukkigeWerknemer == true}" data-ng-model="evangelieGelukkigeWerknemer">EVANGELIE VAN DE GELUKKIGE WERKNEMER</a></div>
 <a class="list-group-item list-group-item-success" href="?sub=contact" data-ng-class="{'activeIn' : contact == true}" data-ng-model="contact">CONTACT</a></div>
 </div>
 </div>
@@ -255,6 +257,13 @@ $(document).ready(function(e) {
 <h3><a href="../../../vitaal?sub=sterke-punten-benadering">'Sterke punten'-benadering maakt van iedereen een talent</a></h3>
 <p>eel bedrijven hebben nog steeds aparte programma&rsquo;s voor hun (top)talent. Langzamerhand is daar echter wel een kentering in te zien. Iedereen is of heeft immers een talent. Uiteraard op ieders eigen niveau, maar talent is er om ontdekt, gekoesterd en verder ontwikkeld te worden. Het idee door de zogenoemde ...</p>
 <a class="readMore" href="../../../vitaal?sub=sterke-punten-benadering">Lees meer</a>
+<div class="clear">&nbsp;</div>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+</li>
+<li>
+<h3><a href="../../../vitaal?sub=evangelie-gelukkige-werknemer">Evangelie van de gelukkige werknemer</a></h3>
+<p>Werk maakt lang niet altijd gelukkig. De een heeft last van stress, een ander voelt zich niet uitgedaagd. Sommige werknemers vervelen zich zelfs dood op de werkvloer. Toch is er steeds meer bewijs dat gelukkige werknemers beter presteren en zich minder vaak ziek ...</p>
+<a class="readMore" href="../../../vitaal?sub=evangelie-gelukkige-werknemer">Lees meer</a>
 <div class="clear">&nbsp;</div>
 </li>
 </ul>
@@ -338,7 +347,46 @@ $(document).ready(function(e) {
 </div>
 </div>
 <!-- Ends content area for vitaliteitGoed  --></div>
-<!-- vitaliteitGoed page ends --> <!-- start conent area for arbeidsvoorwaardenDuurzame  -->
+<!-- vitaliteitGoed page ends --> <!-- start conent area for vitaliteitDek  -->
+        <div data-ng-show="vitaliteitDek == true">
+            <div id="content_container">
+                <div id="content">
+                    <div id="content_kop">
+                        <h1>Vitaliteit: alle hens aan dek </h1>
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="line line-OndernemerWorden">&nbsp;</div>
+                    <div id="content_text">
+                        <p><strong>De werkdruk in Nederland neemt toe, zo blijkt uit recent onderzoek van Effectory. Voor werkgevers betekent dit ‘alle hens aan dek’ om hun medewerker zo gezond en vitaal mogelijk te houden. Temeer omdat de kosten voor de re-integratie van zieke (flex)medewerkers aardig in de papieren kunnen lopen.</strong></p><p>B‘Vitaliteit van medewerkers’ is ‘hot’. Het onderwerp duikt te pas en te onpas op in onderzoeken, vakliteratuur en tijdens vergaderingen van HR-afdelingen. En dat is niet voor niets. Medewerkers moeten immers breed en duurzaam inzetbaar zijn zodat ze fit hun - vaak uitgestelde - pensioendatum kunnen halen. Maar ook omdat zieke medewerkers werkgevers nu eenmaal handenvol geld kosten. Dat geldt ook voor zieke flexkrachten. Zo stelt de nieuwe Ziektewet dat werkgevers sinds 1 januari 2014 meebetalen aan de re-integratie van hun flexmedewerkers die ziek uit dienst zijn gegaan of binnen vier weken na het einde van de arbeidsovereenkomst een beroep doen op de Ziektewet. Maar ook kunnen werkgevers een boete tegemoet zien van maximaal 1 jaarsalaris wanneer ze niet genoeg gedaan hebben aan de re-integratie van de werknemer. En de werkgever is – vooralsnog – verplicht om het loon van een zieke werknemer twee jaar door te betalen. En dan zijn er natuurlijk ook altijd nog de kosten van productieverlies. Dit alles maakt dat verzuim van medewerkers een kostbare aangelegenheid kan zijn.</p><h3>Druk neemt toe</h3><p>Kortom: de noodzaak om te investeren in het welzijn van medewerkers, zowel fysiek als psychisch, is groter dan ooit.. Was in 2012 nog 32% van de medewerkers ontevreden over de werkdruk, in 2015 bleek dit percentage te zijn opgelopen naar 37%. En als we dan weten (Arboned) dat maar liefst de helft van al het langdurig verzuim in Nederlandse bedrijven psychisch van aard is, dan zal dit percentage – met de stijgende werkdruk – naar alle waarschijnlijkheid alleen maar toenemen als we niets doen. Nu al heeft één op de zeven medewerkers in Nederland een burnout, aldus onderzoek van CBS en TNO.<br /><br />Toch doet slechts veertig procent van de werkgevers daadwerkelijk iets om de gezondheid van medewerkers te bevorderen, zo blijkt uit onderzoek van het Rijksinstituut voor Volksgezondheid en Milieu (RIVM) van vorig jaar. Acht van de tien werkgevers noemen de gezondheid van de medewerkers de belangrijkste indicator voor een succesvol bedrijf. Maar vier op de tien bedrijven pakken het daadwerkelijk op. De rest ziet er vanaf om de gezondheid van de werknemers te bevorderen vanwege de kosten. En werknemers hebben daar last van. Zo blijkt uit een onderzoek van Motivaction in opdracht van het Zilveren Kruis (2015) dat ruim de helft van de werknemers vindt dat de werkgever te weinig doet om hen gezond, fit en productief te houden. Zo mag het aanbod in de bedrijfskantine wat 43 procent van de ondervraagden betreft wel wat gezonder. Twee op de drie werknemers vinden overigens dat het de werkgever is die er voor moet zorgen dat er een gezond lunchaanbod is in de bedrijfskantine. Het is wat hen betreft zijn verantwoordelijkheid, en niet die van hen.</p>
+                        <p><u>WEERWOORD</u></p>
+                        <h2>Vitaliteit: een zaak van werkgever én werknemer</h2>
+                        <p><strong>De gezondheid van (flexibele) medewerkers is volgens Olympia een gedeelde verantwoordelijkheid van werkgever én werknemer.  ’Verantwoordelijkheid’ klinkt echter goed op papier, maar om medewerkers daadwerkelijk ‘eigenaar’ te maken van hun eigen vitaliteit, zullen ze hiervoor de ruimte en motivatie moeten krijgen van hun werkgever. </strong></p><p>Zowel de werkgever als de medewerker zelf moeten zich inspannen voor de gezondheid en welzijn van deze laatste. Maar of dit in de praktijk ook daadwerkelijk tot realisatie wordt gebracht, staat of valt met de manier waarop er leiding wordt gegeven in een organisatie. Wie de ruimte krijgt om zelf te handelen en zelf te bepalen wat de beste manier van werken is, heeft meer plezier in zijn werk, presteert beter en voelt zich vitaler. Autonomie is om die reden een belangrijke aanjager van vitaliteit, zo stellen de wetenschappers Edward Deci en Richard Ryan*. Zij zeggen dat mensen van nature liever proactief dan reactief willen handelen. Ze willen ook het liefst kunnen meebeslissen zodat ze volledig achter hun eigen gedrag kunnen staan. Naast autonomie is volgens deze wetenschappers ‘sociale verbondenheid’ een belangrijke pijler van vitaliteit bij (flex)medewerkers. Dat betekent dat ze bij voorkeur deel uitmaken van een hecht team en zich vrij voelen om hun ideeën en gevoelens te delen met collega’s. Tot slot willen mensen hun omgeving blijven ontdekken, begrijpen en beheersen en het gevoel hebben dat ze over waardevolle competenties beschikken waarmee ze dit kunnen doen. Een medewerker die zich competent en betrokken voelt, heeft meer zelfvertrouwen en energie. <br /><br />Als deze drie behoeften - autonomie, sociale verbondenheid, en het gevoel over waardevolle competenties te beschikken – worden bevredigd, dan functioneren mensen op hun best, zo stellen Deci en Ryan. Omgekeerd geldt dat wanneer medewerkers – vast én flex - teveel worden gecontroleerd, geen goede relatie hebben met hun collega’s en leidinggevenden, en niet de kans krijgen te laten zien wat ze kunnen, weinig energie en zelfvertrouwen hebben en hierdoor gestrest kunnen raken. Aan werkgevers de uitdaging om hun medewerkers te omringen met eigen verantwoordelijkheden, fijne collega’s, en genoeg uitdagingen. Daar krijgen ze dan veel voor terug. Zo blijkt uit het recente onderzoek van het Sociaal en Cultureel Planbureau (SCP) ‘Burn-out: verbanden tussen emotionele uitputting, arbeidsmarktpositie en het Nieuwe Werken’ dat het loont om medewerkers meer autonomie en beslissingsbevoegdheid te geven. Ze hebben minder last van emotionele uitputting en zijn meer toegewijd aan hun werk. Olympia draagt hieraan ook haar steentje bij door het onderwerp structureel op de agenda te zetten, aandacht te vragen voor de positie van de werknemer, en deel te nemen aan onderzoek en certificeringen die bijdragen aan de reductie van uitval. Daarvoor krijgen we productieve en vitale medewerkers terug. </p><p><i>*Deci, E.L. &amp; Ryan, R.M. (2000). The ‘what’ and ‘why’ of goal pursuits: Human needs and the self-determination of behavior. Psychological Inquiry, 11, 319-338.</i></p>
+                        <p><u>IN DE PRAKTIJK</u></p>
+                        <h3>'We zoeken contact'</h3>
+                        <p>'We kunnen als werkgever niet achterover leunen, maar zullen moeten investeren in de inzetbaarheid - ofwel energie of levenskracht - van onze medewerkers. We willen vooral dat ze energiek in het leven staan. We zijn om die reden bezig om echt contact te zoeken met onze medewerkers en ze bewust te maken van het nut om te werken aan hun eigen gezondheid en energiehuishouding. Ook gaan we met hen in gesprek over wat ze denken nodig te hebben om de komende jaren inzetbaar te blijven op de arbeidsmarkt. Daarnaast hebben we een uitgebreid vitaliteitsprogramma en we hebben zo'n dertig medewerkers de kans geboden om – met een coach - een jaar lang te werken aan hun vooral mentale gezondheid. Zij zijn tevens onze ambassadeurs en inspireren hopelijk ook de andere medewerkers.'</p><p><i>Hans den Boer, hoofd P&amp;O bij Bruil, specialist in mortel en betonoplossingen</i></p>
+                        <h3>'Tussen de oren'</h3>
+                        <p>'Het onderwerp vitaliteit staat bij veel ondernemers hoog op de agenda. Zeker daar waar het de ouder wordende medewerker betreft. De belangrijkste vraag die ondernemers hebben is: "Hoe krijg ik het belang van de eigen gezondheid tussen de oren van de werknemer." Bewustwording is essentieel. Om die reden zijn wij – onder andere samen met Olympia – de code Gezond en Veilig magazijn aan het ontwikkelen. Deze nieuwe code moet bedrijven handvatten geven om de veiligheid in hun magazijn nóg verder te verbeteren. Het aanbieden van een "toolbox" om de gezondheid te verbeteren is alleen namelijk niet voldoende. Leidinggevenden moeten hierover in gesprek gaan met hun medewerkers en het onderwerp duidelijk op de kaart zetten. Het helpt wanneer een organisatie oog heeft voor het creëren van een gezonde balans tussen werk en privé. Wie op dat punt geen stress heeft, voelt zich allicht vitaler en is en blijft van nog meer waarde voor het bedrijf.'</p><p><i>Daniëlle Gevers Deynoot-de Booij, beleidsadviseur arbeidsveiligheid bij ondernemersvereniging EVO</i></p>
+                        <h3>'Geen onderscheid tussen flex en vast'</h3>
+                        <p>'Als bedrijven geen onderscheid maken tussen vast en flex personeel, dan halen zij het beste in de mensen naar boven. Flexibilisering moet niet alleen gaan over aantallen medewerkers, maar ook over risicobeheersing, duidelijke werkinstructies, de bedrijfscultuur en uitdagingen in de functie. Met name het opnemen van flexwerkers in de bedrijfscultuur en de mogelijkheid voor hen om terug te kunnen vallen op een collega of leidinggevende in de organisatie zijn belangrijk voor de vitaliteit. Het maakt dat mensen minder vaak ziek zijn als gevolg van onveilig werken of psychosociale klachten. Onbewust wordt hier onvoldoende bij stil gestaan. Op het gebied van veilig werken is al veel bekend. Op het gebied van vitaliteit en duurzame inzetbaarheid zijn we een onderzoek gestart naar de psychosociale arbeidsbelasting van flexkrachten. Wij verwachten dit voorjaar de eerste uitkomsten.'</p><p><i>Francis Minnema, manager bij stichting Arbo Flexbranche (STAF), een initiatief van sociale partners in de uitzendbranche.</i></p>
+                        <h2>Kader</h2>
+                        <p>Het onderwijs is koploper als het gaat om werknemers met burnout klachten. Maar liefst een op de vijf medewerkers (21,3%) heeft ermee te maken. Wie in de landbouw werkt, is beter af. Daar zijn de burnout klachten met één op de tien het schaarst. </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Ends content area for vitaliteitDek  --> <!--bottom bar for Ondernemerworden starts-->
+			<div class="bottomBar">
+				<div class="well-container vittal-well">
+					<div class="well ondernemer-well">
+						<div id="contact_text">
+							<img src="/Media/CMSMedia/olympia-vitaal/vitaal-graph1.png"  />
+						</div>
+					</div>
+					<p><i>Bron: CBS/TNO</i></p>
+				</div>
+			</div>
+			<!--bottom bar for Ondernemerworden ends-->
+        </div>
+        <!-- vitaliteitDek page ends --><!-- start conent area for arbeidsvoorwaardenDuurzame  -->
 <div data-ng-show="arbeidsvoorwaardenDuurzame == true">
 <div id="content_container">
 <div id="content">
@@ -371,8 +419,25 @@ $(document).ready(function(e) {
 </div>
 </div>
 </div>
-<!--bottom bar for arbeidsvoorwaardenDuurzame ends--></div>
-<!-- sterkePuntenBenadering page ends --> <!-- start conent area for contact  -->
+<!--bottom bar for sterkePuntenBenadering ends--></div>
+<!-- sterkePuntenBenadering page ends --> <!-- start conent area for evangelieGelukkigeWerknemer  -->
+<div data-ng-show="evangelieGelukkigeWerknemer == true">
+<div id="content_container">
+<div id="content">
+<div id="content_kop">
+<h1>Evangelie van de gelukkige werknemer</h1>
+</div>
+<div class="clear">&nbsp;</div>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<div id="content_text">
+<p>Werk maakt lang niet altijd gelukkig. De een heeft last van stress, een ander voelt zich niet uitgedaagd. Sommige werknemers vervelen zich zelfs dood op de werkvloer. Toch is er steeds meer bewijs dat gelukkige werknemers beter presteren en zich minder vaak ziek melden. Bovendien blijkt de winst van tevreden werknemers uit de omzetcijfers van 'gelukkige' bedrijven.</p>
+<p><em>Bron: Volkskrant</em></p>
+<p><a class="float-right" href="http://www.volkskrant.nl/economie/evangelie-van-de-gelukkige-werknemer~a4263733/" target="_blank">Lees verder</a></p>
+</div>
+</div>
+</div>
+<!--bottom bar for evangelieGelukkigeWerknemer ends--></div>
+<!-- evangelieGelukkigeWerknemer page ends --> <!-- start conent area for contact  -->
 <div data-ng-show="contact == true">
 <div id="content_container">
 <div id="content">
