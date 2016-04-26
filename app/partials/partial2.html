@@ -483,6 +483,44 @@
 						</div>
 					</div>
 
+					<div class="form-group margin-top-15">
+						<label>Foto Toevoegen (optioneel)&nbsp; <a id="tooltip3" class="website-icons small" data-container="body" data-toggle="popover" data-placement="top" data-original-title="Foto Toevoegen (optioneel)" data-content="Door het uploaden van een foto (of een foto in je CV op te nemen) verleen je daarmee toestemming aan Olympia en de aan haar verbonden werkmaatschappijen om die foto in het systeem op te nemen en zo nodig te verstrekken aan (potentiële) opdrachtgevers."><i class="olympia-info3"></i></a></label>
+						<p>Upload hier je foto waarmee je jezelf optimaal presenteert aan ons en (potentiële) opdrachtgevers.</p>
+						<div class="well margin-bottom-0" style="background:#fff;">
+							<div class="row">
+								<div class="col-sm-12">
+									<label>Foto uploaden</label>
+								</div>
+								<div class="col-sm-12">
+
+									<div class="row">
+										<div class="col-sm-2">
+											<button class="btn btn-info hide" type="button" data-toggle="modal" data-target="#PictureUpload" id="upload0">uploaden</button>
+											<button class="btn btn-info hide" type="button" data-toggle="modal" data-target="#PictureUpload1" id="upload1">uploaden</button>
+										</div>
+										<div class="col-sm-4">Upload een foto met één de volgende formaten: JPG, GIF, XX, XX,</div>
+									</div>
+								</div>
+
+								<div class="col-sm-12 hide" id="imagessrc">
+
+									<div class="row">
+										<div class="col-sm-5">
+											<br>
+											<span><img id="srcImage" src="../img/foto2.jpg" alt="your image" /></span>
+										</div>
+										<div class="col-sm-7">
+											<br>
+											<a class="link-in-text" id="removeImages" href="javascript:void(0)">Verwijderen</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-12">
+									
+								</div>
+							</div>
+						</div>
+					</div>
 
 					<div class="form-group margin-top-15">
 						<label>Rijbewijs</label>
@@ -1417,6 +1455,84 @@
 		</div>
 	</div>
 
+	<div class="modal fade" id="PictureUpload" tabindex="-1" role="dialog" aria-labelledby="PictureUpload" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Foto uploaden</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row hide">
+						<div class="col-sm-12">	
+							<input type="file" onchange="readURL(this)" />
+						</div>
+					</div>
+					<div class="row margin-top-15 margin-bottom-20">
+						<div class="col-sm-8">
+							<label>Foto aanpassen</label>
+							<p>Verplaats het gele vierkant om de uitsnede en grootte van je foto aan te passen. <br><a href="javascript:void(0)" >Foto aanpassen</a></p>
+							<img id="blah" src="../img/foto1.jpg" alt="your image" width="300px"/>
+						</div>
+						<div class="col-sm-4">
+							<label>Voorbeeld</label>
+							<p>Zo ziet Olympia je foto.</p>
+							<img id="blah" src="../img/foto2.jpg" alt="your image" width="150px" style="padding-top:32px"/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<p>Door het uploaden van een foto (of een foto in je CV op te nemen) verleen je daarmee toestemming aan Olympia en de aan haar verbonden werkmaatschappijen om die foto in het systeem op te nemen en zo nodig te verstrekken aan (potentiële) opdrachtgevers.</p>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" class="close" data-dismiss="modal" aria-hidden="true">Annuleren</button>
+					<button id="saveImage" type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Upload</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="PictureUpload1" tabindex="-1" role="dialog" aria-labelledby="PictureUpload1" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Foto uploaden</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row hide">
+						<div class="col-sm-12">	
+							<input type="file" onchange="readURL(this)" />
+						</div>
+					</div>
+					<div class="row margin-top-15 margin-bottom-20">
+						<div class="col-sm-8">
+							<label>Foto aanpassen</label>
+							<p>Verplaats het gele vierkant om de uitsnede en grootte van je foto aan te passen. <br><a href="javascript:void(0)" >Foto aanpassen</a></p>
+							<img id="blah" src="../img/avatar.jpg" alt="your image" width="300px"/>
+						</div>
+						<div class="col-sm-4">
+							<label>Voorbeeld</label>
+							<p>Zo ziet Olympia je foto.</p>
+							<img id="blah" src="../img/avatar2.jpg" alt="your image" width="150px" style="padding-top:32px"/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<p>Door het uploaden van een foto (of een foto in je CV op te nemen) verleen je daarmee toestemming aan Olympia en de aan haar verbonden werkmaatschappijen om die foto in het systeem op te nemen en zo nodig te verstrekken aan (potentiële) opdrachtgevers.</p>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" class="close" data-dismiss="modal" aria-hidden="true">Annuleren</button>
+					<button id="saveImage" type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Upload</button>
+				</div>
+			</div>
+		</div>
+	</div
+
 	<!-- Scripts -->
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
 	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -1439,6 +1555,35 @@
 			$('#text-content-count-pop').text(text.length);
 			$('#text-content-count').text(text.length);
 		});
+		// $('#blah').css('display', 'none');
+		function readURL(input) {
+	        if (input.files && input.files[0]) {
+	            var reader = new FileReader();
+
+	            reader.onload = function (e) {
+	                $('#blah')
+	                    // .attr('src', '../img/foto1.jpg')
+	                    .width(300)
+	                    .height(300)
+	                    .css('display', 'block');
+	            };
+
+	            reader.readAsDataURL(input.files[0]);
+	        }
+	    }
+	    //$("#srcImage").css('display', 'none');
+	    $("#saveImage").click(function(){
+	    	// $('#srcImage')
+				  //   	// .attr('src', '../img/foto2.jpg'))
+				  //                   .width(100)
+				  //                   .height(100)
+				  //                   .css({'display': 'block', 'border-radius': '100%'});
+	    	$("#imagessrc").removeClass('hide');
+	    })
+
+	    $("#removeImages").click(function(){
+	    	$("#imagessrc").addClass('hide');
+	    })
 		$(document).ready(function () {
 			$("#menu-227").addClass('sf-menu');
 			$('#menu-227').superfish({
@@ -1447,6 +1592,10 @@
 				autoArrows: 1,
 				dropShadows: 1
 			});
+
+			var X = Math.floor((Math.random() * 10) + 1) % 2;
+			console.log(X);
+			$("#upload" + X).removeClass('hide');
 		});
 	</script>
 </body>

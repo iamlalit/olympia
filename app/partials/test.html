@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Olympia Uitzendbureau</title>
+	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link rel="stylesheet" href="../css/app.css"/>
+	<link rel="stylesheet" href="../lib/croppie/croppie.css"/>
+	<link rel="stylesheet" href="../css/olympia-icons.css"/>
+</head>
+<body>
+	<header class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<a href="#" class="logo">
+					<img src="../img/logo.png" alt="Olympia"/>
+				</a>
+			</div>
+			<div class="col-sm-1"></div>
+			<div class="col-sm-8">
+				<div class="col-sm-8 well well-sm pull-right login" style="background: #fff; margin-top: 20px; margin-bottom: 0px; padding: 5px;">
+					<div class="row low-gutter row-low-gutter-main">
+						<div class="col-sm-9">
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group" style="margin-bottom: 8px">
+										<input class="form-control input-sm input-extra-sm height" type="text">
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group" style="margin-bottom: 8px">
+										<input class="form-control input-sm input-extra-sm height" type="password">
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<button class="btn btn-info btn-sm btn-block pull-right input-extra-sm padding" data-toggle="modal" data-target="#myModal">Login</button>
+								</div>
+
+							</div>
+							
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="checkbox" style="margin-top: 0; margin-bottom: 0;">
+										<label>
+											<input type="checkbox"> <a class="link-in-text" href="">Onthoud mijn innologgegeven</a>
+										</label>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<a href="#" class="link-in-text" data-toggle="modal" data-target="#forgot-pass">Wachtwoord vergeten</a>
+								</div>
+							</div>
+							
+						</div>
+						<div class="col-sm-3 border-left">
+							<div class="row">
+								<div class="col-sm-12 text-center">
+									<p style="font-size: 11px;">Of log in met</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 text-center icons-img">
+									<a href="#" title="Deel via Facebook" class="facebook"></a>
+									<a href="#" title="Deel via Linked in" class="linkedin"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="full-width-border" style="margin-top: 15px;">
+		<div class="container">
+			<nav>
+				<ul class="menu sf-menu" id="menu-227">
+					<li class="current">
+						<a href="javascript:void(0)" class="title">Ik zoek werk</a>
+						<ul>
+							<li>
+								<a href="/Vacatures" class="title">Alle vacatures</a>
+							</li>
+							<li>
+								<a href="/vacaturesperbranche" class="title">Vacatures per branche</a>
+							</li>
+							<li>
+								<a href="/werkgevers" class="title">Vacatures bij topbedrijven</a>
+							</li>
+							<li>
+								<a href="/Registration/RegisterIntro" class="title">Direct inschrijven bij Olympia</a>
+							</li>
+							<li>
+								<a href="/Vestigingen-Olympia-Uitzendbureau" class="title">Vestiging zoeken</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0)" class="title">Ik zoek personeel</a>
+						<ul>
+							<li>
+								<a href="/voorendoorondernemers" class="title">Voor en door ondernemers</a>
+							</li>
+							<li>
+								<a href="http://www.olympia.nl/toptalent" target="_blank" class="title">ONZE VISIE OP TOPTALENT</a>
+							</li>
+							<li>
+								<div class="title">Onze diensten</div>
+								<ul>
+									<li>
+										<a href="/onzediensten/uitzenden" class="title">Uitzenden</a>
+									</li>
+									<li>
+										<a href="/payrollservice" class="title">Payroll service</a>
+									</li>
+									<li>
+										<a href="/wervingenselectie" class="title">Werving en selectie</a>
+									</li>
+									<li>
+										<a href="/mastervendorservice" class="title">Master vendor service</a>
+									</li>
+									<li>
+										<a href="/inhouseservice" class="title">Inhouse Service</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="/vacatureplaatsen" class="title">Vacature aanmelden</a>
+							</li>
+							<li>
+								<a href="/Vestigingen-Olympia-Uitzendbureau?radius=25" class="title">Vestiging zoeken</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0)" class="title">Over Olympia</a>
+						<ul>
+							<li>
+								<a href="/welovetoworkforyou" class="title">We love to work for you</a>
+							</li>
+							<li>
+								<a href="http://www.ondernemenbijolympia.nl" target="_blank" class="title">Ondernemer worden?</a>
+							</li>
+							<li>
+								<a href="/contact" class="title">Contact</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="/mijn-olympia" class="title">Mijn Olympia</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div><!-- // navigation -->
+
+	<div class="container">		
+		<ol class="breadcrumb">
+			<li><a class="link-in-text" href="#">Home</a></li>
+			<li><a class="link-in-text" href="#">Vacatures</a></li>
+			<li><a class="link-in-text" href="#">Zuid Holland</a></li>
+			<li><a class="link-in-text" href="#">Rotterdam</a></li>
+			<li><a class="link-in-text" href="#">Heftruckchauffeur (m/v)</a></li>
+			<li class="active">Sollicitatie voltooid</li>
+		</ol>
+		<!-- // Breadcrumb -->
+		<div class="row">
+			<div class="col-xs-12">
+				<h2>Photo test</h2>
+				
+			</div>
+		</div>
+	</div>
+	<footer class="container" style="font-size: 13px;">
+		<hr/>
+		<p class="info-text">
+			&copy; COPYRIGHT OLYMPIA UITZENDBUREAU
+			&nbsp;
+			<a class="info-text" href="#">Privacy statement</a> | <a class="info-text" href="#">Disclaimer</a> | <a class="info-text" href="#">Contact</a>
+		</p>
+		<br/>
+		<br/>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="../lib/jquery/dist/jquery.min.js"></script>
+	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../lib/jquery.validation/dist/jquery.validate.min.js"></script>
+	<script src="../js/input-file.js"></script>
+	<script src="../js/app.js"></script>
+	<script src="../lib/hoverIntent.js"></script>
+	<script src="../lib/superfish.min.js"></script>
+	<script src="../lib/supersubs.js"></script>
+
+	<script src="../lib/croppie/croppie.min.js"></script>
+	<script src="../lib/exif-js/exif.js"></script>
+	
+	<script>
+		$("#text-content").keyup(function() {
+			var text  = $(this).val();
+			$('#text-content-pop').val(text);
+			$('#text-content-count').text($(this).val().length);
+			$('#text-content-count-pop').text($(this).val().length);
+		});
+		$("#text-content-pop").keyup(function() {
+			var text  = $(this).val();
+			$('#text-content').val(text);
+			$('#text-content-count-pop').text(text.length);
+			$('#text-content-count').text(text.length);
+		});
+		$(document).ready(function () {
+			$("#menu-227").addClass('sf-menu');
+			$('#menu-227').superfish({
+				delay: 200,
+				speed: 'fast',
+				autoArrows: 1,
+				dropShadows: 1
+			});
+		});
+	</script>
+</body>
+</html>
