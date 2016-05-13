@@ -496,7 +496,7 @@
 									<div class="row">
 										<div class="col-sm-2">
 											<button class="btn btn-info hide" type="button" data-toggle="modal" data-target="#PictureUpload" id="upload0">uploaden</button>
-											<button class="btn btn-info hide" type="button" data-toggle="modal" data-target="#PictureUpload1" id="upload1">uploaden</button>
+											<button class="btn btn-info" type="button" data-toggle="modal" data-target="#PictureUpload1" id="upload1">uploaden</button>
 										</div>
 										<div class="col-sm-4">Upload een foto met één de volgende formaten: JPG, GIF, XX, XX,</div>
 									</div>
@@ -507,7 +507,9 @@
 									<div class="row">
 										<div class="col-sm-5">
 											<br>
-											<span><img id="srcImage" src="../img/foto2.jpg" alt="your image" /></span>
+											<span>
+												<img id="srcImage" src="../img/foto2.jpg" alt="your image" width="150px"/>
+											</span>
 										</div>
 										<div class="col-sm-7">
 											<br>
@@ -1488,7 +1490,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" class="close" data-dismiss="modal" aria-hidden="true">Annuleren</button>
-					<button id="saveImage" type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Upload</button>
+					<button id="saveImage0" type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Upload</button>
 				</div>
 			</div>
 		</div>
@@ -1527,7 +1529,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" class="close" data-dismiss="modal" aria-hidden="true">Annuleren</button>
-					<button id="saveImage" type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Upload</button>
+					<button id="saveImage1" type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Upload</button>
 				</div>
 			</div>
 		</div>
@@ -1573,11 +1575,6 @@
 	    }
 	    //$("#srcImage").css('display', 'none');
 	    $("#saveImage").click(function(){
-	    	// $('#srcImage')
-				  //   	// .attr('src', '../img/foto2.jpg'))
-				  //                   .width(100)
-				  //                   .height(100)
-				  //                   .css({'display': 'block', 'border-radius': '100%'});
 	    	$("#imagessrc").removeClass('hide');
 	    })
 
@@ -1592,10 +1589,24 @@
 				autoArrows: 1,
 				dropShadows: 1
 			});
+			var X ;
+			$("#upload0").on('click', function(){
+				$("#upload1").removeClass('hide');	
+				$("#upload0").addClass('hide');	
+			})
+			$("#upload1").on('click', function(){
+				$("#upload0").removeClass('hide');	
+				$("#upload1").addClass('hide');	
+			})
 
-			var X = Math.floor((Math.random() * 10) + 1) % 2;
-			console.log(X);
-			$("#upload" + X).removeClass('hide');
+			$("#saveImage0").click(function(){
+				$("#srcImage").attr('src', '../img/foto2.jpg')	
+		    	$("#imagessrc").removeClass('hide');
+		    })
+		    $("#saveImage1").click(function(){
+				$("#srcImage").attr('src', '../img/avatar2.jpg')	
+		    	$("#imagessrc").removeClass('hide');
+		    })
 		});
 	</script>
 </body>
