@@ -31,31 +31,33 @@ var olympiaApp = angular.module('olympiaApp', []);
 		    $scope.gotoTop();
 		    $scope.sub = $scope.getParameterByName('sub');
 		    if($scope.sub == 'olympia-vitaal'){
-		        $scope.olympiaVitaal = true; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
+		        $scope.olympiaVitaal = true; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;$scope.investerenInVeiligheidEnVitaliteit = false;
 		    }else if($scope.sub == 'artikelen'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = true; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
+		        $scope.olympiaVitaal = false; $scope.artikelen = true; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;$scope.investerenInVeiligheidEnVitaliteit = false;
 		    }else if($scope.sub == 'hoe-vitaler-hoe-beter'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = true; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = true; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;$scope.investerenInVeiligheidEnVitaliteit = false;
 		    }else if($scope.sub == 'vitaliteit-waar-doe-je-goed-aan'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = true; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = true; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;$scope.investerenInVeiligheidEnVitaliteit = false;
 		    }else if($scope.sub == 'vitaliteit-alle-hens-aan-dek'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = true; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = true; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;$scope.investerenInVeiligheidEnVitaliteit = false;
 		    }else if($scope.sub == 'arbeidsvoorwaarden-duurzame-inzetbaarheid-stimuleren'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = true;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = true;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;$scope.investerenInVeiligheidEnVitaliteit = false;
 		    }else if($scope.sub == 'sterke-punten-benadering'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = true;$scope.evangelieGelukkigeWerknemer = false;
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = true;$scope.evangelieGelukkigeWerknemer = false;$scope.investerenInVeiligheidEnVitaliteit = false;
 		    }else if($scope.sub == 'evangelie-gelukkige-werknemer'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = true;
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = true;$scope.investerenInVeiligheidEnVitaliteit = false;
+		    }else if($scope.sub == 'investeren-in-veiligheid-en-vitaliteit'){
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = true; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;$scope.investerenInVeiligheidEnVitaliteit = true;
 		    }else if($scope.sub == 'contact'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = true;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = true;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;$scope.investerenInVeiligheidEnVitaliteit = false;
 		    }else if($scope.sub == 'geregistreerd'){
-		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = true;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
+		        $scope.olympiaVitaal = false; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = true;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;$scope.investerenInVeiligheidEnVitaliteit = false;
 		    }else{
-		        $scope.olympiaVitaal = true; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
+		        $scope.olympiaVitaal = true; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;$scope.investerenInVeiligheidEnVitaliteit = false;
 		    }
 		}else{
 		    $scope.gotoTop();
-		    $scope.olympiaVitaal = true; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;
+		    $scope.olympiaVitaal = true; $scope.artikelen = false; $scope.artikelenState = false; $scope.vitalerBeter = false; $scope.vitaliteitGoed = false; $scope.vitaliteitDek = false; $scope.contact = false;$scope.geregistreerd = false;$scope.arbeidsvoorwaardenDuurzame = false;$scope.sterkePuntenBenadering = false;$scope.evangelieGelukkigeWerknemer = false;$scope.investerenInVeiligheidEnVitaliteit = false;
 		}
       $scope.gotoTop();
 	  }]);
@@ -191,7 +193,7 @@ $(document).ready(function(e) {
 <div class="container-left mob-mainmenu">
 <div id="MainMenu">
 <div class="list-group panel"><a class="list-group-item list-group-item-success" href="?sub=olympia-vitaal" data-ng-class="{'activeIn' : olympiaVitaal == true}" data-ng-model="olympiaVitaal">OLYMPIA VITAAL</a> <a class="list-group-item list-group-item-success" href="?sub=artikelen" data-ng-class="{'activeIn' : artikelen == true}" data-ng-model="artikelen">ARTIKELEN</a>
-<div id="artikelen" data-ng-show="artikelenState == true"><a class="list-group-item" href="?sub=hoe-vitaler-hoe-beter" data-ng-class="{'in' : vitalerBeter == true}" data-ng-model="vitalerBeter">HOE VITALER, HOE BETER!</a> <a class="list-group-item" href="?sub=vitaliteit-waar-doe-je-goed-aan" data-ng-class="{'in' : vitaliteitGoed == true}" data-ng-model="vitaliteitGoed">VITALITEIT! WAAR DOE JE NU EIGENLIJK GOED AAN?</a> <a class="list-group-item" href="?sub=vitaliteit-alle-hens-aan-dek" data-ng-class="{'in' : vitaliteitDek == true}" data-ng-model="vitaliteitDek">VITALITEIT: ALLE HENS AAN DEK</a> <a class="list-group-item" href="?sub=arbeidsvoorwaarden-duurzame-inzetbaarheid-stimuleren" data-ng-class="{'in' : arbeidsvoorwaardenDuurzame == true}" data-ng-model="arbeidsvoorwaardenDuurzame">ARBEIDSVOORWAARDEN MOETEN DUURZAME INZETBAARHEID STIMULEREN</a> <a class="list-group-item" href="?sub=sterke-punten-benadering" data-ng-class="{'in' : sterkePuntenBenadering == true}" data-ng-model="sterkePuntenBenadering">'STERKE PUNTEN'-BENADERING MAAKT VAN IEDEREEN EEN TALENT</a> <a class="list-group-item" href="?sub=sterke-punten-benadering" data-ng-class="{'in' : evangelieGelukkigeWerknemer == true}" data-ng-model="evangelieGelukkigeWerknemer">EVANGELIE VAN DE GELUKKIGE WERKNEMER</a></div>
+<div id="artikelen" data-ng-show="artikelenState == true"><a class="list-group-item" href="?sub=hoe-vitaler-hoe-beter" data-ng-class="{'in' : vitalerBeter == true}" data-ng-model="vitalerBeter">HOE VITALER, HOE BETER!</a> <a class="list-group-item" href="?sub=vitaliteit-waar-doe-je-goed-aan" data-ng-class="{'in' : vitaliteitGoed == true}" data-ng-model="vitaliteitGoed">VITALITEIT! WAAR DOE JE NU EIGENLIJK GOED AAN?</a> <a class="list-group-item" href="?sub=vitaliteit-alle-hens-aan-dek" data-ng-class="{'in' : vitaliteitDek == true}" data-ng-model="vitaliteitDek">VITALITEIT: ALLE HENS AAN DEK</a> <a class="list-group-item" href="?sub=arbeidsvoorwaarden-duurzame-inzetbaarheid-stimuleren" data-ng-class="{'in' : arbeidsvoorwaardenDuurzame == true}" data-ng-model="arbeidsvoorwaardenDuurzame">ARBEIDSVOORWAARDEN MOETEN DUURZAME INZETBAARHEID STIMULEREN</a> <a class="list-group-item" href="?sub=sterke-punten-benadering" data-ng-class="{'in' : sterkePuntenBenadering == true}" data-ng-model="sterkePuntenBenadering">'STERKE PUNTEN'-BENADERING MAAKT VAN IEDEREEN EEN TALENT</a> <a class="list-group-item" href="?sub=sterke-punten-benadering" data-ng-class="{'in' : evangelieGelukkigeWerknemer == true}" data-ng-model="evangelieGelukkigeWerknemer">EVANGELIE VAN DE GELUKKIGE WERKNEMER</a> <a class="list-group-item" href="?sub=investeren-in-veiligheid-en-vitaliteit" data-ng-class="{'in' : investerenInVeiligheidEnVitaliteit == true}" data-ng-model="investerenInVeiligheidEnVitaliteit">INVESTEREN IN VEILIGHEID EN VITALITEIT</a></div>
 <a class="list-group-item list-group-item-success" href="?sub=contact" data-ng-class="{'activeIn' : contact == true}" data-ng-model="contact">CONTACT</a></div>
 </div>
 </div>
@@ -264,6 +266,13 @@ $(document).ready(function(e) {
 <h3><a href="../../../vitaal?sub=evangelie-gelukkige-werknemer">Evangelie van de gelukkige werknemer</a></h3>
 <p>Werk maakt lang niet altijd gelukkig. De een heeft last van stress, een ander voelt zich niet uitgedaagd. Sommige werknemers vervelen zich zelfs dood op de werkvloer. Toch is er steeds meer bewijs dat gelukkige werknemers beter presteren en zich minder vaak ziek ...</p>
 <a class="readMore" href="../../../vitaal?sub=evangelie-gelukkige-werknemer">Lees meer</a>
+<div class="clear">&nbsp;</div>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+</li>
+<li>
+<h3><a href="../../../vitaal?sub=investeren-in-veiligheid-en-vitaliteit">Investeren in veiligheid en vitaliteit</a></h3>
+<p>Employability en duurzame inzetbaarheid: ook in de logistieke branche zijn het actuele thema’s, vertelt Angeline Markus, Business Unit Manager Logistiek van Olympia Uitzendbureau. 'De mens blijft het verschil maken.' ...</p>
+<a class="readMore" href="../../../vitaal?sub=investeren-in-veiligheid-en-vitaliteit">Lees meer</a>
 <div class="clear">&nbsp;</div>
 </li>
 </ul>
@@ -437,7 +446,24 @@ $(document).ready(function(e) {
 </div>
 </div>
 <!--bottom bar for evangelieGelukkigeWerknemer ends--></div>
-<!-- evangelieGelukkigeWerknemer page ends --> <!-- start conent area for contact  -->
+<!-- evangelieGelukkigeWerknemer page ends --><!-- start conent area for investerenInVeiligheidEnVitaliteit  -->
+<div data-ng-show="investerenInVeiligheidEnVitaliteit == true">
+<div id="content_container">
+<div id="content">
+<div id="content_kop">
+<h1>Investeren in veiligheid en vitaliteit</h1>
+</div>
+<div class="clear">&nbsp;</div>
+<div class="line line-OndernemerWorden">&nbsp;</div>
+<div id="content_text">
+<p>Werk maakt lang niet altijd gelukkig. De een heeft last van stress, een ander voelt zich niet uitgedaagd. Sommige werknemers vervelen zich zelfs dood op de werkvloer. Toch is er steeds meer bewijs dat gelukkige werknemers beter presteren en zich minder vaak ziek melden. Bovendien blijkt de winst van tevreden werknemers uit de omzetcijfers van 'gelukkige' bedrijven.</p>
+<p><em>Bron: Volkskrant</em></p>
+<p><a class="float-right" href="http://www.volkskrant.nl/economie/evangelie-van-de-gelukkige-werknemer~a4263733/" target="_blank">Lees verder</a></p>
+</div>
+</div>
+</div>
+<!--bottom bar for investerenInVeiligheidEnVitaliteit ends--></div>
+<!-- investerenInVeiligheidEnVitaliteit page ends --> <!-- start conent area for contact  -->
 <div data-ng-show="contact == true">
 <div id="content_container">
 <div id="content">
