@@ -486,34 +486,36 @@
 					<div class="form-group margin-top-15">
 						<label>Foto Toevoegen (optioneel)&nbsp; <a id="tooltip3" class="website-icons small" data-container="body" data-toggle="popover" data-placement="top" data-original-title="Foto Toevoegen (optioneel)" data-content="Door het uploaden van een foto (of een foto in je CV op te nemen) verleen je daarmee toestemming aan Olympia en de aan haar verbonden werkmaatschappijen om die foto in het systeem op te nemen en zo nodig te verstrekken aan (potentiële) opdrachtgevers."><i class="olympia-info3"></i></a></label>
 						<p>Upload hier je foto waarmee je jezelf optimaal presenteert aan ons en (potentiële) opdrachtgevers.</p>
-						<div class="well margin-bottom-0" style="background:#fff;">
+						<div class="well margin-bottom-0 margin-top-15" style="background:#fff;">
 							<div class="row">
-								<div class="col-sm-12">
+								<div class="col-sm-12" id="fotoUploadneLabel">
 									<label>Foto uploaden</label>
 								</div>
-								<div class="col-sm-12">
+								<div class="col-sm-12" id="fotoUploaden">
 
 									<div class="row">
 										<div class="col-sm-2">
 											<button class="btn btn-info hide" type="button" data-toggle="modal" data-target="#PictureUpload" id="upload0">uploaden</button>
 											<button class="btn btn-info" type="button" data-toggle="modal" data-target="#PictureUpload1" id="upload1">uploaden</button>
 										</div>
-										<div class="col-sm-4">Upload een foto met één de volgende formaten: JPG, GIF, XX, XX,</div>
+										<div class="col-sm-10">Upload een foto met één de volgende formaten: JPG, GIF, XX, XX,</div>
 									</div>
 								</div>
-
 								<div class="col-sm-12 hide" id="imagessrc">
 
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-3">
 											<br>
 											<span>
-												<img id="srcImage" src="../img/foto2.jpg" alt="your image" width="150px"/>
+												<img id="srcImage" src="../img/foto2.jpg" alt="your image" width="154px"/>
 											</span>
 										</div>
-										<div class="col-sm-7">
-											<br>
+										<div class="col-sm-8"><p>&nbsp;</p>Upload een foto met één de volgende formaten: JPG, GIF, XX, XX,</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-3">
 											<a class="link-in-text" id="removeImages" href="javascript:void(0)">Verwijderen</a>
+											<a class="link-in-text pull-right" id="upload2" href="javascript:void(0)" data-toggle="modal" data-target="#PictureUpload">Aanpassen</a>
 										</div>
 									</div>
 								</div>
@@ -1482,15 +1484,26 @@
 							<img id="blah" src="../img/foto2.jpg" alt="your image" width="150px" style="padding-top:32px"/>
 						</div>
 					</div>
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-xs-12">
 							<p>Door het uploaden van een foto (of een foto in je CV op te nemen) verleen je daarmee toestemming aan Olympia en de aan haar verbonden werkmaatschappijen om die foto in het systeem op te nemen en zo nodig te verstrekken aan (potentiële) opdrachtgevers.</p>
 						</div>
+					</div> -->
+					<div class="row margin-top-15">
+						<div class="col-sm-12">
+						<label class="col-sm-12 checkbox-inline">
+							<input type="checkbox" id="inlineCheckbox101" value="1"> Ik verleen toestemming aan Olympia en de aan haar verbonden werkmaatschappijen om de door mij geuploade foto in het systeem op te nemen en zo nodig te verstrekken aan (potentiële) opdrachtgevers.
+						</label>
+						</div>
+					</div>
+					<div class="row margin-top-15 hypothetical-content hide has-error">
+						<label class="col-sm-12">LET OP: Je hebt olympia nog geen toestemming gegeven je foto zo nodig aan (potentiele) opdrachtgevers te verstrekken. Alleen als je hiermee akkoord gaat, kun je een foto aan je profiel toevoegen.</p>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" class="close" data-dismiss="modal" aria-hidden="true">Annuleren</button>
-					<button id="saveImage0" type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Upload</button>
+					<button id="saveImage0" type="button" class="btn btn-primary actual hide" data-dismiss="modal" aria-hidden="true">Upload</button>
+					<button type="button" class="btn btn-primary hypothetical" aria-hidden="true">Upload</button>
 				</div>
 			</div>
 		</div>
@@ -1521,15 +1534,21 @@
 							<img id="blah" src="../img/avatar2.jpg" alt="your image" width="150px" style="padding-top:32px"/>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-xs-12">
-							<p>Door het uploaden van een foto (of een foto in je CV op te nemen) verleen je daarmee toestemming aan Olympia en de aan haar verbonden werkmaatschappijen om die foto in het systeem op te nemen en zo nodig te verstrekken aan (potentiële) opdrachtgevers.</p>
+					<div class="row margin-top-15">
+						<div class="col-sm-12">
+						<label class="col-sm-12 checkbox-inline">
+							<input type="checkbox" id="inlineCheckbox102" value="1"> Ik verleen toestemming aan Olympia en de aan haar verbonden werkmaatschappijen om de door mij geuploade foto in het systeem op te nemen en zo nodig te verstrekken aan (potentiële) opdrachtgevers.
+						</label>
 						</div>
+					</div>
+					<div class="row margin-top-15 hypothetical-content hide has-error">
+						<label class="col-sm-12">LET OP: Je hebt olympia nog geen toestemming gegeven je foto zo nodig aan (potentiele) opdrachtgevers te verstrekken. Alleen als je hiermee akkoord gaat, kun je een foto aan je profiel toevoegen.</p>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" class="close" data-dismiss="modal" aria-hidden="true">Annuleren</button>
-					<button id="saveImage1" type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Upload</button>
+					<button id="saveImage1" type="button" class="btn btn-primary actual hide" data-dismiss="modal" aria-hidden="true">Upload</button>
+					<button type="button" class="btn btn-primary hypothetical" aria-hidden="true">Upload</button>
 				</div>
 			</div>
 		</div>
@@ -1580,7 +1599,10 @@
 
 	    $("#removeImages").click(function(){
 	    	$("#imagessrc").addClass('hide');
+	    	$("#fotoUploaden").removeClass('hide');
+	    	$("#fotoUploadneLabel").removeClass('hide');
 	    })
+
 		$(document).ready(function () {
 			$("#menu-227").addClass('sf-menu');
 			$('#menu-227').superfish({
@@ -1602,12 +1624,38 @@
 			$("#saveImage0").click(function(){
 				$("#srcImage").attr('src', '../img/foto2.jpg')	
 		    	$("#imagessrc").removeClass('hide');
+		    	$("#fotoUploaden").addClass('hide');
+		    	$("#fotoUploadneLabel").addClass('hide');
 		    })
 		    $("#saveImage1").click(function(){
 				$("#srcImage").attr('src', '../img/avatar2.jpg')	
 		    	$("#imagessrc").removeClass('hide');
+		    	$("#fotoUploaden").addClass('hide');
+		    	$("#fotoUploadneLabel").addClass('hide');
 		    })
 		});
+		$("#inlineCheckbox101, #inlineCheckbox102").prop('checked', false);
+		$("#inlineCheckbox101, #inlineCheckbox102").on('change', function(){
+			debugger;
+			if($(this).prop("checked") == true){
+				$('.actual').removeClass('hide');
+				$('.hypothetical').addClass('hide');
+				$('.hypothetical-content').addClass('hide');
+			}else{
+				$('.actual').addClass('hide');
+				$('.hypothetical').removeClass('hide');
+				$('.hypothetical-content').removeClass('hide');
+			}
+		})
+		$('.hypothetical.btn').on('click', function(){
+			$('.hypothetical-content').removeClass('hide');
+		});
+		$('#upload0, #upload1').on('click', function(){
+			$('.actual').addClass('hide')
+				$('.hypothetical').removeClass('hide')
+			$('.hypothetical-content').addClass('hide');
+			$("#inlineCheckbox101, #inlineCheckbox102").prop('checked', false);
+		})
 	</script>
 </body>
 </html>
