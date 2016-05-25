@@ -6621,3 +6621,21 @@ color: #cccccc !important;
   margin-top: 10%;
   position: relative;
 }
+.changeOnHover{
+  position: absolute;
+    bottom: 0;
+    text-align: center;
+    left: 0;
+    width: 79%;
+    padding: 10px;
+    background: rgba(1,1,1,0.8);
+    margin-left: 16px;
+    color: #ffffff;
+    display: none;
+}
+.changeHover:hover .changeOnHover{
+  display: block;
+}
+#upload0 img, #upload1 img{
+  cursor: pointer;
+}
